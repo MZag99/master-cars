@@ -1,0 +1,11 @@
+@import "mixins";
+@import "variables/fonts";
+
+.font-size {
+	@each $size, $values in $fonts {
+
+		&-#{$size} {
+			@include font-size-var($size, $fonts);
+		}
+	}
+}

@@ -1,0 +1,28 @@
+// icon: (desktop, tablet, phone);
+$svg-icons: (
+	phone: (14, 14, 14),
+);
+
+
+@each $svg-name, $values in $svg-icons {
+	$desktop: nth($values, 1);
+	$tablet: nth($values, 2);
+	$phone: nth($values, 3);
+
+	.svg-#{$svg-name} {
+		height: auto;
+		display: inline-block;
+
+		@include breakpoint(desktop) {
+			width: vw($desktop);
+		}
+
+		@include breakpoint(tablet) {
+			width: vw($tablet, tablet);
+		}
+
+		@include breakpoint(phone) {
+			width: vw($phone, phone);
+		}
+	}
+}

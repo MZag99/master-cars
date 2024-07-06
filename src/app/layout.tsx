@@ -10,14 +10,15 @@ import Lightbox from '@/components/partials/Lightbox/Lightbox';
 import '@/styles/main.scss';
 
 export const metadata: Metadata = {
-    title: 'Master Cars - import aut z USA',
+    title: 'Master Cars',
     description: 'Master Cars - import aut z USA'
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
     return (
-        <html lang="en">
+        <html lang="pl">
             <body className={classNames(fonts.SFPro.variable, fonts.Stolzl.variable)}>
+                <h1 className='sr-only'>Master Cars - import aut z USA</h1>
                 <Header />
                 {children}
                 <Lightbox />

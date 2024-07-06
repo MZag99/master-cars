@@ -1,0 +1,47 @@
+
+.align {
+	&-center {
+		inset: 0;
+		margin: auto;
+	}
+
+	&-left {
+		inset: 0 auto 0 0;
+		margin: auto auto auto 0;
+	}
+
+	&-right {
+		inset: 0 0 0 auto;
+		margin: auto 0 auto auto;
+	}
+
+	&-top {
+		inset: 0 0 auto;
+		margin: 0 auto auto;
+	}
+
+	&-top-left {
+		inset: 0 auto auto 0;
+		margin: 0 auto auto;
+	}
+
+	&-top-right {
+		inset: 0 0 auto auto;
+		margin: 0 0 auto auto;
+	}
+
+	&-bottom {
+		inset: auto 0 0;
+		margin: auto auto 0;
+	}
+
+	&-bottom-left {
+		inset: auto auto 0 0;
+		margin: auto auto 0 0;
+	}
+
+	&-bottom-right {
+		inset: auto 0 0 auto;
+		margin: auto 0 0 auto;
+	}
+}

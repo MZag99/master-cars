@@ -1,3 +1,66 @@
 :root {
+    --app-height: 100svh;
+	--vw-value: 100vw;
     --base-grid: 1fr 1fr 1fr 1fr;
+
+	// Colors
+	--color-black: #000;
+	--color-grey-01: #B2B2B2;
+	--color-white: #fff;
+    --color-red: #E71D36;
+
+	--color-bg: var(--color-white);
+
+	// Transitions
+	--transition: #{$time $ease-custom};
+	--transition-fast: #{$time-fast $ease-custom};
+	--transition-fast-delay: #{$time-fast $ease-custom $time-fast};
+	--ease-in: #{$ease-in};
+	--ease-out: #{$ease-out};
+	--ease-in-out: #{$ease-in-out};
+	--ease-out-back: #{$ease-out-back};
+	--ease-custom: #{$ease-custom};
+
+	// Sizes
+	--padding-app: #{vw(13)};
+
+	// Fixed values
+	--header-height: #{vw(66)};
+	--sidebar-width: #{vw(400)};
+	--sidebar-padding: #{vw(13)};
+	--modal-width: #{vw(320)};
+	--modal-width-big: #{vw(567)};
+}
+
+
+html {
+	@include breakpoint(desktop) {
+		font-size: vw($browser-context);
+	}
+
+	@include breakpoint(tablet) {
+		font-size: vw($browser-context, tablet);
+	}
+
+	@include breakpoint(phone) {
+		font-size: vw($browser-context, phone);
+	}
+
+}
+
+html,
+body {
+	font-family: var(--font-primary);
+	font-weight: 400;
+	overscroll-behavior: none;
+	overflow: hidden;
+	background-color: var(--color-bg);
+}
+
+main {
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
+	padding: var(--padding-app);
 }

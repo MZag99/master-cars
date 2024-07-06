@@ -1,3 +1,20 @@
+// Variables
+@import "variables/sizes";
+@import "variables/zindex";
+@import "variables/transitions";
+
 // Base styles
+@import "mixins";
+@import "reset";
 @import "base";
-@import "grid";
+@import "mediaqueries";
+@import "helpers";
+@import "svg-icons";
+
+// Utils
+@import "utils/align";
+@import "utils/no-scrollbar";
+@import "utils/sr-only";
+@import "utils/font-size";
+@import "utils/font-weight";
+@import "utils/radius";

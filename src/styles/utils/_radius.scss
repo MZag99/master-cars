@@ -1,0 +1,32 @@
+@import "mixins";
+
+$radius: 17, 34;
+
+.radius {
+	@each $r in $radius {
+
+		&-#{$r} {
+			border-radius: vw($r);
+		}
+	}
+}
+
+.radius-top {
+	@each $r in $radius {
+
+		&-#{$r} {
+			border-top-left-radius: vw($r);
+			border-top-right-radius: vw($r);
+		}
+	}
+}
+
+.radius-bottom {
+	@each $r in $radius {
+
+		&-#{$r} {
+			border-bottom-left-radius: vw($r);
+			border-bottom-right-radius: vw($r);
+		}
+	}
+}
