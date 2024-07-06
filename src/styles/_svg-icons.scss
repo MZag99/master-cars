@@ -1,6 +1,8 @@
 // icon: (desktop, tablet, phone);
 $svg-icons: (
 	phone: (14, 14, 14),
+	logo: (197, 197, 197),
+	otomoto: (16, 16, 16),
 );
 
 
@@ -24,5 +26,11 @@ $svg-icons: (
 		@include breakpoint(phone) {
 			width: vw($phone, phone);
 		}
+	}
+}
+
+.svg-otomoto {
+	path {
+		fill: revert-layer !important;
 	}
 }

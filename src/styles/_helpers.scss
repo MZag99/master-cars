@@ -17,6 +17,12 @@
 	}
 }
 
+.module-wrapper {
+	display: grid;
+	grid-template-columns: var(--base-grid);
+	padding-inline: var(--base-inline-padding);
+}
+
 .loader-centered {
 	display: block;
 	position: absolute;

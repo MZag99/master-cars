@@ -9,10 +9,13 @@
         "lint": "next lint"
     },
     "dependencies": {
+        "fp-ts": "^2.16.7",
         "framer-motion": "^11.2.13",
+        "gsap": "file:gsap-bonus.tgz",
         "next": "14.2.4",
         "react": "^18",
-        "react-dom": "^18"
+        "react-dom": "^18",
+        "simple-zustand-devtools": "^1.1.0"
     },
     "devDependencies": {
         "@svgr/webpack": "^8.1.0",
@@ -26,6 +29,7 @@
         "eslint-config-prettier": "^9.1.0",
         "eslint-plugin-perfectionist": "^2.11.0",
         "sass": "^1.77.6",
-        "typescript": "^5"
+        "typescript": "^5",
+        "zustand": "^4.5.4"
     }
 }

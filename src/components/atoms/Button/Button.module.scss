@@ -1,5 +1,13 @@
 @import 'mixins';
 
+.wrapper {
+    @include flex;
+
+    @include breakpoint(desktop) {
+        padding-inline: vw(15);
+    }
+}
+
 .is-small {
     @include breakpoint(desktop) {
         height: vw(34);
@@ -59,12 +67,21 @@
     }
 }
 
+.is-disabled {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.is-not-interactive {
+    pointer-events: none;
+}
+
 .text {
     font-family: var(--font-primary);
 }
 
 .icon {
     @include breakpoint(desktop) {
-        margin: 0 0 vw(-1) vw(3);
+        margin-left: vw(7);
     }
 }

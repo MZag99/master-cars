@@ -5,6 +5,7 @@ import Phone from '@/assets/svg/phone.svg';
 import Logo from '@/assets/svg/logo-new.svg';
 import Picture from '@/assets/svg/picture.svg';
 import Warning from '@/assets/svg/warning.svg';
+import Otomoto from '@/assets/svg/otomoto.svg';
 import ArrowUp from '@/assets/svg/arrow-up.svg';
 import Download from '@/assets/svg/download.svg';
 import Facebook from '@/assets/svg/facebook.svg';
@@ -18,17 +19,18 @@ export type IconProps = {
 };
 
 export const icons = {
+    logo: Logo,
     mail: Mail,
     phone: Phone,
+    otomoto: Otomoto,
+    chevron: Chevron,
     picture: Picture,
     warning: Warning,
     arrowUp: ArrowUp,
     download: Download,
     facebook: Facebook,
-    logo: Logo,
     whatsApp: WhatsApp,
-    instagram: Instagram,
-    chevron: Chevron
+    instagram: Instagram
 };
 
 const Icon = ({ name, className }: IconProps): JSX.Element | null => {

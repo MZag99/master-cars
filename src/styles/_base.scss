@@ -1,11 +1,13 @@
 :root {
     --app-height: 100svh;
 	--vw-value: 100vw;
-    --base-grid: 1fr 1fr 1fr 1fr;
+    --base-grid: 610fr 710fr 350fr;
+	--base-inline-padding: #{vw(90)};
 
 	// Colors
 	--color-black: #000;
 	--color-grey-01: #B2B2B2;
+	--color-grey-02: #5A5A5A;
 	--color-white: #fff;
     --color-red: #E71D36;
 
@@ -21,11 +23,8 @@
 	--ease-out-back: #{$ease-out-back};
 	--ease-custom: #{$ease-custom};
 
-	// Sizes
-	--padding-app: #{vw(13)};
-
 	// Fixed values
-	--header-height: #{vw(66)};
+	--header-height: #{vw(100)};
 	--sidebar-width: #{vw(400)};
 	--sidebar-padding: #{vw(13)};
 	--modal-width: #{vw(320)};
@@ -60,7 +59,6 @@ body {
 main {
 	position: relative;
 	width: 100%;
-	height: 100vh;
+	min-height: 100vh;
 	overflow: hidden;
-	padding: var(--padding-app);
 }
