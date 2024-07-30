@@ -1,0 +1,78 @@
+@import 'mixins';
+
+.list {
+    @include flex(row, flex-start, flex-start);
+    flex-wrap: wrap;
+
+    @include breakpoint(desktop) {
+        gap: vw(17);
+    }
+}
+
+.item-wrapper {
+    position: relative;
+    flex: 1;
+    overflow: hidden;
+
+    @include breakpoint(desktop) {
+        height: vw(245);
+    }
+
+    &:nth-child(3n) {
+        min-width: 100%;
+
+        @include breakpoint(desktop) {
+            height: vw(500);
+        }
+    }
+}
+
+.item-image {
+    position: absolute;
+    inset: 0;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.name-label, .image-label {
+    @include flex;
+
+    z-index: 1;
+    position: absolute;
+
+    @include breakpoint(desktop) {
+        left: vw(15);
+        padding-inline: vw(15);
+        height: vw(30);
+        gap: vw(5);
+    }
+
+    svg {
+
+        margin-top: 1px;
+
+        path {
+            fill: var(--color-white);
+        }
+    }
+}
+
+.name-label {
+    @include breakpoint(desktop) {
+        bottom: vw(15);
+    }
+}
+
+.image-label {
+    @include breakpoint(desktop) {
+        top: vw(15);
+    }
+}
+
+.showcase-label {
+    background: var(--color-red);
+}

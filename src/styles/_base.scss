@@ -3,6 +3,7 @@
 	--vw-value: 100vw;
     --base-grid: 610fr 710fr 350fr;
 	--base-inline-padding: #{vw(90)};
+	--base-block-padding: #{vw(90)};
 
 	// Colors
 	--color-black: #000;
@@ -49,10 +50,11 @@ html {
 
 html,
 body {
+	@extend %no-scrollbar;
+
 	font-family: var(--font-primary);
 	font-weight: 400;
 	overscroll-behavior: none;
-	overflow: hidden;
 	background-color: var(--color-bg);
 }
 

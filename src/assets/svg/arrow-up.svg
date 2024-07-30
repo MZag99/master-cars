@@ -1,7 +1,17 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
-<svg width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g id="Arrow / Arrow_Sub_Right_Up">
-<path id="Vector" d="M11 11L16 6M16 6L21 11M16 6V13.8031C16 14.921 16 15.4802 15.7822 15.9076C15.5905 16.2839 15.2839 16.5905 14.9076 16.7822C14.4802 17 13.921 17 12.8031 17H3" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-</g>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Warstwa_1" data-name="Warstwa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 13.03">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #000;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 2px;
+      }
+    </style>
+  </defs>
+  <g id="Arrow_Arrow_Sub_Right_Up" data-name="Arrow Arrow Sub Right Up">
+    <path id="Vector" class="cls-1" d="M9,6L14,1m0,0l5,5M14,1v7.8c.08,.71,0,1.42-.22,2.1-.19,.38-.5,.68-.88,.88-.68,.23-1.4,.3-2.11,.23H1"/>
+  </g>
 </svg>

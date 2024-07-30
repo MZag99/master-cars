@@ -8,7 +8,7 @@
 .subtitle {
     display: inline-block;
     color: var(--color-grey-02);
-    font-family: var(--font-secondary);
+    font-family: var(--font-primary);
 
     @include breakpoint(desktop) {
         margin-top: vw(20);

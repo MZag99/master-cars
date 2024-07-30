@@ -1,10 +1,17 @@
 @import 'mixins';
+@import 'variables/transitions';
 
 .wrapper {
     @include flex;
 
+    transition: opacity 0.3s $ease-custom;
+
     @include breakpoint(desktop) {
         padding-inline: vw(15);
+    }
+
+    @include hover {
+        opacity: 0.8;
     }
 }
 
@@ -17,8 +24,8 @@
 
 .is-big {
     @include breakpoint(desktop) {
-        height: vw(68);
-        min-width: vw(245);
+        height: vw(60);
+        width: vw(245);
     }
 }
 

@@ -19,18 +19,10 @@ const Header = (): JSX.Element => {
                     <li>
                         <Button variant='outline' icon='otomoto' link='https://www.otomoto.pl/'>Oferta</Button>
                     </li>
-                    <li>
-                        <Link href="/">O nas</Link>
-                    </li>
-                    <li>
-                        <Link href="/proces">Proces</Link>
-                    </li>
-                    <li>
-                        <Link href="/kalkulator">Kalkulator</Link>
-                    </li>
-                    <li>
-                        <Link href="/tracking">Tracking</Link>
-                    </li>
+                    <DefaultHeaderItem href='/'>O nas</DefaultHeaderItem>
+                    <DefaultHeaderItem href='/proces'>Proces</DefaultHeaderItem>
+                    <DefaultHeaderItem href='/kalkulator'>Kalkulator</DefaultHeaderItem>
+                    <DefaultHeaderItem href='/tracking'>Tracking</DefaultHeaderItem>
                 </ul>
             </nav>
             <nav className={styles['aside-nav']}>
@@ -41,6 +33,14 @@ const Header = (): JSX.Element => {
                 </ul>
             </nav>
         </header>
+    );
+};
+
+const DefaultHeaderItem = ({ href, children }: { href: string; children: string }): JSX.Element => {
+    return (
+        <li className={styles['header-item']}>
+            <Link href={href}>{children}</Link>
+        </li>
     );
 };
 

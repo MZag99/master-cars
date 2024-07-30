@@ -29,7 +29,7 @@ export const icons = {
     arrowUp: ArrowUp,
     download: Download,
     facebook: Facebook,
-    whatsApp: WhatsApp,
+    whatsapp: WhatsApp,
     instagram: Instagram
 };
 

@@ -23,6 +23,10 @@
 	padding-inline: var(--base-inline-padding);
 }
 
+.padding-block {
+	padding-block: var(--base-block-padding);
+}	
+
 .loader-centered {
 	display: block;
 	position: absolute;

@@ -1,0 +1,26 @@
+.wrapper {
+    position: relative;
+    z-index: 1;
+
+    &:after {
+        position: absolute;
+        content: '';
+        height: 1px;
+        background: var(--color-grey-01);
+        bottom: 0;
+        inset-inline: var(--base-inline-padding);
+    }
+}
+
+.paragraph {
+    color: var(--color-grey-01);
+}
+
+.button {
+    margin-left: auto;
+}
+
+.is-dark {
+    background: var(--color-black);
+    color: var(--color-white);
+}

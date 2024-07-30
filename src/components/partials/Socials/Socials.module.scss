@@ -1,0 +1,19 @@
+@import 'mixins';
+
+.wrapper {
+    @include flex(row, space-between, center);
+    @include z-index(header, $elements);
+
+    position: fixed;
+    right: var(--base-inline-padding);
+    border: 1px solid var(--color-black);
+    background: var(--color-white);
+
+    @include breakpoint(desktop) {
+        bottom: vw(30);
+        width: vw(116);
+        height: vw(34);
+        padding-top: vw(3);
+        padding-inline: vw(15);
+    }
+}

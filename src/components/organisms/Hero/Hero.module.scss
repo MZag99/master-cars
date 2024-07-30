@@ -1,13 +1,15 @@
 @import 'mixins';
 
 .wrapper {
-    height: calc(100vh - var(--header-height));
+    position: relative;
+    height: calc(100vh);
+    z-index: 0;
 }
 
 .text {
-    margin-block: auto;
-
+    
     @include breakpoint(desktop) {
+        margin-top: vw(290);
         width: vw(670);
     }
 
@@ -20,6 +22,18 @@
 .image {
     position: absolute;
     pointer-events: none;
+
+    @include breakpoint(desktop) {
+        right: vw(-250);
+        top: vw(260);
+        width: vw(1330);
+        height: vw(993);
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
 }
 
 .buttons {
@@ -28,5 +42,14 @@
     @include breakpoint(desktop) {
         margin-top: vw(20);
         gap: vw(10);
+    }
+}
+
+.scroll {
+    position: absolute;
+
+    @include breakpoint(desktop) {
+        bottom: vw(30);
+        left: var(--base-inline-padding);
     }
 }

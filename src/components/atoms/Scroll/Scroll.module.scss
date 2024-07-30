@@ -1,0 +1,73 @@
+@import 'mixins';
+@import 'variables/transitions';
+
+$fill-size: vw(12);
+
+@keyframes scroll {
+    0% {
+        opacity: 0;
+    }
+    15% {
+        opacity: 1;
+    }
+    60% {
+        opacity: 1;
+        
+        @include breakpoint(desktop) {
+            top: vw(2);
+        }
+    }
+    90% {
+        top: calc(100% - $fill-size - vw(2));
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.wrapper {
+    @include breakpoint(desktop) {
+        width: vw(100);
+        height: vw(65);
+    }
+}
+
+.bar {
+    position: relative;
+    display: block;
+
+    @include breakpoint(desktop) {
+        width: vw(16);
+        height: vw(61);
+        border-radius: vw(8);
+        border: 1px solid var(--color-black);
+    }
+}
+
+.text {
+    position: absolute;
+    bottom: 0;
+    text-transform: uppercase;
+    font-family: var(--font-primary);
+
+    @include breakpoint(desktop) {
+        left: vw(21);
+    }
+}
+
+.fill {
+    display: block;
+    position: absolute;
+    left: 50%;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    background: var(--color-red);
+    animation: scroll 2s infinite $ease-custom;
+
+    
+    @include breakpoint(desktop) {
+        top: vw(2);
+        width: $fill-size;
+        height: $fill-size;
+    }
+}
