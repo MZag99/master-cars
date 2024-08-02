@@ -1,0 +1,37 @@
+@import 'mixins';
+
+.wrapper {
+    position: relative;
+
+    @include breakpoint(desktop) {
+        padding-block: vw(20);
+    }
+}
+
+.list {
+    @include flex(row, flex-start, center);
+
+    @include breakpoint(desktop) {
+        gap: vw(65);
+    }
+}
+
+.socials {
+    @include flex(row, space-between, center);
+    
+    position: relative;
+    right: unset;
+    bottom: unset;
+    border: none;
+    margin-left: auto;
+ 
+    @include breakpoint(desktop) {
+        gap: vw(35);
+    }
+}
+
+.copyright {
+    span {
+        font-family: var(--font-secondary);
+    }
+}

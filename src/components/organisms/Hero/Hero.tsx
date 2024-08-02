@@ -46,7 +46,7 @@ const Hero = ({ title, subtitle, image }: HeroProps): JSX.Element => {
 
             <Heading className={styles.text}>
 
-                <Title size='large'>{title}</Title>
+                <Title size='extra-large'>{title}</Title>
 
                 <Subtitle>{subtitle}</Subtitle>
 

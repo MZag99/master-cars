@@ -12,9 +12,14 @@
     display: grid;
     grid-template-columns: var(--base-grid);
     padding-inline: var(--base-inline-padding);
+    transition: transform 0.5s var(--ease-custom);
 
     @include breakpoint(desktop) {
         height: var(--header-height);
+    }
+
+    &.is-hidden {
+        transform: translateY(-100%);
     }
 }
 
@@ -28,30 +33,6 @@
     ul {
         @include flex(row, space-between, center);
         width: 100%;
-    }
-}
-
-.header-item {
-    a {
-        position: relative;
-        &:after {
-            content: '';
-            display: block;
-            position: absolute;
-            height: 1px;
-            background: var(--color-black);
-            inset: auto 0 vw(-3) 0;
-            transform: scaleX(0);
-            transform-origin: right;
-            transition: transform 0.3s $ease-custom;
-        }
-    
-        @include hover {
-            &:after {
-                transform: scaleX(1);
-                transform-origin: left;
-            }
-        }
     }
 }
 

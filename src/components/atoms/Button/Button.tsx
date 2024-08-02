@@ -8,20 +8,23 @@ import Icon from '../Icon/Icon';
 
 import styles from './Button.module.scss';
 
-type ButtonProps = {
+export type ButtonProps = {
     variant: 'light' | 'dark' | 'accent' | 'outline';
     children: ReactNode;
     onClick?: () => void;
     disabled?: boolean;
     interactive?: boolean;
+    disclaimer?: string;
     link?: string;
     big?: boolean;
     icon?: keyof typeof icons;
     className?: string;
 };
 
-const Button = ({ link, ...props }: ButtonProps): JSX.Element => {
-    return link ? <LinkButton link={link} {...props} /> : <RegularButton {...props} />;
+const Button = ({ link, disclaimer, children, ...props }: ButtonProps): JSX.Element => {
+    return link ?
+        <LinkButton link={link} {...props}>{children}{disclaimer && <span className={classNames(styles.disclaimer, 'font-size-10')}>{disclaimer}</span>}</LinkButton> :
+        <RegularButton {...props}>{children}{disclaimer && <span className={classNames(styles.disclaimer, 'font-size-10')}>{disclaimer}</span>}</RegularButton>;
 };
 
 

@@ -4,6 +4,7 @@
 .wrapper {
     @include flex;
 
+    position: relative;
     transition: opacity 0.3s $ease-custom;
 
     @include breakpoint(desktop) {
@@ -57,6 +58,7 @@
 
     svg {
         path {
+            stroke: var(--color-white) !important;
             fill: var(--color-white);
         }
     }
@@ -90,5 +92,18 @@
 .icon {
     @include breakpoint(desktop) {
         margin-left: vw(7);
+    }
+}
+
+.disclaimer {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    color: var(--color-grey-01);
+    
+    @include breakpoint(desktop) {
+        transform: translate(-50%, calc(100% + vw(8)));
+        width: 80%;
+        line-height: 1.2;
     }
 }

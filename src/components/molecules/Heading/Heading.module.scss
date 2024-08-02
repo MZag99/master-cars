@@ -3,6 +3,10 @@
 .title {
     font-family: var(--font-primary);
     font-weight: 500;
+
+    @include breakpoint(desktop) {
+        margin-bottom: vw(25);
+    }
 }
 
 .subtitle {

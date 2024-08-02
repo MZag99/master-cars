@@ -8,7 +8,7 @@ export type NumbersProps = {
 };
 
 export type NumbersItem = {
-    value: number;
+    value: number | string;
     label: string;
 };
 

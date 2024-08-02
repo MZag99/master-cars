@@ -11,7 +11,8 @@ export default function Home() {
             <Hero {...CMS.HERO} />
             <Text {...CMS.ABOUT} />
             <Stats {...CMS.STATS} />
-            <Socials />
+            <Text {...CMS.TRACKING} />
+            <Socials isHiding />
         </main>
     );
 }

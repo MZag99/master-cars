@@ -15,7 +15,7 @@ export const Heading = ({ children, className }: HeadingProps): JSX.Element => {
 
 type TitleProps = {
     children: string;
-    size?: 'small' | 'medium' | 'large';
+    size?: 'small' | 'medium' | 'large' | 'extra-large';
 };
 
 export const Title = ({ size = 'medium', children }: TitleProps): JSX.Element => {
@@ -28,6 +28,8 @@ export const Title = ({ size = 'medium', children }: TitleProps): JSX.Element =>
             return { level: 3, fontSize: 'font-size-60' };
         case 'large':
             return { level: 2, fontSize: 'font-size-76' };
+        case 'extra-large':
+            return { level: 2, fontSize: 'font-size-90' };
         default:
             return { level: 3, fontSize: 'font-size-60' };
         }
