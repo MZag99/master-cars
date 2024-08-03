@@ -1,8 +1,11 @@
+import type { StaticImageData } from 'next/image';
 import type { ButtonProps } from '@/components/atoms/Button/Button';
 
+import Image from 'next/image';
 import classNames from 'classnames';
 
 import Button from '@/components/atoms/Button/Button';
+import Warning from '@/components/atoms/Warning/Warning';
 import Paragraph from '@/components/atoms/Paragraph/Paragraph';
 import { Heading, Subtitle, Title } from '@/components/molecules/Heading/Heading';
 
@@ -14,12 +17,29 @@ export type TextProps = {
         subtitle?: string;
         button?: ButtonProps & { children: string }
     }
-    text: string;
+    items: (TextItem | WarningItem | ImageItem)[];
     isDark?: boolean;
     button: ButtonProps & { children: string };
 };
 
-const Text = ({ heading, text, button, isDark }: TextProps): JSX.Element => {
+export type TextItem = {
+    type: 'text';
+    text: string;
+}
+
+export type WarningItem = {
+    type: 'warning';
+    text: string;
+}
+
+export type ImageItem = {
+    type: 'image';
+    image: StaticImageData;
+    caption?: string;
+    alt: string;
+}
+
+const Text = ({ heading, items, button, isDark }: TextProps): JSX.Element => {
     return (
         <div className={classNames(styles.wrapper, 'module-wrapper', 'padding-block', isDark && styles['is-dark'])}>
 
@@ -29,7 +49,19 @@ const Text = ({ heading, text, button, isDark }: TextProps): JSX.Element => {
                 {heading.button && <Button {...heading.button}>{heading.button.children}</Button>}
             </Heading>
 
-            <Paragraph className={classNames(styles.paragraph, isDark && styles['text-light'])}>{text}</Paragraph>
+            <div className={styles.content}>
+                {items && items.map((item, index) =>
+                    item.type === 'text' ?
+                        <Paragraph key={index} className={classNames(styles.paragraph, isDark && styles['text-light'])}>{item.text}</Paragraph> :
+                        item.type === 'warning' ?
+                            <Warning key={index} text={item.text} /> :
+                            item.type === 'image' &&
+                            <div className={styles['image-item']}>
+                                <Image key={index} fill src={item.image.src} alt={item.alt} className={classNames(styles.image, 'radius-34')} />
+                                {item.caption && <span className={classNames(styles.caption, 'font-size-12')}>{item.caption}</span>}
+                            </div>
+                )}
+            </div>
 
             {button && <Button {...button} className={styles.button}>{button.children}</Button>}
 

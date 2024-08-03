@@ -26,7 +26,8 @@
 .is-big {
     @include breakpoint(desktop) {
         height: vw(60);
-        width: vw(245);
+        min-width: vw(265);
+        width: fit-content;
     }
 }
 

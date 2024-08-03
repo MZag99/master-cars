@@ -1,3 +1,5 @@
+@import 'mixins';
+
 .wrapper {
     position: relative;
     z-index: 1;
@@ -16,4 +18,24 @@
 .is-dark {
     background: var(--color-black);
     color: var(--color-white);
+}
+
+.image-item {
+    @include breakpoint(desktop) {
+        margin-block: vw(35);
+    }
+}
+
+.image {
+    position: relative !important;
+    object-fit: cover;
+    overflow: hidden;
+
+    @include breakpoint(desktop) {
+        height: vw(500) !important;
+    }
+}
+
+.caption {
+    color: var(--color-grey-02);
 }

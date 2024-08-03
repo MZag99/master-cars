@@ -1,6 +1,7 @@
 import classNames from 'classnames';
 
 import Socials from '../Socials/Socials';
+import { CMS_UNIVERSAL } from '@/cms/universal';
 
 import LinkListItem from '@/components/molecules/LinkListItem/LinkListItem';
 
@@ -25,7 +26,7 @@ const Footer = ({ copyright, items }: FooterProps): JSX.Element => {
                 )}
             </ul>
 
-            <Socials className={styles.socials} />
+            <Socials {...CMS_UNIVERSAL.SOCIALS} className={styles.socials} />
         </footer>
     );
 };

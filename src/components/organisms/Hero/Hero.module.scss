@@ -2,15 +2,19 @@
 
 .wrapper {
     position: relative;
-    height: calc(100vh);
+    height: calc(100vh - var(--header-height));
     z-index: 0;
 }
 
 .text {
     
     @include breakpoint(desktop) {
-        margin-top: vw(310);
+        margin-top: vw(230);
         width: vw(790);
+    }
+
+    @include breakpoint(hd) {
+        margin-top: vw(160);
     }
 
     strong {
@@ -25,9 +29,13 @@
 
     @include breakpoint(desktop) {
         right: vw(-350);
-        top: vw(300);
+        top: vw(260);
         width: vw(1330);
         height: vw(993);
+    }
+
+    @include breakpoint(hd) {
+        top: vw(170);
     }
 
     img {

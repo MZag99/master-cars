@@ -1,0 +1,20 @@
+@import 'mixins';
+
+.wrapper {
+    @include flex(row, flex-start, center);
+
+    color: var(--color-black);
+    border: 1px solid var(--color-black);
+
+    svg {
+        @include breakpoint(desktop) {
+            margin-right: vw(7);
+        }
+    }
+
+    @include breakpoint(desktop) {
+        height: vw(30);
+        padding-inline: vw(10);
+        margin-block: vw(27);
+    }
+}

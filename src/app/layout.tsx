@@ -2,11 +2,12 @@ import type { Metadata } from 'next';
 
 import classNames from 'classnames';
 
-import { CMS } from '@/cms/all';
 import fonts from '@/utils/fonts';
+import { CMS_UNIVERSAL } from '@/cms/universal';
 
 import Header from '@/components/partials/Header/Header';
 import Footer from '@/components/partials/Footer/Footer';
+import Contact from '@/components/organisms/Contact/Contact';
 import Lightbox from '@/components/partials/Lightbox/Lightbox';
 
 import '@/styles/main.scss';
@@ -21,10 +22,11 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <html lang="pl">
             <body className={classNames(fonts.SFPro.variable, fonts.Stolzl.variable)}>
                 <h1 className='sr-only'>Master Cars - import aut z USA</h1>
-                <Header {...CMS.HEADER}/>
+                <Header {...CMS_UNIVERSAL.HEADER}/>
                 {children}
                 <Lightbox />
-                <Footer {...CMS.FOOTER} />
+                <Contact {...CMS_UNIVERSAL.CONTACT} />
+                <Footer {...CMS_UNIVERSAL.FOOTER} />
             </body>
         </html>
     );

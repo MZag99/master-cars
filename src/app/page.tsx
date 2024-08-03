@@ -1,4 +1,5 @@
-import { CMS } from '@/cms/all';
+import { CMS } from '@/cms/about';
+import { CMS_UNIVERSAL } from '@/cms/universal';
 
 import Hero from '@/components/organisms/Hero/Hero';
 import Text from '@/components/organisms/Text/Text';
@@ -12,7 +13,7 @@ export default function Home() {
             <Text {...CMS.ABOUT} />
             <Stats {...CMS.STATS} />
             <Text {...CMS.TRACKING} />
-            <Socials isHiding />
+            <Socials {...CMS_UNIVERSAL.SOCIALS} isHiding />
         </main>
     );
 }
