@@ -1,0 +1,13 @@
+@import "mixins";
+
+.margin-top-bottom {
+    @include breakpoint(desktop) {
+        margin-block: vw(150) vw(30);
+    }
+}
+
+.margin-bottom {
+    @include breakpoint(desktop) {
+        margin-bottom: vw(30);
+    }
+}

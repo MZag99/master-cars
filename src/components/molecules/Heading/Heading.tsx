@@ -1,3 +1,5 @@
+import type { ButtonProps } from '@/components/atoms/Button/Button';
+
 import classNames from 'classnames';
 import { useMemo, type ReactNode } from 'react';
 
@@ -8,15 +10,25 @@ type HeadingProps = {
     className?: string;
 };
 
+export type TitleSizes = 'small' | 'medium' | 'large' | 'extra-large';
+
+type TitleProps = {
+    children: string;
+    size?: TitleSizes;
+};
+
+export type HeadingType = {
+    title: string;
+    size?: TitleSizes;
+    subtitle?: string;
+    button?: ButtonProps & { children: string }
+}
+
+
 export const Heading = ({ children, className }: HeadingProps): JSX.Element => {
     return <div className={className}>{children}</div>;
 };
 
-
-type TitleProps = {
-    children: string;
-    size?: 'small' | 'medium' | 'large' | 'extra-large';
-};
 
 export const Title = ({ size = 'medium', children }: TitleProps): JSX.Element => {
 

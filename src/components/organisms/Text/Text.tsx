@@ -7,16 +7,13 @@ import classNames from 'classnames';
 import Button from '@/components/atoms/Button/Button';
 import Warning from '@/components/atoms/Warning/Warning';
 import Paragraph from '@/components/atoms/Paragraph/Paragraph';
-import { Heading, Subtitle, Title } from '@/components/molecules/Heading/Heading';
+import { Heading, HeadingType, Subtitle, Title } from '@/components/molecules/Heading/Heading';
 
 import styles from './Text.module.scss';
 
+
 export type TextProps = {
-    heading: {
-        title: string;
-        subtitle?: string;
-        button?: ButtonProps & { children: string }
-    }
+    heading: HeadingType;
     items: (TextItem | WarningItem | ImageItem)[];
     isDark?: boolean;
     button: ButtonProps & { children: string };

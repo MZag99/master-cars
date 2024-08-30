@@ -1,0 +1,158 @@
+@import "mixins";
+
+$padding-inline: #{vw(16)};
+
+.wrapper {
+
+    @include flex(row, space-between, center);
+
+    position: relative;
+    width: fit-content;
+    border: 1px solid var(--color-grey-02);
+    overflow: hidden;
+    z-index: 1;
+
+    &.is-open {
+        overflow: visible;
+    }
+
+    span {
+        color: var(--color-grey-01);
+    }
+
+    input {
+        color: var(--color-grey-01);
+        transition: color 0.3s var(--ease-custom);
+
+        &:focus {
+            color: var(--color-black);
+        }
+    }
+
+
+    @include breakpoint(desktop) {
+        height: vw(34);
+        width: vw(277);
+        padding-inline: $padding-inline;
+    }
+}
+
+.dropdown-wrapper {
+    overflow: visible;
+    background: var(--color-white);
+}
+
+.dropdown {
+    z-index: -1;
+    position: absolute;
+    inset: auto 0 0 0;
+    border-top: none;
+    background: var(--color-white);
+    border: 1px solid var(--color-black);
+    border-top: none;
+    clip-path: inset(0 0 100% 0);
+    color: var(--color-grey-01);
+    transition: clip-path 0.3s var(--ease-custom);
+
+    @include breakpoint(desktop) {
+        border-radius: 0 0 vw(17) vw(17);
+        padding: vw(16) $padding-inline vw(10);
+        transform: translateY(calc(100% - vw(7)));
+    }
+
+    li {
+        transition: color 0.3s var(--ease-custom);
+        cursor: pointer;
+
+        &:not(:last-child) {
+            @include breakpoint(desktop) {
+                margin-bottom: vw(5);
+            }
+        }
+
+        @include hover {
+            color: var(--color-black);
+        }
+    }
+
+    .is-open & {
+        clip-path: inset(0 0 0 0);
+    }
+
+    +svg {
+        pointer-events: none;
+        transition: transform 0.3s var(--ease-custom);
+
+        @include breakpoint(desktop) {
+            margin-left: vw(12);
+        }
+
+        .is-open & {
+            transform: rotate(180deg);
+        }
+    }
+}
+
+.checkbox-wrapper {
+    border: none;
+    overflow: visible;
+    width: fit-content;
+
+    label {
+        @include breakpoint(desktop) {
+            height: vw(34);
+            width: fit-content;
+        }
+    }
+
+    span {
+        position: relative;
+        color: var(--color-black);
+
+        @include breakpoint(desktop) {
+            top: vw(-8);
+            margin-right: vw(16);
+        }
+    }
+
+    input {
+        position: relative;
+        cursor: pointer;
+        accent-color: var(--color-black);
+        appearance: none;
+        border: 1px solid var(--color-black);
+
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            background: transparent;
+            border-radius: 50%;
+            inset: vw(6);
+            transition: background 0.3s var(--ease-custom);
+        }
+
+        &:checked {
+            &:after {
+                background: var(--color-black);
+            }
+        }
+
+        @include breakpoint(desktop) {
+            width: vw(34);
+            height: vw(34);
+            border-radius: 50%;
+        }
+    }
+}
+
+.caption {
+    position: absolute;
+    color: var(--color-grey-02);
+    
+    @include breakpoint(desktop) {
+        inset: auto auto 0 0;
+        transform: translateY(calc(100% - vw(24)));
+    }
+
+}

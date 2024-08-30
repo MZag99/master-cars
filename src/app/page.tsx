@@ -7,6 +7,7 @@ import Stats from '@/components/organisms/Stats/Stats';
 import Socials from '@/components/partials/Socials/Socials';
 
 export default function Home() {
+
     return (
         <main>
             <Hero {...CMS.HERO} />

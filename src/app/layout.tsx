@@ -6,6 +6,7 @@ import fonts from '@/utils/fonts';
 import { CMS_UNIVERSAL } from '@/cms/universal';
 
 import Header from '@/components/partials/Header/Header';
+import Loader from '@/components/partials/Loader/Loader';
 import Footer from '@/components/partials/Footer/Footer';
 import Contact from '@/components/organisms/Contact/Contact';
 import Lightbox from '@/components/partials/Lightbox/Lightbox';
@@ -19,14 +20,23 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
     return (
-        <html lang="pl">
+        <html lang='pl'>
             <body className={classNames(fonts.SFPro.variable, fonts.Stolzl.variable)}>
+
                 <h1 className='sr-only'>Master Cars - import aut z USA</h1>
-                <Header {...CMS_UNIVERSAL.HEADER}/>
+
+                <Header {...CMS_UNIVERSAL.HEADER} />
+
                 {children}
+
                 <Lightbox />
+
+                <Loader />
+
                 <Contact {...CMS_UNIVERSAL.CONTACT} />
+
                 <Footer {...CMS_UNIVERSAL.FOOTER} />
+
             </body>
         </html>
     );

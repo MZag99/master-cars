@@ -19,7 +19,7 @@ export type GlobalStore = {
     }
 }
 
-const useGlobalStore = create<GlobalStore>()(
+export const useGlobalStore = create<GlobalStore>()(
     devtools(
         set => ({
             isPageLoaded: false,
