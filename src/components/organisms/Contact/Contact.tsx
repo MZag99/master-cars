@@ -27,8 +27,6 @@ const Contact = ({ info, emailButton, contactItems }: ContactProps) => {
                 <p dangerouslySetInnerHTML={{ __html: info }}></p>
             </div>
 
-            <Button big variant='dark' icon='mail' link={emailButton.email}>{emailButton.copy}</Button>
-
             <div className={styles['contact-items']}>
                 {contactItems.map((item, index) => (
                     <div key={index} className={styles['contact-item']}>
@@ -38,6 +36,9 @@ const Contact = ({ info, emailButton, contactItems }: ContactProps) => {
                     </div>
                 ))}
             </div>
+
+            <Button className={styles.button} big variant='dark' icon='mail' link={emailButton.email}>{emailButton.copy}</Button>
+
         </div>
     );
 };

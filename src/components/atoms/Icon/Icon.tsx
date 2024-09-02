@@ -2,6 +2,7 @@ import classNames from 'classnames';
 
 import Mail from '@/assets/svg/mail.svg';
 import Phone from '@/assets/svg/phone.svg';
+import DHL from '@/assets/svg/dhl-logo.svg';
 import Logo from '@/assets/svg/logo-new.svg';
 import Picture from '@/assets/svg/picture.svg';
 import Warning from '@/assets/svg/warning.svg';
@@ -30,7 +31,8 @@ export const icons = {
     download: Download,
     facebook: Facebook,
     whatsapp: WhatsApp,
-    instagram: Instagram
+    instagram: Instagram,
+    dhl: DHL
 };
 
 const Icon = ({ name, className }: IconProps): JSX.Element | null => {

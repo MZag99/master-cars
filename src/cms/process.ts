@@ -3,7 +3,7 @@ import type { TextProps } from '@/components/organisms/Text/Text';
 import DodgeImage from '@/assets/images/cars/dodge-challenger-2015.jpg';
 
 export const CMS = {
-    PROCESS: {
+    PROCESS_TEXT_MODULE: {
         heading: {
             title: 'Proces importu<br/>naszych aut',
             subtitle: 'Zobacz jak wygląda nasz proces importu aut z USA i Kanady.'

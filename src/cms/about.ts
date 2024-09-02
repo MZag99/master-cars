@@ -11,7 +11,9 @@ export const CMS = {
         subtitle: 'Import samochodów ze Stanów Zjednoczonych w korzystnych cenach.',
         image: HeroImage
     },
-    ABOUT: {
+
+    
+    ABOUT_TEXT_MODULE: {
         heading: {
             title: 'Czym się<br/>zajmujemy?'
         },
@@ -30,6 +32,8 @@ export const CMS = {
         },
         isDark: true
     } as TextProps,
+
+
     STATS: {
         numberItems: [
             {
@@ -94,7 +98,9 @@ export const CMS = {
             'Zapraszamy take na nasza grupę <a href="https://www.facebook.com/" target="_blank">WhatsApp</a>.'
         ]
     },
-    TRACKING: {
+
+
+    TRACKING_TEXT_MODULE: {
         heading: {
             title: 'Czekasz na<br/>swoje auto?',
             button: {

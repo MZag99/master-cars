@@ -7,7 +7,7 @@ import Socials from '@/components/partials/Socials/Socials';
 export default function Process() {
     return (
         <main>
-            <Text {...CMS.PROCESS} />
+            <Text {...CMS.PROCESS_TEXT_MODULE} />
             <Socials {...CMS_UNIVERSAL.SOCIALS} isHiding />
         </main>
     );

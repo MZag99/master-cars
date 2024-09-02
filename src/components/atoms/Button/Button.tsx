@@ -9,8 +9,8 @@ import Icon from '../Icon/Icon';
 import styles from './Button.module.scss';
 
 export type ButtonProps = {
-    variant: 'light' | 'dark' | 'accent' | 'outline';
-    children: ReactNode;
+    children?: ReactNode;
+    variant?: 'light' | 'dark' | 'accent' | 'outline';
     onClick?: () => void;
     disabled?: boolean;
     interactive?: boolean;
@@ -21,6 +21,7 @@ export type ButtonProps = {
     className?: string;
 };
 
+
 const Button = ({ link, disclaimer, children, ...props }: ButtonProps): JSX.Element => {
     return link ?
         <LinkButton link={link} {...props}>{children}{disclaimer && <span className={classNames(styles.disclaimer, 'font-size-10')}>{disclaimer}</span>}</LinkButton> :
@@ -28,7 +29,7 @@ const Button = ({ link, disclaimer, children, ...props }: ButtonProps): JSX.Elem
 };
 
 
-const RegularButton = ({ variant, big, icon, children, onClick, disabled, interactive = true, className }: ButtonProps): JSX.Element => {
+const RegularButton = ({ variant = 'light', big, icon, children, onClick, disabled, interactive = true, className }: ButtonProps): JSX.Element => {
     return (
         <button
             onClick={onClick}
@@ -50,7 +51,7 @@ const RegularButton = ({ variant, big, icon, children, onClick, disabled, intera
 };
 
 
-const LinkButton = ({ variant, big, icon, children, link, disabled, interactive = true, className }: ButtonProps): JSX.Element => {
+const LinkButton = ({ variant = 'light', big, icon, children, link, disabled, interactive = true, className }: ButtonProps): JSX.Element => {
     return (
         <a
             href={link}
