@@ -268,7 +268,16 @@ export const CMS = {
     },
 
 
+    CURRENCY_WIDGET_COPY: 'Kursy walut',
+
+
     UNIVERSAL: {
+        DOCUMENTS_TITLE: 'Dokumenty do pobrania',
+        DOCUMENTS_ITEMS: [
+            { name: 'Umowa zlecenia sprowadzenia samochodu', downloadName: 'Master Cars - umowa zlecenia sprowadzenia samochodu', path: '/pdf/sample.pdf' },
+            { name: 'Procedura zakupu samochodu z USA', path: '/pdf/sample.pdf' }
+        ],
+
         SOCIALS: {
             facebook: 'https://www.facebook.com/',
             instagram: 'https://www.instagram.com/',

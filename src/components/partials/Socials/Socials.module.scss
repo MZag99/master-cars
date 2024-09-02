@@ -6,7 +6,7 @@
 
     position: fixed;
     right: var(--base-inline-padding);
-    border: 1px solid var(--color-black);
+    border: var(--border-thick);
     background: var(--color-white);
     transition: opacity 0.5s var(--ease-custom);
 

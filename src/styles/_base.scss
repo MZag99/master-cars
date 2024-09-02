@@ -15,6 +15,11 @@
 
 	--color-bg: var(--color-white);
 
+	// Borders
+	--border-thin: 1px solid var(--color-grey-02);
+	--border-thinner: 1px solid var(--color-grey-03);
+	--border-thick: 1px solid var(--color-black);
+
 	// Transitions
 	--transition: #{$time $ease-custom};
 	--transition-fast: #{$time-fast $ease-custom};

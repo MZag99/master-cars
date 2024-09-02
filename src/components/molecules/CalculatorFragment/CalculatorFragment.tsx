@@ -5,6 +5,8 @@ import type { DropdownInputProps, CheckboxInputProps, TextInputProps, InputValue
 import classNames from 'classnames';
 import { useEffect, useMemo, useState } from 'react';
 
+import { useLoadedCurrencies } from '@/store/useControlsStore';
+
 import { DropdownInput, InputLabel, CheckboxInput, TextInput, InputCaption, InputValue } from '@/components/atoms/CalculatorInputs/CalculatorInputs';
 
 import styles from './CalculatorFragment.module.scss';
@@ -53,8 +55,10 @@ const CalculatorRow = ({ label, caption, input, variant, className, index, setRo
 
     const rowCurrency = useMemo(() => input.props.currency, [input]);
     const initialValue = useMemo(() => (input.type === 'value' || input.type === 'no-choice') ? (input.props as InputValueProps).value : 0, [input]);
+    const loadedCurrencies = useLoadedCurrencies();
 
-    const currencyMultiplier = useMemo(() => rowCurrency === 'pln' ? 1 : 4.5, [rowCurrency]);
+    const dollarRate = useMemo(() => loadedCurrencies?.find(el => el.code === 'USD')?.rate, [loadedCurrencies]);
+    const currencyMultiplier = useMemo(() => rowCurrency === 'pln' ? 1 : (dollarRate ?? 4), [rowCurrency, dollarRate]);
 
     const [rowValue, setRowValue] = useState<number>(initialValue);
 

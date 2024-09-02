@@ -1,11 +1,15 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 import { CMS } from '@/cms/calculator';
 import { CMS_UNIVERSAL } from '@/cms/universal';
+import useCurrencies from '@/hooks/useCurrencies';
+import { roundToDecimal } from '@/utils/roundToDecimal';
+import { useControlsStoreActions } from '@/store/useControlsStore';
 
 import Socials from '@/components/partials/Socials/Socials';
+import Documents from '@/components/atoms/Documents/Documents';
 import Calculator from '@/components/organisms/Calculator/Calculator';
 import { Heading, Title } from '@/components/molecules/Heading/Heading';
 import { CalculatorFragment, CalculatorRow } from '@/components/molecules/CalculatorFragment/CalculatorFragment';
@@ -17,13 +21,20 @@ export default function CalculatorPage() {
     const [baseCalculatorSum, setBaseCalculatorSum] = useState(0);
     const [tollCalculatorSum, setTollCalculatorSum] = useState(0);
     const [bonusCalculatorSum, setBonusCalculatorSum] = useState(0);
+
+    const { setCurrencies } = useControlsStoreActions();
+
+    const currencies = useCurrencies(['usd']);
     
     const summaryValue = useMemo(() => baseCalculatorSum + tollCalculatorSum + bonusCalculatorSum, [baseCalculatorSum, tollCalculatorSum, bonusCalculatorSum]);
 
+    useEffect(() => {
+        setCurrencies(currencies);
+    }, [currencies, setCurrencies]);
 
     return (
         <main>
-            <Calculator heading={CMS.CALCULATOR_MAIN.HEADING}>
+            <Calculator heading={CMS.CALCULATOR_MAIN.HEADING} currencyWidget>
 
                 {/* Base (top) calculator */}
                 <CalculatorFragment
@@ -33,7 +44,7 @@ export default function CalculatorPage() {
                             ...CMS.CALCULATOR_MAIN.BASE_CALCULATOR_ITEMS,
                             {
                                 ...CMS.CALCULATOR_MAIN.BASE_SUMMARY_ROW,
-                                input: { type: 'value', props: { value: baseCalculatorSum, currency: 'pln' } }
+                                input: { type: 'value', props: { value: roundToDecimal(baseCalculatorSum, 2), currency: 'pln' } }
                             }
                         ]
                     }
@@ -59,7 +70,7 @@ export default function CalculatorPage() {
 
             </Calculator>
 
-            <Calculator heading={CMS.CALCULATOR_BONUS.HEADING}>
+            <Calculator>
 
                 <Heading className={styles['margin-bottom']}>
                     <Title size='small'>{CMS.CALCULATOR_BONUS.SEPARATOR_TEXT}</Title>
@@ -81,6 +92,8 @@ export default function CalculatorPage() {
                     {...CMS.CALCULATOR_BONUS.SUMMARY_ROW}
                     input={{ type: 'value', props: { value: summaryValue, currency: 'pln' } }}
                 />
+
+                <Documents title={CMS.UNIVERSAL.DOCUMENTS_TITLE} className={styles.documents} items={CMS.UNIVERSAL.DOCUMENTS_ITEMS} />
 
             </Calculator>
 

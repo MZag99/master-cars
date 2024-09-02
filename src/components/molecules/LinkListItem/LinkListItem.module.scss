@@ -4,6 +4,7 @@
 .wrapper {
     a {
         position: relative;
+        
         &:after {
             content: '';
             display: block;

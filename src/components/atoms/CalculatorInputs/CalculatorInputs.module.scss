@@ -48,7 +48,7 @@ $padding-inline: #{vw(16)};
     inset: auto 0 0 0;
     border-top: none;
     background: var(--color-white);
-    border: 1px solid var(--color-black);
+    border: var(--border-thick);
     border-top: none;
     clip-path: inset(0 0 100% 0);
     color: var(--color-grey-01);
@@ -120,7 +120,7 @@ $padding-inline: #{vw(16)};
         cursor: pointer;
         accent-color: var(--color-black);
         appearance: none;
-        border: 1px solid var(--color-black);
+        border: var(--border-thick);
 
         &:after {
             content: '';

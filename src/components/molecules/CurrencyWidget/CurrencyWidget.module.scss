@@ -1,0 +1,36 @@
+@import "mixins";
+
+.wrapper {
+    border: var(--border-thin);
+    height: fit-content;
+
+    @include breakpoint(desktop) {
+        margin-left: vw(80);
+        padding: vw(15);
+        width: vw(280);
+    }
+
+    h2 {
+        @include breakpoint(desktop) {
+            margin-bottom: vw(10);
+        }
+    }
+}
+
+.item {
+    border-bottom: var(--border-thinner);
+
+    @include breakpoint(desktop) {
+        @include flex(row, space-between, center);
+    }
+}
+
+.rate {
+    color: var(--color-red);
+}
+
+.label {
+    color: var(--color-grey-01);
+    margin-right: vw(10);
+    vertical-align: middle;
+}

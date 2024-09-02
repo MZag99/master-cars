@@ -11,3 +11,11 @@
         margin-bottom: vw(30);
     }
 }
+
+.documents {
+    @include breakpoint(desktop) {
+        position: absolute;
+        left: var(--base-inline-padding);
+        bottom: var(--base-inline-padding);
+    }
+}

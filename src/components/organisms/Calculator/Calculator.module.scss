@@ -10,3 +10,12 @@
         margin-top: vw(20);
     }
 }
+
+.currencies {
+    position: fixed;
+    
+    @include breakpoint(desktop) {
+        top: calc(var(--header-height) + var(--base-inline-padding));
+        right: var(--base-inline-padding);
+    }
+}

@@ -1,0 +1,31 @@
+@import "mixins";
+
+.wrapper {
+    h3 {
+        @include breakpoint(desktop) {
+            margin-bottom: vw(12);
+        }
+    }
+
+    li {
+        @include flex(row, flex-start, center);
+
+        border: var(--border-thin);
+        width: fit-content;
+
+        @include breakpoint(desktop) {
+            height: vw(34);
+            padding-inline: vw(13);
+        }
+
+        svg {
+            @include breakpoint(desktop) {
+                margin: 0 0 vw(-2) vw(8);
+            }
+        }
+
+        &:not(:last-child) {
+            margin-bottom: vw(10);
+        }
+    }
+}
