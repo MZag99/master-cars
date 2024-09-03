@@ -13,7 +13,7 @@ type HeadingProps = {
 export type TitleSizes = 'small' | 'medium' | 'large' | 'extra-large';
 
 type TitleProps = {
-    children: string;
+    children: ReactNode;
     size?: TitleSizes;
 };
 
@@ -49,7 +49,7 @@ export const Title = ({ size = 'medium', children }: TitleProps): JSX.Element =>
 
     const Tag = `h${data.level}` as 'h2' | 'h3' | 'h4';
 
-    return <Tag className={classNames(styles.title, data.fontSize)} dangerouslySetInnerHTML={{ __html: children }}></Tag>;
+    return <Tag className={classNames(styles.title, data.fontSize)} dangerouslySetInnerHTML={{ __html: children?.toString() || '' }}></Tag>;
 };
 
 

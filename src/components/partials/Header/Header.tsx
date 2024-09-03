@@ -4,6 +4,7 @@ import type { ButtonProps } from '@/components/atoms/Button/Button';
 import Link from 'next/link';
 import { useMemo } from 'react';
 import classNames from 'classnames';
+import { usePathname } from 'next/navigation';
 
 import useScrollDirection from '@/hooks/useScrollDirection';
 
@@ -23,7 +24,9 @@ export type HeaderProps = {
 
 const Header = ({ items }: HeaderProps): JSX.Element => {
 
+    const pathname = usePathname();
     const { down } = useScrollDirection();
+    
     const isHidden = useMemo(() => down, [down]);
 
     return (
@@ -42,7 +45,9 @@ const Header = ({ items }: HeaderProps): JSX.Element => {
                             <li key={i}>
                                 <Button variant={item.button.variant} icon={item.button.icon} link={item.link}>{item.name}</Button>
                             </li> :
-                            <LinkListItem key={i} href={item.link}>{item.name}</LinkListItem>;
+                            <LinkListItem key={i} href={item.link} isActive={pathname === item.link}>
+                                {item.name}
+                            </LinkListItem>;
                     })}
                 </ul>
             </nav>

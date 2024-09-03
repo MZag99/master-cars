@@ -10,7 +10,6 @@ import { AnimatePresence, motion } from 'framer-motion';
 import Button from '@/components/atoms/Button/Button';
 import Scroll from '@/components/atoms/Scroll/Scroll';
 import { Heading, Subtitle, Title } from '@/components/molecules/Heading/Heading';
-import { CheckboxInput } from '@/components/atoms/CalculatorInputs/CalculatorInputs';
 
 import styles from './Hero.module.scss';
 
@@ -47,7 +46,7 @@ const Hero = ({ title, subtitle, image }: HeroProps): JSX.Element => {
 
             <Heading className={styles.text}>
 
-                <Title size='extra-large'>{title}</Title>
+                <Title size='large'>{title}</Title>
 
                 <Subtitle>{subtitle}</Subtitle>
 

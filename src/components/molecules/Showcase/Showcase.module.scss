@@ -16,6 +16,7 @@
 
     @include breakpoint(desktop) {
         height: vw(245);
+        max-width: 50%;
     }
 
     &:nth-child(3n) {
@@ -25,11 +26,18 @@
             height: vw(500);
         }
     }
+
+    @include hover {
+        .item-image {
+            transform: scale(1.05);
+        }
+    }
 }
 
 .item-image {
     position: absolute;
     inset: 0;
+    transition: transform 0.3s var(--ease-custom);
 
     img {
         width: 100%;
@@ -62,8 +70,15 @@
 }
 
 .name-label {
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
     @include breakpoint(desktop) {
+        max-width: 80%;
         bottom: vw(15);
+        padding-top: vw(4);
     }
 }
 
@@ -75,4 +90,8 @@
 
 .showcase-label {
     background: var(--color-red);
+}
+
+.button {
+    z-index: 1;
 }

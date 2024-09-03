@@ -9,12 +9,12 @@
 .text {
     
     @include breakpoint(desktop) {
-        margin-top: vw(230);
+        margin-top: vw(250);
         width: vw(790);
     }
 
     @include breakpoint(hd) {
-        margin-top: vw(160);
+        margin-top: vw(180);
     }
 
     strong {
@@ -29,7 +29,7 @@
 
     @include breakpoint(desktop) {
         right: vw(-350);
-        top: vw(260);
+        top: vw(220);
         width: vw(1330);
         height: vw(993);
     }

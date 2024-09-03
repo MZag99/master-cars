@@ -52,8 +52,9 @@ export const CMS = {
         showcaseItems: [
             {
                 year: 2012,
-                carName: 'Chevrolet Camaro',
-                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus ut dolor.',
+                carName: 'Chevrolet Camaro Chevrolet Camaro Chevrolet Camaro',
+                horsepower: 400,
+                description: 'Nasza firma do 2000 roku zajmuje się importem i sprzedażą aut ze Stanów Zjednoczonych i Kanady.  Mauris id tortor nec ex consequat suscipit. Mauris id tortor nec ex consequat suscipit et eget elit. In non fermentum nunc. Donec sit amet dictum arcu. In hac habitasse platea dictumst. Sed nec leo risus. Integer quis sapien euismod, dapibus libero vitae, viverra justo. Quisque ac condimentum nisi, et porttitor sem. Duis facilisis tincidunt cursus.',
                 countryOrigin: 'USA',
                 overallCostPln: 120000,
                 pictures: [
@@ -66,6 +67,7 @@ export const CMS = {
             {
                 year: 2015,
                 carName: 'Dodge Challenger',
+                horsepower: 400,
                 description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus ut dolor.',
                 countryOrigin: 'USA',
                 overallCostPln: 150000,
@@ -83,6 +85,7 @@ export const CMS = {
             {
                 year: 2018,
                 carName: 'Ford Mustang',
+                horsepower: 400,
                 description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus ut dolor.',
                 countryOrigin: 'USA',
                 overallCostPln: 180000,
@@ -94,7 +97,7 @@ export const CMS = {
             }
         ],
         disclaimers: [
-            'Całą naszą ofertę znajdziesz na naszym profilu <a href="https://www.facebook.com/" target="_blank">OTOMOTO</a>.',
+            'Całą naszą ofertę znajdziesz<br/> na naszym profilu <a href="https://www.facebook.com/" target="_blank">OTOMOTO</a>.',
             'Zapraszamy take na nasza grupę <a href="https://www.facebook.com/" target="_blank">WhatsApp</a>.'
         ]
     },

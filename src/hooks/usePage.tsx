@@ -3,9 +3,12 @@ import { useEffect } from 'react';
 
 import { useIsTouch } from '@/store/useBrowserStore';
 import { useGlobalStoreActions } from '@/store/useGlobalStore';
+import { useRouter } from 'next/navigation';
 
 export default function usePage() {
+
     const isTouch = useIsTouch();
+    const router = useRouter();
     const { setIsPageLoaded } = useGlobalStoreActions();
 
     /**
@@ -13,13 +16,10 @@ export default function usePage() {
      *  This only runs on mount.
      */
     useEffect(() => {
-        setIsPageLoaded(true);
-
         if (typeof window !== 'undefined') {
-            document.body.classList.add('is-loaded');
             !isTouch && document.body.classList.add('no-touchevents');
         }
-    }, [setIsPageLoaded, isTouch]);
+    }, [isTouch]);
 
     /**
      *  Scroll to top of the page when page is loaded
@@ -41,4 +41,18 @@ export default function usePage() {
         }
     }, []);
 
+
+    useEffect(() => {
+        const LOADED_DELAY = 1000;
+
+        setTimeout(() => {
+            setIsPageLoaded(true);
+            document.body.classList.add('is-loaded');
+        }, LOADED_DELAY);
+
+        return () => {
+            setIsPageLoaded(false);
+            document.body.classList.remove('is-loaded');
+        };
+    }, [setIsPageLoaded]);
 }

@@ -2,7 +2,7 @@ import type { icons } from '@/components/atoms/Icon/Icon';
 
 import classNames from 'classnames';
 
-import Button from '@/components/atoms/Button/Button';
+import Icon from '@/components/atoms/Icon/Icon';
 
 import styles from './Vendors.module.scss';
 
@@ -19,9 +19,11 @@ const Vendors = ({ items }: VendorsProps) => {
             <div></div>
 
             <ul className={styles.list}>
-                {items.map((item, index) => 
+                {items.map((item, index) =>
                     <li className={classNames(styles.item, 'radius-17')} key={index}>
-                        <Button className='full' icon={item.logo as keyof typeof icons} link={item.url} />
+                        <a className='full' href={item.url} target='_blank' rel='noreferrer'>
+                            <Icon name={item.logo as keyof typeof icons} />
+                        </a>
                     </li>
                 )}
             </ul>

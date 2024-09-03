@@ -10,81 +10,97 @@
     @include breakpoint(desktop) {
         padding-inline: vw(15);
     }
+    
+    @include breakpoint(hd) {
+        padding-inline: vw(10);
+    }
 
     @include hover {
         opacity: 0.8;
     }
-}
 
-.is-small {
-    @include breakpoint(desktop) {
-        height: vw(34);
-        min-width: vw(120);
-    }
-}
-
-.is-big {
-    @include breakpoint(desktop) {
-        height: vw(60);
-        min-width: vw(265);
-        width: fit-content;
-    }
-}
-
-.is-dark {
-    background: var(--color-black);
-    color: var(--color-white);
-
-    svg {
-        path {
-            fill: var(--color-white);
+    &.is-small {
+        @include breakpoint(desktop) {
+            height: vw(34);
+            min-width: vw(120);
+        }
+        
+        @include breakpoint(hd) {
+            height: vw(34 * $hd-scaling-factor);
+            min-width: vw(120 * $hd-scaling-factor);
         }
     }
-}
+    
+    &.is-big {
+        @include breakpoint(desktop) {
+            height: vw(60);
+            min-width: vw(265);
+            width: fit-content;
+        }
 
-.is-light {
-    background: var(--color-white);
-    color: var(--color-black);
-
-    svg {
-        path {
-            fill: var(--color-black);
+        @include breakpoint(hd) {
+            height: vw(60 * $hd-scaling-factor);
+            min-width: vw(265 * $hd-scaling-factor);
         }
     }
-}
-
-.is-accent {
-    background: var(--color-red);
-    color: var(--color-white);
-
-    svg {
-        path {
-            stroke: var(--color-white) !important;
-            fill: var(--color-white);
+    
+    &.is-dark {
+        background: var(--color-black);
+        color: var(--color-white);
+    
+        svg {
+            path {
+                fill: var(--color-white);
+            }
         }
     }
-}
-
-.is-outline {
-    background: transparent;
-    border: var(--border-thick);
-    color: var(--color-black);
-
-    svg {
-        path {
-            fill: var(--color-black);
+    
+    &.is-light {
+        background: var(--color-white);
+        color: var(--color-black);
+    
+        svg {
+            path {
+                fill: var(--color-black);
+            }
         }
     }
+    
+    &.is-accent {
+        background: var(--color-red);
+        color: var(--color-white);
+    
+        svg {
+            path {
+                stroke: var(--color-white) !important;
+                fill: var(--color-white);
+            }
+        }
+    }
+    
+    &.is-outline {
+        background: transparent;
+        border: var(--border-thick);
+        color: var(--color-black);
+    
+        svg {
+            path {
+                fill: var(--color-black);
+            }
+        }
+    }
+    
+    &.is-disabled {
+        opacity: 0.5;
+        pointer-events: none;
+    }
+    
+    &.is-not-interactive {
+        pointer-events: none;
+    }
+
 }
 
-.is-disabled {
-    opacity: 0.5;
-    pointer-events: none;
-}
-
-.is-not-interactive {
-    pointer-events: none;
-}
 
 .text {
     font-family: var(--font-primary);

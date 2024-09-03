@@ -12,7 +12,8 @@ $svg-icons: (
 	warning: (16, 16, 16),
 	chevron: (12, 12, 12),
 	download: (18, 18, 18),
-	dhl: (240, 240, 240)
+	dhl: (240, 240, 240),
+	close: (15, 15, 15)
 );
 
 
@@ -27,6 +28,10 @@ $svg-icons: (
 
 		@include breakpoint(desktop) {
 			width: vw($desktop);
+		}
+
+		@include breakpoint(hd) {
+			width: vw($desktop * $hd-scaling-factor);
 		}
 
 		@include breakpoint(tablet) {

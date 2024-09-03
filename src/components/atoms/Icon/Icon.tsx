@@ -1,6 +1,7 @@
 import classNames from 'classnames';
 
 import Mail from '@/assets/svg/mail.svg';
+import Close from '@/assets/svg/close.svg';
 import Phone from '@/assets/svg/phone.svg';
 import DHL from '@/assets/svg/dhl-logo.svg';
 import Logo from '@/assets/svg/logo-new.svg';
@@ -20,6 +21,8 @@ export type IconProps = {
 };
 
 export const icons = {
+    dhl: DHL,
+    close: Close,
     logo: Logo,
     mail: Mail,
     phone: Phone,
@@ -32,7 +35,6 @@ export const icons = {
     facebook: Facebook,
     whatsapp: WhatsApp,
     instagram: Instagram,
-    dhl: DHL
 };
 
 const Icon = ({ name, className }: IconProps): JSX.Element | null => {

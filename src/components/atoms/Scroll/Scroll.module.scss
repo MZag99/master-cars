@@ -30,6 +30,11 @@ $fill-size: vw(12);
         width: vw(100);
         height: vw(65);
     }
+
+    @include breakpoint(hd) {
+        width: vw(100 * $hd-scaling-factor);
+        height: vw(65 * $hd-scaling-factor);
+    }
 }
 
 .bar {
@@ -42,6 +47,12 @@ $fill-size: vw(12);
         border-radius: vw(8);
         border: var(--border-thick);
     }
+
+    @include breakpoint(hd) {
+        width: vw(16 * $hd-scaling-factor);
+        height: vw(61 * $hd-scaling-factor);
+        border-radius: vw(8 * $hd-scaling-factor);
+    }
 }
 
 .text {
@@ -52,6 +63,10 @@ $fill-size: vw(12);
 
     @include breakpoint(desktop) {
         left: vw(21);
+    }
+
+    @include breakpoint(hd) {
+        left: vw(21 * $hd-scaling-factor);
     }
 }
 
@@ -69,5 +84,11 @@ $fill-size: vw(12);
         top: vw(2);
         width: $fill-size;
         height: $fill-size;
+    }
+
+    @include breakpoint(hd) {
+        top: vw(2 * $hd-scaling-factor);
+        width: $fill-size * $hd-scaling-factor;
+        height: $fill-size * $hd-scaling-factor;
     }
 }

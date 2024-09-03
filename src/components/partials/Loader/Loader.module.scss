@@ -1,15 +1,17 @@
 @import "mixins";
 
 .wrapper {
+    @include flex;
     @include z-index(intro);
 
     position: fixed;
     inset: 0;
     background: var(--color-white);
     pointer-events: none;
-    transition: opacity 0.5s var(--ease-custom);
 
-    &.is-hidden {
-        opacity: 0;
+    svg {
+        @include breakpoint(desktop) {
+            width: vw(220);
+        }
     }
 }

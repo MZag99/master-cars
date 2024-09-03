@@ -1,0 +1,18 @@
+@import "mixins";
+
+.wrapper {
+    @include flex;
+    @include z-index(modals);
+
+    position: fixed;
+    inset: 0;
+    background-color: var(--lightbox-bg);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s var(--ease-custom);
+    
+    &.is-open {
+        opacity: 1;
+        pointer-events: auto;
+    }
+}

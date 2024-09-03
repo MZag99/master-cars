@@ -1,10 +1,13 @@
 import Link from 'next/link';
+import classNames from 'classnames';
 
 import styles from './LinkListItem.module.scss';
 
-const LinkListItem = ({ href, children }: { href: string; children: string }): JSX.Element => {
+type LinkListItemProps = { href: string; children: string; isActive: boolean };
+
+const LinkListItem = ({ href, children, isActive }: LinkListItemProps): JSX.Element => {
     return (
-        <li className={styles['wrapper']}>
+        <li className={classNames(styles['wrapper'], isActive && styles['is-active'])}>
             <Link href={href}>{children}</Link>
         </li>
     );

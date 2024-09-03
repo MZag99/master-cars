@@ -1,0 +1,180 @@
+@import "mixins";
+@import "helpers";
+
+.wrapper {
+    --padding: #{vw(70)};
+
+    @include flex(column, flex-start, flex-start);
+
+    position: relative;
+    background: var(--color-black);
+
+    @include breakpoint(desktop) {
+        width: vw(1400);
+        height: vw(1000);
+        padding: var(--padding);
+    }
+
+    @include breakpoint(hd) {
+        width: vw(1200);
+        height: vw(900);
+    }
+}
+
+
+.image-closer, .close {
+    @include breakpoint(desktop) {
+        position: absolute !important;
+        top: vw(25);
+        right: vw(25);
+
+        padding: 0 !important;
+        min-width: auto !important;
+        width: vw(34) !important;
+        background: var(--color-red) !important;
+
+        svg {
+            margin: 0;
+
+            path {
+                fill: var(--color-white) !important;
+            }
+        }
+    }
+
+    @include breakpoint(hd) {
+        top: vw(25 * $hd-scaling-factor);
+        right: vw(25 * $hd-scaling-factor);
+        width: vw(34 * $hd-scaling-factor) !important;
+    }
+}
+
+
+.heading {
+    color: var(--color-white);
+}
+
+
+.list {
+    color: var(--color-grey-01);
+
+    strong {
+        color: var(--color-red);
+    }
+}
+
+
+.info {
+    @include flex(row, space-between, flex-start);
+    width: 100%;
+
+    @include breakpoint(desktop) {
+        margin-top: vw(50);
+    }
+
+    @include breakpoint(hd) {
+        margin-top: vw(50 * $hd-scaling-factor);
+    }
+}
+
+
+.text {
+    color: var(--color-grey-01);
+
+    @include breakpoint(desktop) {
+        width: vw(620);
+    }
+
+    @include breakpoint(hd) {
+        width: vw(620 * $hd-scaling-factor);
+    }
+}
+
+
+.pictures {
+    @extend %no-scrollbar;
+    @include flex(row, flex-start, flex-start);
+
+    overflow: auto;
+    flex: 1;
+    flex-wrap: wrap;
+
+    @include breakpoint(desktop) {
+        gap: vw(17);
+        margin-top: vw(50);
+    }
+
+    @include breakpoint(hd) {
+        gap: vw(17 * $hd-scaling-factor);
+        margin-top: vw(50 * $hd-scaling-factor);
+    }
+
+    li {
+        position: relative;
+        overflow: hidden;
+
+        &:last-child {
+            @include flex(column, flex-end, flex-start);
+
+            color: var(--color-grey-01);
+        }
+
+        @include breakpoint(desktop) {
+            width: 32%;
+            height: vw(220);
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.3s var(--ease-custom);
+            }
+        }
+
+        @include hover {
+            img {
+                transform: scale(1.1);
+            }
+        }
+    }
+}
+
+
+.disclaimers {
+    @include breakpoint(desktop) {
+        p {
+            width: vw(340);
+        }
+    }
+}
+
+
+.image-lightbox {
+    @include flex;
+
+    position: fixed;
+    inset: 0;
+    background: var(--lightbox-bg);
+    opacity: 0;
+    pointer-events: none;
+
+    img {
+        object-fit: cover;
+
+        @include breakpoint(desktop) {
+            height: auto;
+            width: 80%;
+            max-height: 90%;
+        }
+    }
+
+    &.is-open {
+        opacity: 1;
+        pointer-events: auto;
+    }
+}
+
+
+.image-closer {
+    background: var(--color-black) !important;
+}

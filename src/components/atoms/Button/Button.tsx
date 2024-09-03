@@ -34,14 +34,14 @@ const RegularButton = ({ variant = 'light', big, icon, children, onClick, disabl
         <button
             onClick={onClick}
             className={classNames(
-                className,
                 styles.wrapper,
                 disabled && styles['is-disabled'],
                 !interactive && styles['is-not-interactive'],
                 `radius-${big ? 34 : 17}`,
                 `font-size-${big ? 23 : 16}`,
                 styles[`is-${variant}`],
-                styles[`is-${big ? 'big' : 'small'}`]
+                styles[`is-${big ? 'big' : 'small'}`],
+                className
             )}
         >
             <span className={styles.text}>{children}</span>
@@ -57,14 +57,14 @@ const LinkButton = ({ variant = 'light', big, icon, children, link, disabled, in
             href={link}
             target='_blank'
             className={classNames(
-                className,
                 styles.wrapper,
                 disabled && styles['is-disabled'],
                 !interactive && styles['is-not-interactive'],
                 `radius-${big ? 34 : 17}`,
                 `font-size-${big ? 23 : 16}`,
                 styles[`is-${variant}`],
-                styles[`is-${big ? 'big' : 'small'}`]
+                styles[`is-${big ? 'big' : 'small'}`],
+                className
             )}
         >
             <span className={styles.text}>{children}</span>

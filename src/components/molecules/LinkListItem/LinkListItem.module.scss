@@ -24,4 +24,13 @@
             }
         }
     }
+
+    &.is-active {
+        a {
+            &:after {
+                transform: scaleX(1);
+                transform-origin: left;
+            }
+        }
+    }
 }

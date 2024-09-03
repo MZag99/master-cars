@@ -7,11 +7,11 @@ import Vendors from '@/components/organisms/Vendors/Vendors';
 
 export default function Tracking() {
     return (
-        <main>
+        <article>
             <Text {...CMS.PROCESS_TEXT_MODULE} />
             <Vendors {...CMS.VENDORS_MODULE} />
 
             <Socials {...CMS_UNIVERSAL.SOCIALS} isHiding />
-        </main>
+        </article>
     );
 }

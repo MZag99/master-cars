@@ -33,7 +33,7 @@ export default function CalculatorPage() {
     }, [currencies, setCurrencies]);
 
     return (
-        <main>
+        <article>
             <Calculator heading={CMS.CALCULATOR_MAIN.HEADING} currencyWidget>
 
                 {/* Base (top) calculator */}
@@ -62,7 +62,7 @@ export default function CalculatorPage() {
                             ...CMS.CALCULATOR_MAIN.TOLL_CALCULATOR_ITEMS,
                             {
                                 ...CMS.CALCULATOR_MAIN.TOLL_SUMMARY_ROW,
-                                input: { type: 'value', props: { value: baseCalculatorSum, currency: 'pln' } }
+                                input: { type: 'value', props: { value: roundToDecimal(baseCalculatorSum, 2), currency: 'pln' } }
                             }
                         ]
                     }
@@ -90,7 +90,7 @@ export default function CalculatorPage() {
                 {/* Final sum */}
                 <CalculatorRow
                     {...CMS.CALCULATOR_BONUS.SUMMARY_ROW}
-                    input={{ type: 'value', props: { value: summaryValue, currency: 'pln' } }}
+                    input={{ type: 'value', props: { value: roundToDecimal(summaryValue, 2), currency: 'pln' } }}
                 />
 
                 <Documents title={CMS.UNIVERSAL.DOCUMENTS_TITLE} className={styles.documents} items={CMS.UNIVERSAL.DOCUMENTS_ITEMS} />
@@ -98,6 +98,6 @@ export default function CalculatorPage() {
             </Calculator>
 
             <Socials {...CMS_UNIVERSAL.SOCIALS} isHiding />
-        </main>
+        </article>
     );
 }

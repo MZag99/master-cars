@@ -1,6 +1,7 @@
 import { create } from 'zustand';
 import { devtools } from 'zustand/middleware';
 import { mountStoreDevtool } from 'simple-zustand-devtools';
+import { Lightbox } from '@/types/universal';
 
 /**
  * Global Store:
@@ -13,9 +14,11 @@ import { mountStoreDevtool } from 'simple-zustand-devtools';
 export type GlobalStore = {
     isPageLoaded: boolean;
     isMenuOpen: boolean;
+    lightbox: Lightbox | null;
     actions: {
         setIsPageLoaded: (isPageLoaded: boolean) => void;
         setIsMenuOpen: (isMenuOpen: boolean) => void;
+        setLightbox: (lightbox: Lightbox | null) => void;
     }
 }
 
@@ -24,9 +27,11 @@ export const useGlobalStore = create<GlobalStore>()(
         set => ({
             isPageLoaded: false,
             isMenuOpen: false,
+            lightbox: null,
             actions: {
                 setIsPageLoaded: isPageLoaded => set(() => ({ isPageLoaded })),
-                setIsMenuOpen: isMenuOpen => set(() => ({ isMenuOpen }))
+                setIsMenuOpen: isMenuOpen => set(() => ({ isMenuOpen })),
+                setLightbox: lightbox => set(() => ({ lightbox }))
             }
         }),
         { name: 'Global Store' }
@@ -35,6 +40,7 @@ export const useGlobalStore = create<GlobalStore>()(
 
 export const useIsPageLoaded = () => useGlobalStore(state => state.isPageLoaded);
 export const useIsMenuOpen = () => useGlobalStore(state => state.isMenuOpen);
+export const useLightbox = () => useGlobalStore(state => state.lightbox);
 export const useGlobalStoreActions = () => useGlobalStore(state => state.actions);
 
 if (process.env.NODE_ENV === 'development') {
