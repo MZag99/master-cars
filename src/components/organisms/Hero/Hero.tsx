@@ -6,6 +6,7 @@ import Image from 'next/image';
 import classNames from 'classnames';
 import { useEffect, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
+import useAnimation from '@/hooks/useAnimation';
 
 import Button from '@/components/atoms/Button/Button';
 import Scroll from '@/components/atoms/Scroll/Scroll';
@@ -24,7 +25,19 @@ const SCROLL_TIMEOUT = 3000;
 const Hero = ({ title, subtitle, image }: HeroProps): JSX.Element => {
 
     const [scrollVisible, setScrollVisible] = useState<boolean>(false);
+
+    const buttonsRef = useRef<HTMLDivElement>(null);
+    const titleRef = useRef<HTMLHeadingElement>(null);
+    const subtitleRef = useRef<HTMLSpanElement>(null);
+    const carRef = useRef<HTMLDivElement>(null);
+
+    useAnimation(carRef, { name: 'fadeLeft', options: { delay: 1, duration: 1, ease: 'power3.out' } });
+    useAnimation(buttonsRef, { name: 'fadeUp', options: { delay: 2, duration: 1, ease: 'power3.out' } });
+    useAnimation(titleRef, { name: 'splitUp', options: { delay: 1.3, duration: 0.8, ease: 'power3.out', stagger: 0.01 } });
+    useAnimation(subtitleRef, { name: 'splitUp', options: { delay: 1.5, duration: 0.8, ease: 'power3.out', stagger: 0.01 } });
+
     const scrollTimeout = useRef<NodeJS.Timeout | null>(null);
+
 
     useEffect(() => {
         scrollTimeout.current && clearTimeout(scrollTimeout.current);
@@ -40,17 +53,17 @@ const Hero = ({ title, subtitle, image }: HeroProps): JSX.Element => {
     return (
         <div className={classNames(styles.wrapper, 'module-wrapper')}>
 
-            <div className={styles.image}>
+            <div ref={carRef} className={styles.image}>
                 <Image fill src={image} alt='Hero image' />
             </div>
 
             <Heading className={styles.text}>
 
-                <Title size='large'>{title}</Title>
+                <Title ref={titleRef} size='large'>{title}</Title>
 
-                <Subtitle>{subtitle}</Subtitle>
+                <Subtitle ref={subtitleRef}>{subtitle}</Subtitle>
 
-                <div className={styles.buttons}>
+                <div ref={buttonsRef} className={styles.buttons}>
                     <Button variant='accent'>O nas</Button>
                     <Button variant='outline' icon='otomoto' link='https://www.otomoto.pl/'>Oferta</Button>
                 </div>

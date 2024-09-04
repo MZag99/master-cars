@@ -17,10 +17,18 @@
 	}
 }
 
+.is-scrolling-disabled {
+	overflow: hidden;
+}
+
 .module-wrapper {
 	display: grid;
 	grid-template-columns: var(--base-grid);
 	padding-inline: var(--base-inline-padding);
+}
+
+.lines-overflow-wrapper {
+	overflow: hidden;
 }
 
 .padding-block {

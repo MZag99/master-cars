@@ -34,7 +34,7 @@ const ShowcaseModal = (): JSX.Element | null => {
 
                 {/* Content */}
                 <Heading className={styles.heading}>
-                    <Title>{lightbox.carName}</Title>
+                    <Title>{`${lightbox.carName} <span>(${lightbox.year})</span>`}</Title>
                 </Heading>
 
                 <div className={styles.info}>

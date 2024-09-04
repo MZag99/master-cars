@@ -3,14 +3,14 @@
     background: var(--color-black);
     color: var(--color-white);
 
-    &:after {
+    /* &:after {
         position: absolute;
         content: '';
         height: 1px;
         background: var(--color-grey-02);
         top: 0;
         inset-inline: var(--base-inline-padding);
-    }
+    } */
 }
 
 .disclaimers {

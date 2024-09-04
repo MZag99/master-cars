@@ -1,8 +1,12 @@
 'use client';
 
+import { AnimatePresence, motion } from 'framer-motion';
+
 import usePage from '@/hooks/usePage';
 import useBrowser from '@/hooks/useBrowser';
-import { AnimatePresence, motion } from 'framer-motion';
+import { useLightbox } from '@/store/useGlobalStore';
+import classNames from 'classnames';
+import { useEffect } from 'react';
 
 const variants = {
     initial: { opacity: 0 },
@@ -21,5 +25,5 @@ export default function Template({ children }: { children: React.ReactNode }) {
                 {children}
             </motion.main>
         </AnimatePresence>
-    )
+    );
 }

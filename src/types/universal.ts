@@ -1,4 +1,4 @@
-import { ShowcaseItem } from "@/components/molecules/Showcase/Showcase";
+import type { ShowcaseItem } from '@/components/molecules/Showcase/Showcase';
 
 export type Currency = 'pln' | 'dollar';
 
@@ -21,3 +21,5 @@ export type CurrencyObject = {
 }
 
 export type Lightbox = ShowcaseItem;
+
+export type AnimationType = (el: HTMLElement | HTMLElement[], options?: GSAPTweenVars) => void;

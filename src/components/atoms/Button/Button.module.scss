@@ -5,7 +5,8 @@
     @include flex;
 
     position: relative;
-    transition: opacity 0.3s $ease-custom;
+    width: fit-content;
+    transition: filter 0.3s var(--ease-custom);
 
     @include breakpoint(desktop) {
         padding-inline: vw(15);
@@ -16,7 +17,7 @@
     }
 
     @include hover {
-        opacity: 0.8;
+        filter: brightness(0.8);
     }
 
     &.is-small {
@@ -117,6 +118,7 @@
     bottom: 0;
     left: 50%;
     color: var(--color-grey-01);
+    text-align: center;
     
     @include breakpoint(desktop) {
         transform: translate(-50%, calc(100% + vw(8)));

@@ -4,7 +4,9 @@ import type { StaticImageData } from 'next/image';
 
 import Image from 'next/image';
 import classNames from 'classnames';
+import { useEffect, useRef } from 'react';
 
+import useAnimation from '@/hooks/useAnimation';
 import { useGlobalStoreActions } from '@/store/useGlobalStore';
 
 import Icon from '@/components/atoms/Icon/Icon';
@@ -35,8 +37,18 @@ const Showcase = ({ items }: ShowcaseProps): JSX.Element => {
 
     const { setLightbox } = useGlobalStoreActions();
 
+    const listRef = useRef<HTMLUListElement>(null);
+    const listItemsRef = useRef<HTMLLIElement[]>([]);
+
+    useEffect(() => {
+        if (!listRef.current) return;
+        listItemsRef.current = Array.from(listRef.current.children) as HTMLLIElement[];
+    }, []);
+
+    useAnimation(listItemsRef, { name: 'fade', joined: true, options: { delay: 0.3, duration: 0.5, stagger: 0.1, ease: 'power3.out' } });
+
     return (
-        <ul className={styles.list}>
+        <ul ref={listRef} className={styles.list}>
             {items.map((item, index) =>
                 <li key={index} className={classNames(styles['item-wrapper'], 'radius-34')}>
 

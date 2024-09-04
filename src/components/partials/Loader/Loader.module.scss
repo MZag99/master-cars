@@ -1,6 +1,8 @@
 @import "mixins";
 
 .wrapper {
+    --transition: transform 0.5s var(--ease-custom);
+
     @include flex;
     @include z-index(intro);
 
@@ -8,10 +10,31 @@
     inset: 0;
     background: var(--color-white);
     pointer-events: none;
+    font-family: var(--font-primary);
+    
+    &.is-left {
+        transform: translateX(-100%);
+    }
+    
+    &.is-right {
+        transform: translateX(100%);
+        transition: var(--transition);
+    }
+    
+    &.is-middle {
+        transform: translateX(0);
+        transition: var(--transition);
+    }
+}
 
-    svg {
-        @include breakpoint(desktop) {
-            width: vw(220);
-        }
+.text-wrapper {
+    opacity: 0;
+
+    span {
+        color: var(--color-black);
+    }
+    
+    strong {
+        color: var(--color-red);
     }
 }

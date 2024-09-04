@@ -1,7 +1,7 @@
 import type { ButtonProps } from '@/components/atoms/Button/Button';
 
 import classNames from 'classnames';
-import { useMemo, type ReactNode } from 'react';
+import { forwardRef, useMemo, useRef, type ReactNode } from 'react';
 
 import styles from './Heading.module.scss';
 
@@ -30,7 +30,7 @@ export const Heading = ({ children, className }: HeadingProps): JSX.Element => {
 };
 
 
-export const Title = ({ size = 'medium', children }: TitleProps): JSX.Element => {
+export const Title = forwardRef<HTMLHeadingElement, TitleProps>(({ size = 'medium', children }, ref): JSX.Element => {
 
     const data = useMemo(() => {
         switch (size) {
@@ -49,14 +49,14 @@ export const Title = ({ size = 'medium', children }: TitleProps): JSX.Element =>
 
     const Tag = `h${data.level}` as 'h2' | 'h3' | 'h4';
 
-    return <Tag className={classNames(styles.title, data.fontSize)} dangerouslySetInnerHTML={{ __html: children?.toString() || '' }}></Tag>;
-};
+    return <Tag ref={ref} className={classNames(styles.title, data.fontSize)} dangerouslySetInnerHTML={{ __html: children?.toString() || '' }}></Tag>;
+});
 
 
 type SubtitleProps = {
     children: string;
 };
 
-export const Subtitle: React.FC<SubtitleProps> = ({ children }) => {
-    return <span className={classNames(styles.subtitle, 'font-size-16')}>{children}</span>;
-};
+export const Subtitle = forwardRef<HTMLSpanElement, SubtitleProps>(({ children }, ref) => {
+    return <span ref={ref} className={classNames(styles.subtitle, 'font-size-16')}>{children}</span>;
+});

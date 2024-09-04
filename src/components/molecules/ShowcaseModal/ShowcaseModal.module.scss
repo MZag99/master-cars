@@ -11,13 +11,14 @@
 
     @include breakpoint(desktop) {
         width: vw(1400);
-        height: vw(1000);
+        height: vw(900);
         padding: var(--padding);
     }
 
     @include breakpoint(hd) {
         width: vw(1200);
-        height: vw(900);
+        height: vw(850);
+        padding: calc(var(--padding) * $hd-scaling-factor);
     }
 }
 
@@ -52,6 +53,14 @@
 
 .heading {
     color: var(--color-white);
+
+    span {
+        @include font-size(32);
+
+        font-weight: 400;
+        vertical-align: middle;
+        color: var(--color-grey-02);
+    }
 }
 
 

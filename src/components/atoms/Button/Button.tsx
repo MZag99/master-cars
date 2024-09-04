@@ -1,7 +1,7 @@
-import type { ReactNode } from 'react';
+import type { LegacyRef, ReactNode } from 'react';
 import type { icons } from '../Icon/Icon';
 
-import React from 'react';
+import React, { forwardRef } from 'react';
 import classNames from 'classnames';
 
 import Icon from '../Icon/Icon';
@@ -22,16 +22,31 @@ export type ButtonProps = {
 };
 
 
-const Button = ({ link, disclaimer, children, ...props }: ButtonProps): JSX.Element => {
+const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(({ link, disclaimer, children, ...props }, ref): JSX.Element => {
     return link ?
-        <LinkButton link={link} {...props}>{children}{disclaimer && <span className={classNames(styles.disclaimer, 'font-size-10')}>{disclaimer}</span>}</LinkButton> :
-        <RegularButton {...props}>{children}{disclaimer && <span className={classNames(styles.disclaimer, 'font-size-10')}>{disclaimer}</span>}</RegularButton>;
-};
+        <LinkButton ref={ref as LegacyRef<HTMLAnchorElement>} link={link} {...props}>
+            {children}
+            {disclaimer &&
+                <span className={classNames(styles.disclaimer, 'font-size-10')}>
+                    {disclaimer}
+                </span>
+            }
+        </LinkButton> :
+        <RegularButton ref={ref as LegacyRef<HTMLButtonElement>} {...props}>
+            {children}
+            {disclaimer &&
+                <span className={classNames(styles.disclaimer, 'font-size-10')}>
+                    {disclaimer}
+                </span>
+            }
+        </RegularButton>;
+});
 
 
-const RegularButton = ({ variant = 'light', big, icon, children, onClick, disabled, interactive = true, className }: ButtonProps): JSX.Element => {
+const RegularButton = forwardRef<HTMLButtonElement, ButtonProps>(({ variant = 'light', big, icon, children, onClick, disabled, interactive = true, className }, ref): JSX.Element => {
     return (
         <button
+            ref={ref}
             onClick={onClick}
             className={classNames(
                 styles.wrapper,
@@ -48,14 +63,14 @@ const RegularButton = ({ variant = 'light', big, icon, children, onClick, disabl
             {icon && <Icon className={styles.icon} name={icon} />}
         </button>
     );
-};
+});
 
 
-const LinkButton = ({ variant = 'light', big, icon, children, link, disabled, interactive = true, className }: ButtonProps): JSX.Element => {
+const LinkButton = forwardRef<HTMLAnchorElement, ButtonProps>(({ variant = 'light', big, icon, children, link, disabled, interactive = true, className }, ref): JSX.Element => {
     return (
         <a
+            ref={ref}
             href={link}
-            target='_blank'
             className={classNames(
                 styles.wrapper,
                 disabled && styles['is-disabled'],
@@ -71,6 +86,6 @@ const LinkButton = ({ variant = 'light', big, icon, children, link, disabled, in
             {icon && <Icon className={styles.icon} name={icon} />}
         </a>
     );
-};
+});
 
 export default Button;

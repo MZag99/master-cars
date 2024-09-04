@@ -4,6 +4,7 @@
 .wrapper {
     a {
         position: relative;
+        transition: color 0.3s var(--ease-custom) 0.2s;
         
         &:after {
             content: '';
@@ -26,11 +27,7 @@
     }
 
     &.is-active {
-        a {
-            &:after {
-                transform: scaleX(1);
-                transform-origin: left;
-            }
-        }
+        pointer-events: none;
+        color: var(--color-red);
     }
 }

@@ -23,7 +23,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     return (
         <html lang='pl'>
             <body className={classNames(fonts.SFPro.variable, fonts.Stolzl.variable)}>
-
                 <h1 className='sr-only'>Master Cars - import aut z USA</h1>
 
                 <Header {...CMS_UNIVERSAL.HEADER} />

@@ -1,3 +1,5 @@
+'use client';
+
 import type { NumbersItem } from '@/components/molecules/Numbers/Numbers';
 import type { ShowcaseItem } from '@/components/molecules/Showcase/Showcase';
 
@@ -8,6 +10,8 @@ import Paragraph from '@/components/atoms/Paragraph/Paragraph';
 import Showcase from '@/components/molecules/Showcase/Showcase';
 
 import styles from './Stats.module.scss';
+import { useRef } from 'react';
+import useAnimation from '@/hooks/useAnimation';
 
 type StatsProps = {
     numberItems: NumbersItem[];
@@ -17,13 +21,17 @@ type StatsProps = {
 
 const Stats = ({ showcaseItems, numberItems, disclaimers }: StatsProps) => {
 
+    const disclaimersRef = useRef<HTMLDivElement>(null);
+
+    useAnimation(disclaimersRef, { name: 'splitUp', options: { duration: 1, delay: 0.3, ease: 'power3.out', stagger: 0.002 } });
+
     return (
         <div className={classNames(styles.wrapper, 'module-wrapper', 'padding-block')}>
 
             <Numbers items={numberItems} />
             <Showcase items={showcaseItems} />
 
-            <div className={styles.disclaimers}>
+            <div ref={disclaimersRef} className={styles.disclaimers}>
                 {disclaimers.map((disclaimer, index) => (
                     <Paragraph key={index} className={styles.disclaimer}>{disclaimer}</Paragraph>
                 ))}

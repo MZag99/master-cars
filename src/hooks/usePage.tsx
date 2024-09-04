@@ -2,13 +2,12 @@ import { gsap } from 'gsap';
 import { useEffect } from 'react';
 
 import { useIsTouch } from '@/store/useBrowserStore';
-import { useGlobalStoreActions } from '@/store/useGlobalStore';
-import { useRouter } from 'next/navigation';
+import { useGlobalStoreActions, useLightbox } from '@/store/useGlobalStore';
 
 export default function usePage() {
 
     const isTouch = useIsTouch();
-    const router = useRouter();
+    const lightbox = useLightbox();
     const { setIsPageLoaded } = useGlobalStoreActions();
 
     /**
@@ -43,7 +42,7 @@ export default function usePage() {
 
 
     useEffect(() => {
-        const LOADED_DELAY = 1000;
+        const LOADED_DELAY = 1500;
 
         setTimeout(() => {
             setIsPageLoaded(true);
@@ -55,4 +54,9 @@ export default function usePage() {
             document.body.classList.remove('is-loaded');
         };
     }, [setIsPageLoaded]);
+
+
+    useEffect(() => {
+        document.body.classList.toggle('is-scrolling-disabled', !!lightbox);
+    }, [lightbox]);
 }

@@ -6,28 +6,59 @@
 
     position: fixed;
     right: var(--base-inline-padding);
-    border: var(--border-thick);
-    background: var(--color-white);
+    background: var(--color-red);
     transition: opacity 0.5s var(--ease-custom);
+
+    svg {
+        path {
+            fill: var(--color-white);
+        }
+    }
 
     @include breakpoint(desktop) {
         bottom: vw(30);
-        width: vw(116);
         height: vw(34);
         padding-top: vw(3);
         padding-inline: vw(15);
+        gap: vw(20);
     }
 
     @include breakpoint(hd) {
         bottom: vw(30 * $hd-scaling-factor);
-        width: vw(116 * $hd-scaling-factor);
         height: vw(34 * $hd-scaling-factor);
         padding-top: vw(3 * $hd-scaling-factor);
         padding-inline: vw(15 * $hd-scaling-factor);
+        gap: vw(20 * $hd-scaling-factor);
     }
 
     &.is-hidden {
         opacity: 0;
         pointer-events: none;
+    }
+
+    li {
+        @include flex;
+
+        @include breakpoint(desktop) {
+            width: vw(20);
+
+            a {
+                padding: vw(5);
+            }
+        }
+
+        @include breakpoint(hd) {
+            width: vw(20 * $hd-scaling-factor);
+
+            a {
+                padding: vw(5 * $hd-scaling-factor);
+            }
+        }
+
+        transition: width 0.3s var(--ease-custom);
+
+        @include hover {
+            width: vw(30);
+        }
     }
 }

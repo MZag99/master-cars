@@ -46,7 +46,8 @@ export const CMS = {
             },
             {
                 label: 'Taniej kupując u nas',
-                value: '20%'
+                value: '20',
+                suffix: '%'
             }
         ],
         showcaseItems: [
@@ -108,6 +109,7 @@ export const CMS = {
             title: 'Czekasz na<br/>swoje auto?',
             button: {
                 children: 'Tracking',
+                link: '/tracking',
                 variant: 'accent'
             }
         },
@@ -120,6 +122,7 @@ export const CMS = {
         button: {
             children: 'Kalkulator',
             variant: 'accent',
+            link: '/kalkulator',
             disclaimer: 'Sprawdź ile moesz zaoszczędzić kupując u nas',
             big: true,
             icon: 'arrowUp'
