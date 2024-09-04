@@ -6,6 +6,7 @@ import Image from 'next/image';
 import classNames from 'classnames';
 import { useEffect, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
+
 import useAnimation from '@/hooks/useAnimation';
 
 import Button from '@/components/atoms/Button/Button';

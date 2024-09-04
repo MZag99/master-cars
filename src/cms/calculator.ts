@@ -76,7 +76,7 @@ export const CMS = {
                         currency: 'dollar'
                     }
                 }
-            },
+            }
         ] as CalculatorFragmentProps['items'],
 
 

@@ -16,7 +16,7 @@ const Stolzl = localFont({
             path: '../assets/fonts/Stolzl/Stolzl600.woff2',
             weight: '600',
             style: 'normal'
-        },
+        }
     ],
     variable: '--font-primary',
     fallback: ['Arial', 'Helvetica', 'ui-sans-serif']

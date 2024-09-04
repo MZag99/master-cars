@@ -1,7 +1,7 @@
 import type { ButtonProps } from '@/components/atoms/Button/Button';
 
 import classNames from 'classnames';
-import { forwardRef, useMemo, useRef, type ReactNode } from 'react';
+import { forwardRef, useMemo, type ReactNode } from 'react';
 
 import styles from './Heading.module.scss';
 
@@ -60,3 +60,6 @@ type SubtitleProps = {
 export const Subtitle = forwardRef<HTMLSpanElement, SubtitleProps>(({ children }, ref) => {
     return <span ref={ref} className={classNames(styles.subtitle, 'font-size-16')}>{children}</span>;
 });
+
+Title.displayName = 'Title';
+Subtitle.displayName = 'Subtitle';

@@ -1,13 +1,14 @@
 'use client';
 
+import { useRef } from 'react';
 import classNames from 'classnames';
+
+import useAnimation from '@/hooks/useAnimation';
 
 import Icon from '@/components/atoms/Icon/Icon';
 import Button from '@/components/atoms/Button/Button';
 
 import styles from './Contact.module.scss';
-import useAnimation from '@/hooks/useAnimation';
-import { useRef } from 'react';
 
 export type ContactProps = {
     info: string;

@@ -4,9 +4,6 @@ import { AnimatePresence, motion } from 'framer-motion';
 
 import usePage from '@/hooks/usePage';
 import useBrowser from '@/hooks/useBrowser';
-import { useLightbox } from '@/store/useGlobalStore';
-import classNames from 'classnames';
-import { useEffect } from 'react';
 
 const variants = {
     initial: { opacity: 0 },
