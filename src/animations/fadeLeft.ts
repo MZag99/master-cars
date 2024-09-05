@@ -5,7 +5,7 @@ import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-export const fadeLeft: AnimationType = (element: HTMLElement, options: GSAPTweenVars = { duration: 0.5, ease: 'power3.out' }) => {
+export const fadeLeft: AnimationType = (element: HTMLElement | HTMLElement[], options: GSAPTweenVars = { duration: 0.5, ease: 'power3.out' }) => {
     gsap.fromTo(element,
         {
             opacity: 0,
