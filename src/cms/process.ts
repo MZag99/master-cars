@@ -1,5 +1,7 @@
 import type { TextProps } from '@/components/organisms/Text/Text';
 
+// Fotki do modułu Tekstowego w sekcji Proces:
+// ściezka do fotek aut: '@/assets/images/cars/[NAZWA_PLIKU]'
 import DodgeImage from '@/assets/images/cars/dodge-challenger-2015.jpg';
 
 export const CMS = {

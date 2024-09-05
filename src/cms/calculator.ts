@@ -11,7 +11,9 @@ export const CMS = {
             subtitle: 'Wprowadź informacje dotyczące interesującego Cię auta i sprawdź w jakiej cenie je u nas dostaniesz.'
         } as HeadingType,
 
-
+        /**
+         * typy inputów: 'text', 'value', 'dropdown', 'checkbox', 'no-choice'
+         */
         BASE_CALCULATOR_ITEMS: [
             {
                 label: 'Planowana cena pojazdu (USD)',
@@ -40,7 +42,7 @@ export const CMS = {
                     props: {
                         currency: '$',
                         options: [
-                            { name: 'Kalifornia (CA)', value: '1000' },
+                            { name: 'Alaska (Al)', value: '3000' },
                             { name: 'Kalifornia (CA)', value: '1000' },
                             { name: 'Kalifornia (CA)', value: '1000' }
                         ]
@@ -76,7 +78,7 @@ export const CMS = {
                         currency: 'dollar'
                     }
                 }
-            },
+            }
         ] as CalculatorFragmentProps['items'],
 
 
@@ -182,16 +184,6 @@ export const CMS = {
 
 
     CALCULATOR_BONUS: {
-        HEADING: {
-            size: 'small',
-            title: 'Skontaktuj się z nami w celu<br/>otrzymania szczegółowej<br/>wyceny!',
-            button: {
-                variant: 'accent',
-                children: 'Kontakt',
-                icon: 'phone'
-            }
-        } as HeadingType,
-
 
         SEPARATOR_TEXT: 'Usługi dodatkowe',
 
@@ -203,7 +195,8 @@ export const CMS = {
                 input: {
                     type: 'checkbox',
                     props: {
-                        value: 3000,
+                        value: 200,
+                        label: '100-300',
                         currency: 'pln'
                     }
                 }
@@ -243,7 +236,7 @@ export const CMS = {
                 input: {
                     type: 'no-choice',
                     props: {
-                        value: 3000,
+                        value: 10000,
                         currency: 'pln'
                     }
                 }

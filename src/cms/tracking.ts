@@ -30,10 +30,6 @@ export const CMS = {
             {
                 logo: 'dhl',
                 url: 'https://www.dhl.com/'
-            },
-            {
-                logo: 'dhl',
-                url: 'https://www.dhl.com/'
             }
         ]
     }

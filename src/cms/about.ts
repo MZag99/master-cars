@@ -1,21 +1,23 @@
 import type { TextProps } from '@/components/organisms/Text/Text';
 
 import HeroImage from '@/assets/images/hero-image.png';
+// Fotki do modułu Showcase w sekcji Stats:
+// ściezka do fotek aut: '@/assets/images/cars/[NAZWA_PLIKU]'
 import CamaroImage from '@/assets/images/cars/camaro-2012.jpg';
 import MustangImage from '@/assets/images/cars/ford-mustang-2018.jpg';
 import DodgeImage from '@/assets/images/cars/dodge-challenger-2015.jpg';
 
 export const CMS = {
     HERO: {
-        title: 'Sprowadzimy dla Ciebie Twoje <strong>wymarzone auto</strong>',
+        title: 'Sprowadzimy dla Ciebie Twoje <strong>wymarzone auto</strong>', // tag <strong> oznacza pogrubienie tekstu i pokolorowanie na czerowno.
         subtitle: 'Import samochodów ze Stanów Zjednoczonych w korzystnych cenach.',
         image: HeroImage
     },
 
-    
+
     ABOUT_TEXT_MODULE: {
         heading: {
-            title: 'Czym się<br/>zajmujemy?'
+            title: 'Czym się<br/>zajmujemy?' // tag <br/> oznacza złamanie tekstu do nowej linii.
         },
         items: [
             {
@@ -34,6 +36,23 @@ export const CMS = {
     } as TextProps,
 
 
+    /**
+     * Wzór do dodawania nowego samochoód do sekcji Showcase w sekcji Stats:
+     * {
+            year: 2012,
+            carName: 'Chevrolet Camaro Chevrolet Camaro Chevrolet Camaro',
+            horsepower: 400,
+            description: 'Nasza firma do 2000 roku zajmuje się importem i sprzedażą aut ze Stanów Zjednoczonych i Kanady.  Mauris id tortor nec ex consequat suscipit. Mauris id tortor nec econsequat suscipit et eget elit. In non fermentum nunc. Donec sit amet dictum arcu. In hac habitasse platea dictumst. Sed nec leo risus. Integer quis sapien euismod, dapibus libervitae, viverra justo. Quisque ac condimentum nisi, et porttitor sem. Duis facilisis tincidunt cursus.',
+            countryOrigin: 'USA',
+            overallCostPln: 120000,
+            pictures: [
+                CamaroImage,
+                CamaroImage,
+                CamaroImage,
+                CamaroImage
+            ]
+        },
+     */
     STATS: {
         numberItems: [
             {
@@ -95,10 +114,25 @@ export const CMS = {
                     MustangImage,
                     MustangImage
                 ]
+            },
+            {
+                year: 2012,
+                carName: 'Chevrolet Camaro',
+                horsepower: 400,
+                description: 'Nasza firma do 2000 roku zajmuje się importem i sprzedażą aut ze Stanów Zjednoczonych i Kanady.  Mauris id tortor nec ex consequat suscipit. Mauris id tortor nec econsequat suscipit et eget elit. In non fermentum nunc. Donec sit amet dictum arcu. In hac habitasse platea dictumst. Sed nec leo risus. Integer quis sapien euismod, dapibus libervitae, viverra justo. Quisque ac condimentum nisi, et porttitor sem. Duis facilisis tincidunt cursus.',
+                countryOrigin: 'USA / Kalifornia',
+                overallCostPln: 220000,
+                pictures: [
+                    CamaroImage,
+                    CamaroImage
+                ]
             }
         ],
+        /**
+         * Tag <a> oznacza link do zewnętrznej strony, pod href podaj adres tej strony, a target="_blank" oznacza otwarcie nowego okna w przeglądarce.
+         */
         disclaimers: [
-            'Całą naszą ofertę znajdziesz<br/> na naszym profilu <a href="https://www.facebook.com/" target="_blank">OTOMOTO</a>.',
+            'Całą naszą ofertę znajdziesz<br/> na naszym profilu <a href="https://www.facebook.com/" target="_blank">OTOMOTO</a>.', 
             'Zapraszamy take na nasza grupę <a href="https://www.facebook.com/" target="_blank">WhatsApp</a>.'
         ]
     },

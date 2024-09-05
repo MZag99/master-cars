@@ -31,6 +31,8 @@ export const CMS_UNIVERSAL = {
             }
         ]
     } as HeaderProps,
+
+
     SOCIALS: {
         items: [
             {
@@ -47,6 +49,8 @@ export const CMS_UNIVERSAL = {
             }
         ]
     } as SocialsProps,
+
+
     CONTACT: {
         info: 'ul. Pana Balcera 8/110<br/>20-631, Lublin<br/>NIP 7121575499<br/>Regon 1283726619283981',
         emailButton: {
@@ -66,6 +70,8 @@ export const CMS_UNIVERSAL = {
             }
         ]
     },
+
+    
     FOOTER: {
         copyright: '<span>©</span>Copyright 2024',
         items: [
