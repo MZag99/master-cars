@@ -1,8 +1,8 @@
-import type { LegacyRef, ReactNode } from 'react';
 import type { icons } from '../Icon/Icon';
+import type { LegacyRef, ReactNode } from 'react';
 
-import React, { forwardRef } from 'react';
 import classNames from 'classnames';
+import React, { forwardRef } from 'react';
 
 import Icon from '../Icon/Icon';
 
@@ -87,5 +87,10 @@ const LinkButton = forwardRef<HTMLAnchorElement, ButtonProps>(({ variant = 'ligh
         </a>
     );
 });
+
+
+Button.displayName = 'Button';
+RegularButton.displayName = 'RegularButton';
+LinkButton.displayName = 'LinkButton';
 
 export default Button;

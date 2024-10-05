@@ -1,7 +1,8 @@
+import type { Lightbox } from '@/types/universal';
+
 import { create } from 'zustand';
 import { devtools } from 'zustand/middleware';
 import { mountStoreDevtool } from 'simple-zustand-devtools';
-import { Lightbox } from '@/types/universal';
 
 /**
  * Global Store:

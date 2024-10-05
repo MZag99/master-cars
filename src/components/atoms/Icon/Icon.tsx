@@ -34,7 +34,7 @@ export const icons = {
     download: Download,
     facebook: Facebook,
     whatsapp: WhatsApp,
-    instagram: Instagram,
+    instagram: Instagram
 };
 
 const Icon = ({ name, className }: IconProps): JSX.Element | null => {
