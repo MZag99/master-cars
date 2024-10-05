@@ -40,7 +40,7 @@ $fill-size: vw(12);
 .bar {
     position: relative;
     display: block;
-
+    
     @include breakpoint(desktop) {
         width: vw(16);
         height: vw(61);

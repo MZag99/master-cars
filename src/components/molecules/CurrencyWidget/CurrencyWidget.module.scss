@@ -3,6 +3,7 @@
 .wrapper {
     border: var(--border-thin);
     height: fit-content;
+    background: var(--color-white);
 
     @include breakpoint(desktop) {
         margin-left: vw(80);
@@ -22,6 +23,10 @@
 
     @include breakpoint(desktop) {
         @include flex(row, space-between, center);
+
+        &:not(:last-child) {
+            margin-bottom: vw(10);
+        }
     }
 }
 

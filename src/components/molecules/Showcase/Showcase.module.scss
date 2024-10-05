@@ -16,10 +16,10 @@
 
     @include breakpoint(desktop) {
         height: vw(245);
-        max-width: 50%;
+        max-width: 33%;
     }
 
-    &:nth-child(3n) {
+    &:nth-child(4n) {
         min-width: 100%;
 
         @include breakpoint(desktop) {
@@ -49,6 +49,7 @@
 .name-label, .image-label {
     @include flex;
 
+    color: var(--color-white);
     z-index: 1;
     position: absolute;
 

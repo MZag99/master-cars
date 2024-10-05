@@ -27,6 +27,12 @@
 	padding-inline: var(--base-inline-padding);
 }
 
+.module-wrapper-double {
+	display: grid;
+	grid-template-columns: var(--base-grid-double);
+	padding-inline: var(--base-inline-padding);
+}
+
 .lines-overflow-wrapper {
 	overflow: hidden;
 }

@@ -24,7 +24,7 @@ export default function CalculatorPage() {
 
     const { setCurrencies } = useControlsStoreActions();
 
-    const currencies = useCurrencies(['usd']);
+    const currencies = useCurrencies(['usd', 'eur']);
     
     const summaryValue = useMemo(() => baseCalculatorSum + tollCalculatorSum + bonusCalculatorSum, [baseCalculatorSum, tollCalculatorSum, bonusCalculatorSum]);
 

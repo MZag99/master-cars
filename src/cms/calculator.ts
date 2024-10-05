@@ -1,6 +1,8 @@
 import type { HeadingType } from '@/components/molecules/Heading/Heading';
 import type { CalculatorFragmentProps, CalculatorRowProps } from '@/components/molecules/CalculatorFragment/CalculatorFragment';
 
+import { SOCIAL_LINKS } from '@/static/constants';
+
 export const CMS = {
 
     
@@ -272,10 +274,9 @@ export const CMS = {
         ],
 
         SOCIALS: {
-            facebook: 'https://www.facebook.com/',
-            instagram: 'https://www.instagram.com/',
-            linkedin: 'https://www.linkedin.com/',
-            twitter: 'https://www.twitter.com/'
+            facebook: SOCIAL_LINKS.FACEBOOK,
+            instagram: SOCIAL_LINKS.INSTAGRAM,
+            whatsapp: SOCIAL_LINKS.WHATSAPP
         }
     }
 };

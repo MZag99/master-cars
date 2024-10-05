@@ -2,6 +2,8 @@ import type { FooterProps } from '@/components/partials/Footer/Footer';
 import type { HeaderProps } from '@/components/partials/Header/Header';
 import type { SocialsProps } from '@/components/partials/Socials/Socials';
 
+import { SOCIAL_LINKS } from '@/static/constants';
+
 export const CMS_UNIVERSAL = {
     HEADER: {
         items: [
@@ -10,7 +12,7 @@ export const CMS_UNIVERSAL = {
                     variant: 'outline',
                     icon: 'otomoto'
                 },
-                link: '/otomoto',
+                link: SOCIAL_LINKS.OTOMOTO,
                 name: 'Oferta'
             },
             {
@@ -37,15 +39,15 @@ export const CMS_UNIVERSAL = {
         items: [
             {
                 name: 'facebook',
-                link: 'https://www.facebook.com/'
+                link: SOCIAL_LINKS.FACEBOOK
             },
             {
                 name: 'instagram',
-                link: 'https://www.instagram.com/'
+                link: SOCIAL_LINKS.INSTAGRAM
             },
             {
                 name: 'whatsapp',
-                link: 'https://www.whatsapp.com/'
+                link: SOCIAL_LINKS.WHATSAPP
             }
         ]
     } as SocialsProps,

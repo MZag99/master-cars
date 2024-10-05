@@ -1,24 +1,18 @@
 @import 'mixins';
 
 .wrapper {
-    @include flex(row, flex-start, flex-start);
+    @include flex(column, flex-start, flex-start);
 
     li {
         @include flex(column, flex-start, flex-start);
-
-        float: left;
         
         &:not(:last-child) {
-            border-right: 1px solid var(--color-grey-01);
+            // border-right: 1px solid var(--color-grey-01);
 
             @include breakpoint(desktop) {
                 margin-right: vw(30);
-                padding-right: vw(20);
+                margin-bottom: vw(30);
             }
-        }
-
-        @include breakpoint(desktop) {
-            height: vw(160);
         }
     }
 }

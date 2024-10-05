@@ -2,14 +2,16 @@
 
 .wrapper {
     position: relative;
-    height: calc(100vh - var(--header-height));
+    height: calc(90vh - var(--header-height));
+    background: var(--color-white);
     z-index: 0;
+    overflow: hidden;
 }
 
 .text {
     
     @include breakpoint(desktop) {
-        margin-top: vw(230);
+        margin-top: vw(200);
         width: vw(790);
     }
 
@@ -26,21 +28,25 @@
 .image {
     position: absolute;
     pointer-events: none;
+    clip-path: inset(0 0 0 100%);
+    overflow: hidden;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    transition: clip-path 1s var(--ease-out) 0.5s;
 
-    @include breakpoint(desktop) {
-        right: vw(-350);
-        top: vw(220);
-        width: vw(1330);
-        height: vw(993);
+    :global(.is-loaded) & {
+        clip-path: inset(0 0 0 0);
     }
 
-    @include breakpoint(hd) {
-        top: vw(170);
+    @include breakpoint(desktop) {
+        inset: vw(150) 0 vw(100) vw(850);
     }
 
     img {
-        width: 100%;
-        height: 100%;
+        width: 120% !important;
+        height: 120% !important;
+        object-position: 0% 50%;
+        object-fit: cover
     }
 }
 
@@ -57,7 +63,7 @@
     position: absolute;
 
     @include breakpoint(desktop) {
-        bottom: vw(30);
+        bottom: vw(100);
         left: var(--base-inline-padding);
     }
 }

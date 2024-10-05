@@ -3,15 +3,16 @@
 import type { NumbersItem } from '@/components/molecules/Numbers/Numbers';
 import type { ShowcaseItem } from '@/components/molecules/Showcase/Showcase';
 
+import { useRef } from 'react';
 import classNames from 'classnames';
+
+import useAnimation from '@/hooks/useAnimation';
 
 import Numbers from '@/components/molecules/Numbers/Numbers';
 import Paragraph from '@/components/atoms/Paragraph/Paragraph';
 import Showcase from '@/components/molecules/Showcase/Showcase';
 
 import styles from './Stats.module.scss';
-import { useRef } from 'react';
-import useAnimation from '@/hooks/useAnimation';
 
 type StatsProps = {
     numberItems: NumbersItem[];
@@ -26,7 +27,7 @@ const Stats = ({ showcaseItems, numberItems, disclaimers }: StatsProps) => {
     useAnimation(disclaimersRef, { name: 'splitUp', options: { duration: 1, delay: 0.3, ease: 'power3.out', stagger: 0.002 } });
 
     return (
-        <div className={classNames(styles.wrapper, 'module-wrapper', 'padding-block')}>
+        <div className={classNames(styles.wrapper, 'module-wrapper-double', 'padding-block')}>
 
             <Numbers items={numberItems} />
             <Showcase items={showcaseItems} />

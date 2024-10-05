@@ -1,7 +1,8 @@
 :root {
     --app-height: 100svh;
 	--vw-value: 100vw;
-    --base-grid: 610fr 710fr 350fr;
+    --base-grid: 500fr 820fr 350fr;
+    --base-grid-double: 500fr 1170fr;
 	--base-inline-padding: #{vw(90)};
 	--base-block-padding: #{vw(90)};
 
@@ -10,10 +11,11 @@
 	--color-grey-01: #B2B2B2;
 	--color-grey-02: #5A5A5A;
 	--color-grey-03: #DEDEDE;
+	--color-grey-04: #FAFAFA;
 	--color-white: #fff;
     --color-red: #E71D36;
 
-	--color-bg: var(--color-white);
+	--color-bg: var(--color-grey-04);
 	--lightbox-bg: rgba(5, 5, 5, 0.8);
 
 	// Borders
@@ -73,6 +75,6 @@ main {
 	margin-top: var(--header-height);
 	position: relative;
 	width: 100%;
-	min-height: 100vh;
+	min-height: 60vh;
 	overflow: hidden;
 }

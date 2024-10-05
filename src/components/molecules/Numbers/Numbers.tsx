@@ -33,7 +33,7 @@ const Numbers = ({ items }: NumbersProps): JSX.Element => {
         <ul ref={ref} className={styles.wrapper}>
             {items.map((item, i) =>
                 <li key={i}>
-                    <span className={classNames(styles.value, 'font-size-60')}>
+                    <span className={classNames(styles.value, 'font-size-90')}>
                         <span className='js-number'>{item.value}</span>
                         {item.suffix && <span>{item.suffix}</span>}
                     </span>
