@@ -14,7 +14,7 @@ export const CMS = {
         } as HeadingType,
 
         /**
-         * typy inputów: 'text', 'value', 'dropdown', 'checkbox', 'no-choice'
+         * typy inputów: 'text', 'value', 'dropdown', 'checkbox', 'no-choice', 'relative'
          */
         BASE_CALCULATOR_ITEMS: [
             {
@@ -22,7 +22,7 @@ export const CMS = {
                 input: {
                     type: 'text',
                     props: {
-                        currency: '$',
+                        currency: 'USD',
                         placeholder: '0'
                     }
                 }
@@ -30,10 +30,11 @@ export const CMS = {
             {
                 label: 'Koszty aukcyjne (około)',
                 input: {
-                    type: 'value',
+                    type: 'relative',
                     props: {
-                        value: 936,
-                        currency: 'dollar'
+                        relativeRow: 0,
+                        relativeMultiplier: 0.1,
+                        currency: 'USD'
                     }
                 }
             },
@@ -42,7 +43,7 @@ export const CMS = {
                 input: {
                     type: 'dropdown',
                     props: {
-                        currency: '$',
+                        currency: 'USD',
                         options: [
                             { name: 'Alaska (Al)', value: '3000' },
                             { name: 'Kalifornia (CA)', value: '1000' },
@@ -56,8 +57,8 @@ export const CMS = {
                 input: {
                     type: 'value',
                     props: {
-                        value: 936,
-                        currency: 'dollar'
+                        value: 1,
+                        currency: 'USD'
                     }
                 }
             },
@@ -66,8 +67,8 @@ export const CMS = {
                 input: {
                     type: 'value',
                     props: {
-                        value: 936,
-                        currency: 'dollar'
+                        value: 1,
+                        currency: 'USD'
                     }
                 }
             },
@@ -76,8 +77,8 @@ export const CMS = {
                 input: {
                     type: 'value',
                     props: {
-                        value: 936,
-                        currency: 'dollar'
+                        value: 1,
+                        currency: 'USD'
                     }
                 }
             }
@@ -91,7 +92,7 @@ export const CMS = {
                 type: 'value',
                 props: {
                     value: 0,
-                    currency: 'dollar'
+                    currency: 'USD'
                 }
             },
             variant: 'accent',
@@ -108,7 +109,7 @@ export const CMS = {
                 input: {
                     type: 'text',
                     props: {
-                        currency: '$',
+                        currency: 'USD',
                         placeholder: '0'
                     }
                 }
@@ -118,8 +119,8 @@ export const CMS = {
                 input: {
                     type: 'value',
                     props: {
-                        value: 936,
-                        currency: 'dollar'
+                        value: 1,
+                        currency: 'USD'
                     }
                 }
             },
@@ -141,8 +142,8 @@ export const CMS = {
                 input: {
                     type: 'value',
                     props: {
-                        value: 936,
-                        currency: 'dollar'
+                        value: 1,
+                        currency: 'USD'
                     }
                 }
             },
@@ -151,8 +152,8 @@ export const CMS = {
                 input: {
                     type: 'value',
                     props: {
-                        value: 936,
-                        currency: 'dollar'
+                        value: 1,
+                        currency: 'USD'
                     }
                 }
             },
@@ -161,8 +162,8 @@ export const CMS = {
                 input: {
                     type: 'value',
                     props: {
-                        value: 936,
-                        currency: 'dollar'
+                        value: 1,
+                        currency: 'USD'
                     }
                 }
             }
@@ -176,7 +177,7 @@ export const CMS = {
                 type: 'value',
                 props: {
                     value: 0,
-                    currency: 'dollar'
+                    currency: 'USD'
                 }
             },
             variant: 'accent',
@@ -199,7 +200,7 @@ export const CMS = {
                     props: {
                         value: 200,
                         label: '100-300',
-                        currency: 'pln'
+                        currency: 'PLN'
                     }
                 }
             },
@@ -209,7 +210,7 @@ export const CMS = {
                     type: 'checkbox',
                     props: {
                         value: 500,
-                        currency: 'pln'
+                        currency: 'PLN'
                     }
                 }
             },
@@ -219,7 +220,7 @@ export const CMS = {
                     type: 'checkbox',
                     props: {
                         value: 500,
-                        currency: 'pln'
+                        currency: 'PLN'
                     }
                 }
             },
@@ -229,7 +230,7 @@ export const CMS = {
                     type: 'checkbox',
                     props: {
                         value: 500,
-                        currency: 'pln'
+                        currency: 'PLN'
                     }
                 }
             },
@@ -239,7 +240,7 @@ export const CMS = {
                     type: 'no-choice',
                     props: {
                         value: 10000,
-                        currency: 'pln'
+                        currency: 'PLN'
                     }
                 }
             }
@@ -255,7 +256,7 @@ export const CMS = {
                 type: 'value',
                 props: {
                     value: 0,
-                    currency: 'pln'
+                    currency: 'PLN'
                 }
             },
             variant: 'outline'

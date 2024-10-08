@@ -1,6 +1,6 @@
 import type { ShowcaseItem } from '@/components/molecules/Showcase/Showcase';
 
-export type Currency = 'pln' | 'dollar';
+export type Currency = 'PLN' | 'USD' | 'EUR';
 
 export type CurrencyObjectRaw = {
     code: string;

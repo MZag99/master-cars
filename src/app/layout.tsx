@@ -33,7 +33,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
 
                 <Loader />
 
-                <Contact {...CMS_UNIVERSAL.CONTACT} />
+                <Contact id='contact' {...CMS_UNIVERSAL.CONTACT} />
 
                 <Footer {...CMS_UNIVERSAL.FOOTER} />
 

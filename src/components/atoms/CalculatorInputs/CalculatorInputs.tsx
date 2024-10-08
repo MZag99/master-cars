@@ -4,7 +4,7 @@ import type { Currency } from '@/types/universal';
 import type { ChangeEvent, ReactNode } from 'react';
 
 import classNames from 'classnames';
-import { forwardRef, useCallback, useEffect, useMemo, useState } from 'react';
+import { forwardRef, useCallback, useEffect, useState } from 'react';
 
 import useClickOutside from '@/hooks/useClickOutside';
 
@@ -24,6 +24,8 @@ export type TextInputProps = CalculatorInputProps & { placeholder?: string };
 export type CheckboxInputProps = CalculatorInputProps & { label?: string, value: string };
 
 export type InputValueProps = CalculatorInputProps & { value: number };
+
+export type RelativeInputValueProps = CalculatorInputProps & { value: number; relativeRow: number; relativeMultiplier: number; formula: string };
 
 export type DropdownInputProps = CalculatorInputProps & { options: { name: string, value: string }[] };
 
@@ -120,8 +122,6 @@ const CheckboxInput = ({ setRowValue, value, currency }: CheckboxInputProps): JS
     const [isChecked, setIsChecked] = useState(false);
     const [isInit, setIsInit] = useState(true);
 
-    const currencySymbol = useMemo(() => currency === 'dollar' ? '$' : ' PLN', [currency]);
-
     const handleChange = useCallback(() => {
         setIsChecked(!isChecked);
     }, [isChecked, setIsChecked]);
@@ -140,7 +140,7 @@ const CheckboxInput = ({ setRowValue, value, currency }: CheckboxInputProps): JS
     return (
         <InputWrapper className={classNames(styles['checkbox-wrapper'], 'font-size-23')}>
             <label>
-                <span>{value}{currencySymbol}</span>
+                <span>{value}{currency}</span>
                 <input
                     type='checkbox'
                     value={value}
@@ -162,13 +162,15 @@ const InputLabel = ({ children, className }: InputLabelProps): JSX.Element => {
 };
 
 
-const InputValue = ({ className, value, currency }: InputValueProps): JSX.Element => {
+const InputValue = ({ className, value, currency, setRowValue }: InputValueProps): JSX.Element => {
 
-    const currencySymbol = useMemo(() => currency === 'dollar' ? '$' : ' PLN', [currency]);
+    useEffect(() => {
+        setRowValue && setRowValue(value);
+    }, [value, setRowValue]);
 
     return (
         <div className={classNames('font-size-23', className)}>
-            <span>{value}{currencySymbol}</span>
+            <span>{value} {currency}</span>
         </div>
     );
 };
@@ -181,7 +183,6 @@ const InputCaption = ({ children, className }: InputLabelProps): JSX.Element => 
         </p>
     );
 };
-
 
 InputWrapper.displayName = 'InputWrapper';
 

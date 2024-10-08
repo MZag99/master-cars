@@ -1,8 +1,8 @@
-import type { CurrencyObject, CurrencyObjectRaw } from '@/types/universal';
+import type { Currency, CurrencyObject, CurrencyObjectRaw } from '@/types/universal';
 
 import { useState, useEffect, useCallback, useRef } from 'react';
 
-const useCurrencies = (codes: string[]) => {
+const useCurrencies = (codes: Currency[]) => {
 
     const [currencies, setCurrencies] = useState<{ code: string, rate: number }[]>([]);
     const loadedRef = useRef<CurrencyObject[]>([]);

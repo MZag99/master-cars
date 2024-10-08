@@ -3,8 +3,10 @@ import type { ButtonProps } from '@/components/atoms/Button/Button';
 
 import Link from 'next/link';
 import { useMemo } from 'react';
+import gsap from 'gsap/dist/gsap';
 import classNames from 'classnames';
 import { usePathname } from 'next/navigation';
+import { ScrollToPlugin } from 'gsap/dist/ScrollToPlugin';
 
 import useScrollDirection from '@/hooks/useScrollDirection';
 
@@ -13,6 +15,8 @@ import Button from '@/components/atoms/Button/Button';
 import LinkListItem from '@/components/molecules/LinkListItem/LinkListItem';
 
 import styles from './Header.module.scss';
+
+gsap.registerPlugin(ScrollToPlugin);
 
 export type HeaderProps = {
     items: {
@@ -26,7 +30,7 @@ const Header = ({ items }: HeaderProps): JSX.Element => {
 
     const pathname = usePathname();
     const { down } = useScrollDirection();
-    
+
     const isHidden = useMemo(() => down, [down]);
 
     return (
@@ -55,7 +59,12 @@ const Header = ({ items }: HeaderProps): JSX.Element => {
             <nav className={styles['aside-nav']}>
                 <ul>
                     <li>
-                        <Button variant='accent' icon='phone'>Kontakt</Button>
+                        <Button
+                            variant='accent'
+                            icon='phone'
+                            onClick={() => gsap.to(window, { scrollTo: { y: '#contact' }, duration: 1, ease: 'power3.out' })}>
+                            Kontakt
+                        </Button>
                     </li>
                 </ul>
             </nav>

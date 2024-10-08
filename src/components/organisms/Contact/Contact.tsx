@@ -1,12 +1,13 @@
 'use client';
 
 import { useRef } from 'react';
-import classNames from 'classnames';
 
 import useAnimation from '@/hooks/useAnimation';
+import useCssVariable from '@/hooks/useCssVariable';
 
 import Icon from '@/components/atoms/Icon/Icon';
 import Button from '@/components/atoms/Button/Button';
+import Module from '@/components/partials/Module/Module';
 
 import styles from './Contact.module.scss';
 
@@ -21,16 +22,18 @@ export type ContactProps = {
         phoneNumber: string;
         email: string;
     }[];
+    id?: string;
 };
 
-const Contact = ({ info, emailButton, contactItems }: ContactProps) => {
+const Contact = ({ info, emailButton, contactItems, id }: ContactProps) => {
 
     const ref = useRef<HTMLDivElement>(null);
 
     useAnimation(ref, { name: 'fade', options: { duration: 0.5, delay: 0.5, ease: 'power3.out' } });
+    useCssVariable(ref, '--contact-height', 'clientHeight');
 
     return (
-        <div ref={ref} className={classNames(styles.wrapper, 'module-wrapper')}>
+        <Module id={id} ref={ref} className={styles.wrapper}>
 
             <div className={styles.info}>
                 <Icon name='logo' className={styles.logo} />
@@ -49,7 +52,7 @@ const Contact = ({ info, emailButton, contactItems }: ContactProps) => {
 
             <Button className={styles.button} big variant='dark' icon='mail' link={emailButton.email}>{emailButton.copy}</Button>
 
-        </div>
+        </Module>
     );
 };
 

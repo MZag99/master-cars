@@ -1,10 +1,12 @@
 'use client';
 
+import { useRef } from 'react';
 import classNames from 'classnames';
 import { usePathname } from 'next/navigation';
 
 import Socials from '../Socials/Socials';
 import { CMS_UNIVERSAL } from '@/cms/universal';
+import useCssVariable from '@/hooks/useCssVariable';
 
 import LinkListItem from '@/components/molecules/LinkListItem/LinkListItem';
 
@@ -21,9 +23,12 @@ export type FooterProps = {
 const Footer = ({ copyright, items }: FooterProps): JSX.Element => {
 
     const pathname = usePathname();
+    const ref = useRef<HTMLDivElement>(null);
+
+    useCssVariable(ref, '--footer-height', 'clientHeight');
 
     return (
-        <footer className={classNames(styles.wrapper, 'module-wrapper')}>
+        <footer ref={ref} className={classNames(styles.wrapper, 'module-wrapper')}>
             <span className={styles.copyright} dangerouslySetInnerHTML={{ __html: copyright }}></span>
 
             <ul className={styles.list}>

@@ -2,6 +2,7 @@
 
 .wrapper {
     position: relative;
+    background: var(--color-white);
 
     @include breakpoint(desktop) {
         padding-top: vw(50);

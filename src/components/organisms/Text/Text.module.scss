@@ -6,19 +6,12 @@
     z-index: 1;
 }
 
-.paragraph {
-    &.text-light {
-        color: var(--color-grey-01);
-    }
-}
-
 .button {
     margin-left: auto;
 }
 
 .is-dark {
-    background: var(--color-black);
-    color: var(--color-white);
+    background: var(--color-grey-04);
 }
 
 .image-item {

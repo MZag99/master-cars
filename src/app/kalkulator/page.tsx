@@ -22,9 +22,15 @@ export default function CalculatorPage() {
     const [tollCalculatorSum, setTollCalculatorSum] = useState(0);
     const [bonusCalculatorSum, setBonusCalculatorSum] = useState(0);
 
+    useEffect(() => {
+        console.log('baseCalculatorSum', baseCalculatorSum);
+        console.log('tollCalculatorSum', tollCalculatorSum);
+        console.log('bonusCalculatorSum', bonusCalculatorSum);
+    }, [baseCalculatorSum, tollCalculatorSum, bonusCalculatorSum]);
+
     const { setCurrencies } = useControlsStoreActions();
 
-    const currencies = useCurrencies(['usd', 'eur']);
+    const currencies = useCurrencies(['USD', 'EUR']);
     
     const summaryValue = useMemo(() => baseCalculatorSum + tollCalculatorSum + bonusCalculatorSum, [baseCalculatorSum, tollCalculatorSum, bonusCalculatorSum]);
 
@@ -44,7 +50,7 @@ export default function CalculatorPage() {
                             ...CMS.CALCULATOR_MAIN.BASE_CALCULATOR_ITEMS,
                             {
                                 ...CMS.CALCULATOR_MAIN.BASE_SUMMARY_ROW,
-                                input: { type: 'value', props: { value: roundToDecimal(baseCalculatorSum, 2), currency: 'pln' } }
+                                input: { type: 'value', props: { value: roundToDecimal(baseCalculatorSum, 2), currency: 'PLN' } }
                             }
                         ]
                     }
@@ -62,7 +68,7 @@ export default function CalculatorPage() {
                             ...CMS.CALCULATOR_MAIN.TOLL_CALCULATOR_ITEMS,
                             {
                                 ...CMS.CALCULATOR_MAIN.TOLL_SUMMARY_ROW,
-                                input: { type: 'value', props: { value: roundToDecimal(baseCalculatorSum, 2), currency: 'pln' } }
+                                input: { type: 'value', props: { value: roundToDecimal(tollCalculatorSum, 2), currency: 'PLN' } }
                             }
                         ]
                     }
@@ -90,7 +96,7 @@ export default function CalculatorPage() {
                 {/* Final sum */}
                 <CalculatorRow
                     {...CMS.CALCULATOR_BONUS.SUMMARY_ROW}
-                    input={{ type: 'value', props: { value: roundToDecimal(summaryValue, 2), currency: 'pln' } }}
+                    input={{ type: 'value', props: { value: roundToDecimal(summaryValue, 2), currency: 'PLN' } }}
                 />
 
                 <Documents title={CMS.UNIVERSAL.DOCUMENTS_TITLE} className={styles.documents} items={CMS.UNIVERSAL.DOCUMENTS_ITEMS} />

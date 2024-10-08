@@ -15,7 +15,7 @@
 	--color-white: #fff;
     --color-red: #E71D36;
 
-	--color-bg: var(--color-grey-04);
+	--color-bg: var(--color-white);
 	--lightbox-bg: rgba(5, 5, 5, 0.8);
 
 	// Borders
@@ -75,6 +75,6 @@ main {
 	margin-top: var(--header-height);
 	position: relative;
 	width: 100%;
-	min-height: 60vh;
+	min-height: calc(100vh - var(--header-height) - var(--footer-height) - var(--contact-height));
 	overflow: hidden;
 }
