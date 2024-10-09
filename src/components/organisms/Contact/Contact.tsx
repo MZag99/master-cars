@@ -6,10 +6,11 @@ import useAnimation from '@/hooks/useAnimation';
 import useCssVariable from '@/hooks/useCssVariable';
 
 import Icon from '@/components/atoms/Icon/Icon';
-import Button from '@/components/atoms/Button/Button';
 import Module from '@/components/partials/Module/Module';
+import EmailWidget from '@/components/molecules/EmailWidget/EmailWidget';
 
 import styles from './Contact.module.scss';
+import { ReceiverData } from '@/types/universal';
 
 export type ContactProps = {
     info: string;
@@ -22,10 +23,11 @@ export type ContactProps = {
         phoneNumber: string;
         email: string;
     }[];
+    receiverData: ReceiverData;
     id?: string;
 };
 
-const Contact = ({ info, emailButton, contactItems, id }: ContactProps) => {
+const Contact = ({ info, emailButton, contactItems, id, receiverData }: ContactProps) => {
 
     const ref = useRef<HTMLDivElement>(null);
 
@@ -50,7 +52,7 @@ const Contact = ({ info, emailButton, contactItems, id }: ContactProps) => {
                 ))}
             </div>
 
-            <Button className={styles.button} big variant='dark' icon='mail' link={emailButton.email}>{emailButton.copy}</Button>
+            <EmailWidget copy={emailButton.copy} receiverData={receiverData} className={styles['email-widget']} />
 
         </Module>
     );

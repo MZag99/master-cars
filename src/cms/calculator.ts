@@ -107,19 +107,20 @@ export const CMS = {
             {
                 label: 'Cło',
                 input: {
-                    type: 'text',
+                    type: 'value',
                     props: {
                         currency: 'USD',
-                        placeholder: '0'
+                        value: 200
                     }
                 }
             },
             {
                 label: 'Vat (19%)',
                 input: {
-                    type: 'value',
+                    type: 'relative',
                     props: {
-                        value: 1,
+                        relativeRow: 0,
+                        relativeMultiplier: 0.19,
                         currency: 'USD'
                     }
                 }
@@ -129,6 +130,7 @@ export const CMS = {
                 input: {
                     type: 'dropdown',
                     props: {
+                        currency: 'USD',
                         options: [
                             { name: 'Kalifornia (CA)', value: '1000' },
                             { name: 'Kalifornia (CA)', value: '1000' },

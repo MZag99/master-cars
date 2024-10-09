@@ -55,6 +55,11 @@ export const CMS_UNIVERSAL = {
 
     CONTACT: {
         info: 'ul. Pana Balcera 8/110<br/>20-631, Lublin<br/>NIP 7121575499<br/>Regon 1283726619283981',
+        receiverData: {
+            serviceId: 'service_7o30bu8',
+            templateId: 'template_f8g0uep',
+            userId: 'T4LlAKopzKbik7ItK'
+        },
         emailButton: {
             email: 'mailto:zagojski.michal.99@gmail.com',
             copy: 'Napisz do nas'

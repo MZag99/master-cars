@@ -4,6 +4,10 @@
     position: relative;
     background: var(--color-white);
     z-index: 1;
+
+    strong {
+        color: var(--color-red);
+    }
 }
 
 .button {

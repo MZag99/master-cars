@@ -118,7 +118,7 @@ const DropdownInput = ({ options, setRowValue, className }: DropdownInputProps):
 };
 
 
-const CheckboxInput = ({ setRowValue, value, currency }: CheckboxInputProps): JSX.Element => {
+const CheckboxInput = ({ setRowValue, value, currency, label }: CheckboxInputProps): JSX.Element => {
     const [isChecked, setIsChecked] = useState(false);
     const [isInit, setIsInit] = useState(true);
 
@@ -140,7 +140,7 @@ const CheckboxInput = ({ setRowValue, value, currency }: CheckboxInputProps): JS
     return (
         <InputWrapper className={classNames(styles['checkbox-wrapper'], 'font-size-23')}>
             <label>
-                <span>{value}{currency}</span>
+                <span>{label ?? value} {currency}</span>
                 <input
                     type='checkbox'
                     value={value}

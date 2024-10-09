@@ -18,7 +18,7 @@ export type CalculatorProps = {
 
 const Calculator = ({ heading, children, currencyWidget }: CalculatorProps): JSX.Element => {
     return (
-        <Module padding-block>
+        <Module paddingBlock>
 
             {heading ?
                 <Heading>

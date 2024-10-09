@@ -66,3 +66,12 @@
 .button {
     margin-left: auto;
 }
+
+.email-widget {
+    position: absolute;
+
+    @include breakpoint(desktop) {
+        top: vw(30);
+        right: var(--base-inline-padding);
+    }
+}

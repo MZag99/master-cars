@@ -30,7 +30,7 @@ export const CMS = {
         items: [
             {
                 type: 'text',
-                text: 'Nasza firma do 2000 roku zajmuje się importem i sprzedażą aut ze Stanów Zjednoczonych i Kanady. Mauris id tortor nec ex consequat suscipit. Mauris id tortor nec ex consequat suscipit et eget elit. In non fermentum nunc. <br/><br/>Donec sit amet dictum arcu. In hac habitasse platea dictumst. Sed nec leo risus. Integer quis sapien euismod, dapibus libero vitae, viverra justo. Quisque ac condimentum nisi, et porttitor sem. Duis facilisis tincidunt cursus. <br/><br/>Nasza firma do 2000 roku zajmuje się importem i sprzedażą aut ze Stanów Zjednoczonych i Kanady.  Mauris id tortor nec ex consequat suscipit. Mauris id tortor nec ex consequat suscipit et eget elit. In non fermentum nunc. Donec sit amet dictum arcu. In hac habitasse platea dictumst. Sed nec leo risus. Integer quis sapien euismod, dapibus libero vitae, viverra justo. Quisque ac condimentum nisi, et porttitor sem. Duis facilisis tincidunt cursus. dapibus libero vitae, viverra justo. Quisque ac condimentum nisi, et porttitor sem. Duis facilisis tincidunt cursus. dapibus libero vitae, viverra justo. Quisque ac condimentum nisi, et porttitor sem. Duis facilisis tincidunt cursus.'
+                text: 'Nasza firma <strong>od 2000 roku zajmuje się importem i sprzedażą aut ze Stanów Zjednoczonych i Kanady.</strong> Mauris id tortor nec ex consequat suscipit. Mauris id tortor nec ex consequat suscipit et eget elit. In non fermentum nunc. <br/><br/>Donec sit amet dictum arcu. In hac habitasse platea dictumst. Sed nec leo risus. Integer quis sapien euismod, dapibus libero vitae, viverra justo. Quisque ac condimentum nisi, et porttitor sem. Duis facilisis tincidunt cursus. <br/><br/>Nasza firma do 2000 roku zajmuje się importem i sprzedażą aut ze Stanów Zjednoczonych i Kanady.  Mauris id tortor nec ex consequat suscipit. Mauris id tortor nec ex consequat suscipit et eget elit. In non fermentum nunc. Donec sit amet dictum arcu. In hac habitasse platea dictumst. Sed nec leo risus. Integer quis sapien euismod, dapibus libero vitae, viverra justo. Quisque ac condimentum nisi, et porttitor sem. Duis facilisis tincidunt cursus. dapibus libero vitae, viverra justo. Quisque ac condimentum nisi, et porttitor sem. Duis facilisis tincidunt cursus. dapibus libero vitae, viverra justo. Quisque ac condimentum nisi, et porttitor sem. Duis facilisis tincidunt cursus.'
             }
         ],
         isDark: true
@@ -127,7 +127,79 @@ export const CMS = {
                     CamaroImage,
                     CamaroImage
                 ]
-            }
+            },
+            {
+                year: 2015,
+                carName: 'Dodge Challenger',
+                horsepower: 400,
+                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus ut dolor.',
+                countryOrigin: 'USA',
+                overallCostPln: 150000,
+                pictures: [
+                    DodgeImage,
+                    DodgeImage,
+                    DodgeImage,
+                    DodgeImage,
+                    DodgeImage,
+                    DodgeImage,
+                    DodgeImage,
+                    DodgeImage
+                ]
+            },,
+            {
+                year: 2015,
+                carName: 'Dodge Challenger',
+                horsepower: 400,
+                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus ut dolor.',
+                countryOrigin: 'USA',
+                overallCostPln: 150000,
+                pictures: [
+                    DodgeImage,
+                    DodgeImage,
+                    DodgeImage,
+                    DodgeImage,
+                    DodgeImage,
+                    DodgeImage,
+                    DodgeImage,
+                    DodgeImage
+                ]
+            },,
+            {
+                year: 2015,
+                carName: 'Dodge Challenger',
+                horsepower: 400,
+                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus ut dolor.',
+                countryOrigin: 'USA',
+                overallCostPln: 150000,
+                pictures: [
+                    DodgeImage,
+                    DodgeImage,
+                    DodgeImage,
+                    DodgeImage,
+                    DodgeImage,
+                    DodgeImage,
+                    DodgeImage,
+                    DodgeImage
+                ]
+            },
+            {
+                year: 2015,
+                carName: 'Dodge Challenger',
+                horsepower: 400,
+                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus ut dolor.',
+                countryOrigin: 'USA',
+                overallCostPln: 150000,
+                pictures: [
+                    DodgeImage,
+                    DodgeImage,
+                    DodgeImage,
+                    DodgeImage,
+                    DodgeImage,
+                    DodgeImage,
+                    DodgeImage,
+                    DodgeImage
+                ]
+            },
         ],
         /**
          * Tag <a> oznacza link do zewnętrznej strony, pod href podaj adres tej strony, a target="_blank" oznacza otwarcie nowego okna w przeglądarce.

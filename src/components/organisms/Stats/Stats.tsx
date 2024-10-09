@@ -28,7 +28,7 @@ const Stats = ({ showcaseItems, numberItems, disclaimers }: StatsProps) => {
     useAnimation(disclaimersRef, { name: 'splitUp', options: { duration: 1, delay: 0.3, ease: 'power3.out', stagger: 0.002 } });
 
     return (
-        <Module className={classNames(styles.wrapper, 'module-wrapper-double')}>
+        <Module paddingBlock className={classNames(styles.wrapper, 'module-wrapper-double')}>
 
             <Numbers items={numberItems} />
             <Showcase items={showcaseItems} />
