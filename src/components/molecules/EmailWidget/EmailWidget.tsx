@@ -1,12 +1,14 @@
-import { useMemo, useRef, useState } from 'react';
+import type { ReceiverData } from '@/types/universal';
+
 import classNames from 'classnames';
-import emailjs from 'emailjs-com';
+import { sendForm } from 'emailjs-com';
+import { useMemo, useState } from 'react';
+
+import useClickOutside from '@/hooks/useClickOutside';
 
 import Icon from '@/components/atoms/Icon/Icon';
 
 import styles from './EmailWidget.module.scss';
-import useClickOutside from '@/hooks/useClickOutside';
-import { ReceiverData } from '@/types/universal';
 
 type EmailWidgetProps = {
     copy: string;
@@ -47,7 +49,7 @@ const EmailWidget = ({ copy, receiverData, className }: EmailWidgetProps): JSX.E
 
         setIsSending(true);
 
-        emailjs.sendForm(serviceId, templateId, e.target as HTMLFormElement, userId)
+        sendForm(serviceId, templateId, e.target as HTMLFormElement, userId)
             .then(() => {
                 setIsSent(true);
                 setIsSending(false);
@@ -79,7 +81,7 @@ const EmailWidget = ({ copy, receiverData, className }: EmailWidgetProps): JSX.E
                         className={styles.input}
                         required
                         value={senderEmail}
-                        onChange={(e) => setSenderEmail(e.target.value)}
+                        onChange={e => setSenderEmail(e.target.value)}
                     />
 
                     <input

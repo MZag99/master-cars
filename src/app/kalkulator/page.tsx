@@ -22,12 +22,6 @@ export default function CalculatorPage() {
     const [tollCalculatorSum, setTollCalculatorSum] = useState(0);
     const [bonusCalculatorSum, setBonusCalculatorSum] = useState(0);
 
-    useEffect(() => {
-        console.log('baseCalculatorSum', baseCalculatorSum);
-        console.log('tollCalculatorSum', tollCalculatorSum);
-        console.log('bonusCalculatorSum', bonusCalculatorSum);
-    }, [baseCalculatorSum, tollCalculatorSum, bonusCalculatorSum]);
-
     const { setCurrencies } = useControlsStoreActions();
 
     const currencies = useCurrencies(['USD', 'EUR']);

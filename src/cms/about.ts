@@ -145,7 +145,7 @@ export const CMS = {
                     DodgeImage,
                     DodgeImage
                 ]
-            },,
+            },
             {
                 year: 2015,
                 carName: 'Dodge Challenger',
@@ -163,7 +163,7 @@ export const CMS = {
                     DodgeImage,
                     DodgeImage
                 ]
-            },,
+            },
             {
                 year: 2015,
                 carName: 'Dodge Challenger',
@@ -199,7 +199,7 @@ export const CMS = {
                     DodgeImage,
                     DodgeImage
                 ]
-            },
+            }
         ],
         /**
          * Tag <a> oznacza link do zewnętrznej strony, pod href podaj adres tej strony, a target="_blank" oznacza otwarcie nowego okna w przeglądarce.

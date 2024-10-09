@@ -1,5 +1,7 @@
 'use client';
 
+import type { ReceiverData } from '@/types/universal';
+
 import { useRef } from 'react';
 
 import useAnimation from '@/hooks/useAnimation';
@@ -10,7 +12,6 @@ import Module from '@/components/partials/Module/Module';
 import EmailWidget from '@/components/molecules/EmailWidget/EmailWidget';
 
 import styles from './Contact.module.scss';
-import { ReceiverData } from '@/types/universal';
 
 export type ContactProps = {
     info: string;
