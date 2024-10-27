@@ -44,7 +44,7 @@ const ShowcaseModal = (): JSX.Element | null => {
                     <ul className={classNames(styles.list, listFontSize)}>
                         <li>Rocznik: <strong>{lightbox.year}</strong></li>
                         <li>Moc: <strong>{lightbox.horsepower} KM</strong></li>
-                        <li>Pochodzenie: <strong>{lightbox.countryOrigin}</strong></li>
+                        <li>Przebieg: <strong>{lightbox.mileage}</strong></li>
                         <li>Całkowity koszt projektu: <strong>{lightbox.overallCostPln} PLN</strong></li>
                     </ul>
 

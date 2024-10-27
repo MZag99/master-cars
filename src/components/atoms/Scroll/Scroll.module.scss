@@ -3,6 +3,7 @@
 
 $fill-size: vw(12);
 $fill-size-mobile: vw(12, phone);
+$fill-size-tablet: vw(12, tablet);
 
 @keyframes scrollMobile {
     0% {
@@ -61,6 +62,11 @@ $fill-size-mobile: vw(12, phone);
         height: vw(65, phone);
     }
 
+    @include breakpoint(tablet) {
+        width: vw(100, tablet);
+        height: vw(65, tablet);
+    }
+
     @include breakpoint(hd) {
         width: vw(100 * $hd-scaling-factor);
         height: vw(65 * $hd-scaling-factor);
@@ -85,6 +91,12 @@ $fill-size-mobile: vw(12, phone);
         border-radius: vw(8, phone);
     }
 
+    @include breakpoint(tablet) {
+        width: vw(16, tablet);
+        height: vw(61, tablet);
+        border-radius: vw(8, tablet);
+    }
+
     @include breakpoint(hd) {
         width: vw(16 * $hd-scaling-factor);
         height: vw(61 * $hd-scaling-factor);
@@ -104,6 +116,10 @@ $fill-size-mobile: vw(12, phone);
 
     @include breakpoint(not-desktop) {
         left: vw(21, phone);
+    }
+
+    @include breakpoint(tablet) {
+        left: vw(21, tablet);
     }
 
     @include breakpoint(hd) {
@@ -131,6 +147,12 @@ $fill-size-mobile: vw(12, phone);
         width: $fill-size-mobile;
         height: $fill-size-mobile;
         animation: scrollMobile 2s infinite $ease-custom;
+    }
+
+    @include breakpoint(tablet) {
+        top: vw(2, tablet);
+        width: $fill-size-tablet;
+        height: $fill-size-tablet;
     }
 
     @include breakpoint(hd) {

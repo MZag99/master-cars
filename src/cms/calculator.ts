@@ -30,10 +30,26 @@ export const CMS = {
             {
                 label: 'Koszty aukcyjne (około)',
                 input: {
-                    type: 'relative',
+                    type: 'relative-stepped',
                     props: {
-                        relativeRow: 0,
-                        relativeMultiplier: 0.1,
+                        steps: [
+                            {
+                                minValue: 1,
+                                maxValue: 1000,
+                                stepValue: 105
+                            },
+                            {
+                                minValue: 1001,
+                                maxValue: 2000,
+                                stepValue: 150
+                            },
+                            {
+                                minValue: 2001,
+                                maxValue: 'infinity',
+                                isRelative: true,
+                                stepValue: 0.5
+                            }
+                        ],
                         currency: 'USD'
                     }
                 }
@@ -49,6 +65,16 @@ export const CMS = {
                             { name: 'Kalifornia (CA)', value: '1000' },
                             { name: 'Kalifornia (CA)', value: '1000' }
                         ]
+                    }
+                }
+            },
+            {
+                label: 'Broker',
+                input: {
+                    type: 'hidden',
+                    props: {
+                        value: 300,
+                        currency: 'USD'
                     }
                 }
             },
@@ -160,7 +186,7 @@ export const CMS = {
                 input: {
                     type: 'checkbox',
                     props: {
-                        value: 300,
+                        value: 400,
                         currency: 'PLN'
                     }
                 }

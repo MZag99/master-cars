@@ -18,12 +18,17 @@
         line-height: 1.15;
         margin-bottom: vw(10, phone);
     }
+
+    @include breakpoint(tablet) {
+        margin-bottom: vw(10, tablet);
+    }
 }
 
 .subtitle {
     display: inline-block;
     color: var(--color-grey-02);
     font-family: var(--font-primary);
+    text-wrap: pretty;
 
     @include breakpoint(desktop) {
         margin-top: vw(10);
@@ -33,5 +38,11 @@
     @include breakpoint(not-desktop) {
         margin-top: vw(5, phone);
         color: var(--color-red);
+    }
+
+    @include breakpoint(tablet) {
+        width: vw(300, tablet);
+
+        br { display: none; }
     }
 }

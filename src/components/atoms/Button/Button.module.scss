@@ -16,6 +16,10 @@
     @include breakpoint(not-desktop) {
         padding-inline: vw(12, phone);
     }
+
+    @include breakpoint(tablet) {
+        padding-inline: vw(12, tablet);
+    }
     
     @include breakpoint(hd) {
         padding-inline: vw(10);
@@ -48,6 +52,11 @@
             height: vw(28, phone);
             min-width: vw(70, phone);
         }
+
+        @include breakpoint(tablet) {
+            height: vw(28, tablet);
+            min-width: vw(70, tablet);
+        }
         
         @include breakpoint(hd) {
             height: vw(34 * $hd-scaling-factor);
@@ -66,6 +75,11 @@
         @include breakpoint(not-desktop) {
             height: vw(34, phone);
             min-width: vw(165, phone);
+        }
+
+        @include breakpoint(tablet) {
+            height: vw(40, tablet);
+            min-width: vw(200, tablet);
         }
 
         @include breakpoint(hd) {
@@ -157,6 +171,10 @@
     @include breakpoint(not-desktop) {
         margin-left: vw(5, phone);
     }
+
+    @include breakpoint(tablet) {
+        margin-left: vw(5, tablet);
+    }
 }
 
 .disclaimer {
@@ -175,5 +193,9 @@
     @include breakpoint(not-desktop) {
         transform: translate(-50%, calc(100% + vw(6, phone)));
         width: 90%;
+    }
+
+    @include breakpoint(tablet) {
+        transform: translate(-50%, calc(100% + vw(6, tablet)));
     }
 }

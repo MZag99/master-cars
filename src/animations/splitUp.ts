@@ -23,7 +23,7 @@ export const splitUp: AnimationType = (element: HTMLElement | HTMLElement[], opt
                 start: 'top+=10% bottom'
             },
             y: 0,
-            onComplete: () => splitText.revert(),
+            // onComplete: () => splitText.revert(),
             ...options
         });
 };

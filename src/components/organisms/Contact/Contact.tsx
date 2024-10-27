@@ -57,7 +57,7 @@ const Contact = ({ emailButton, contactItems, id, receiverData }: ContactProps) 
                 ))}
             </div>
 
-            <EmailWidget copy={emailButton.copy} receiverData={receiverData} className={styles['email-widget']} />
+            {breakpoint?.desktop && <EmailWidget copy={emailButton.copy} receiverData={receiverData} className={styles['email-widget']} />}
 
         </Module>
     );

@@ -27,6 +27,11 @@
         }
     }
 
+    @include breakpoint(tablet) {
+        margin-top: vw(60, tablet);
+        width: vw(530, tablet);
+    }
+
     @include breakpoint(hd) {
         margin-top: vw(180);
     }
@@ -58,6 +63,10 @@
         inset: vw(310, phone) 0 vw(20, phone) vw(110, phone);
     }
 
+    @include breakpoint(tablet) {
+        inset: vw(450, tablet) 0 vw(40, tablet) vw(200, tablet);
+    }
+
     img {
         width: 120% !important;
         height: 120% !important;
@@ -77,6 +86,11 @@
     @include breakpoint(not-desktop) {
         margin-top: vw(10, phone);
         gap: vw(10, phone);
+    }
+
+    @include breakpoint(tablet) {
+        margin-top: vw(10, tablet);
+        gap: vw(10, tablet);
     }
 }
 

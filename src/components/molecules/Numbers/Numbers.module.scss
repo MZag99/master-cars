@@ -18,11 +18,20 @@
                 margin-right: 0;
                 margin-bottom: vw(20, phone);
             }
+
+            @include breakpoint(tablet) {
+                margin-right: 0;
+                margin-bottom: vw(20, tablet);
+            }
         }
     }
 
     @include breakpoint(not-desktop) {
         margin-bottom: vw(50, phone);
+    }
+
+    @include breakpoint(tablet) {
+        margin-bottom: vw(80, tablet);
     }
 }
 

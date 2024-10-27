@@ -20,11 +20,15 @@ export type CalculatorInputProps = {
     setRowValue?: (value: number) => void;
 }
 
+export type Step = { minValue: number, maxValue: number | 'infinity', stepValue: number, isRelative?: boolean };
+
 export type TextInputProps = CalculatorInputProps & { placeholder?: string };
 
 export type CheckboxInputProps = CalculatorInputProps & { label?: string, value: string };
 
 export type InputValueProps = CalculatorInputProps & { label?: string, value: number };
+
+export type RelativeSteppedProps = CalculatorInputProps & { label?: string, value: number, steps: Step[] };
 
 export type RelativeInputValueProps = CalculatorInputProps & { value: number; relativeRow: number; relativeMultiplier: number; formula: string };
 

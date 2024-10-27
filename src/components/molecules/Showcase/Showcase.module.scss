@@ -12,6 +12,10 @@
     @include breakpoint(not-desktop) {
         gap: vw(15, phone);
     }
+
+    @include breakpoint(tablet) {
+        gap: vw(15, tablet);
+    }
 }
 
 .item-wrapper {
@@ -84,6 +88,14 @@
         gap: vw(5, phone);
     }
 
+    @include breakpoint(tablet) {
+        left: vw(15, tablet);
+        bottom: vw(15, tablet);
+        padding-inline: vw(10, tablet);
+        height: vw(25, tablet);
+        gap: vw(7, tablet);
+    }
+
     svg {
 
         margin-top: 1px;
@@ -103,11 +115,15 @@
     @include breakpoint(desktop) {
         max-width: 80%;
         bottom: vw(15);
-        padding-top: vw(5);
+        padding-top: vw(3);
     }
 
     @include breakpoint(not-desktop) {
         max-width: 80%;
+    }
+
+    @include breakpoint(tablet) {
+        @include flex;
     }
 }
 

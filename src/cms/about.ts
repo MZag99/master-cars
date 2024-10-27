@@ -5,11 +5,38 @@ import { SOCIAL_LINKS } from '@/static/constants';
 
 import HeroImage from '@/assets/images/hero-image.jpg';
 // ściezka do fotek aut: '@/assets/images/cars/[NAZWA_PLIKU]'
+//M4
 import BMWImage1 from '@/assets/images/cars/bmw/DSC_0212-min.jpg';
 import BMWImage2 from '@/assets/images/cars/bmw/DSC_0215-min.jpg';
 import BMWImage3 from '@/assets/images/cars/bmw/DSC_0218-min.jpg';
 import BMWImage4 from '@/assets/images/cars/bmw/DSC_0225-min.jpg';
 import BMWImage5 from '@/assets/images/cars/bmw/DSC_0227-min.jpg';
+
+//F30 1
+import BMW2Image1 from '@/assets/images/cars/bmw2/DSC_0234 (1).jpg';
+import BMW2Image2 from '@/assets/images/cars/bmw2/DSC_0235 (2).jpg';
+import BMW2Image3 from '@/assets/images/cars/bmw2/DSC_0238 (2).jpg';
+import BMW2Image4 from '@/assets/images/cars/bmw2/DSC_0239 (1).jpg';
+import BMW2Image5 from '@/assets/images/cars/bmw2/DSC_0240 (4).jpg';
+import BMW2Image6 from '@/assets/images/cars/bmw2/DSC_0241 (3).jpg';
+import BMW2Image7 from '@/assets/images/cars/bmw2/DSC_0242 (1).jpg';
+import BMW2Image8 from '@/assets/images/cars/bmw2/DSC_0245 (2).jpg';
+import BMW2Image9 from '@/assets/images/cars/bmw2/DSC_0247 (2).jpg';
+import BMW2Image10 from '@/assets/images/cars/bmw2/DSC_0250.jpg';
+import BMW2Image11 from '@/assets/images/cars/bmw2/DSC_0251.jpg';
+import BMW2Image12 from '@/assets/images/cars/bmw2/DSC_0254 (1).jpg';
+import BMW2Image13 from '@/assets/images/cars/bmw2/DSC_0256.jpg';
+
+// Tucson
+import TucsonImage1 from '@/assets/images/cars/tucson/DSC_0190.jpg';
+import TucsonImage2 from '@/assets/images/cars/tucson/DSC_0193.jpg';
+import TucsonImage3 from '@/assets/images/cars/tucson/DSC_0204.jpg';
+import TucsonImage4 from '@/assets/images/cars/tucson/DSC_0205 (1).jpg';
+import TucsonImage5 from '@/assets/images/cars/tucson/DSC_0206.jpg';
+import TucsonImage6 from '@/assets/images/cars/tucson/DSC_0207.jpg';
+import TucsonImage7 from '@/assets/images/cars/tucson/DSC_0208.jpg';
+import TucsonImage8 from '@/assets/images/cars/tucson/DSC_0210 (1).jpg';
+
 
 export const CMS = {
     HERO: {
@@ -78,7 +105,7 @@ export const CMS = {
                 carName: 'BMW M4',
                 horsepower: 550,
                 description: 'Po więcej informacji zapraszamy do kontaktu',
-                countryOrigin: 'USA',
+                mileage: 105000,
                 overallCostPln: 180000,
                 pictures: [
                     BMWImage1,
@@ -86,6 +113,47 @@ export const CMS = {
                     BMWImage3,
                     BMWImage4,
                     BMWImage5
+                ]
+            },
+            {
+                year: 2017,
+                carName: 'BMW F30 320',
+                horsepower: 190,
+                description: 'Po więcej informacji zapraszamy do kontaktu',
+                mileage: 95000,
+                overallCostPln: 70000,
+                pictures: [
+                    BMW2Image1,
+                    BMW2Image2,
+                    BMW2Image3,
+                    BMW2Image4,
+                    BMW2Image5,
+                    BMW2Image6,
+                    BMW2Image7,
+                    BMW2Image8,
+                    BMW2Image9,
+                    BMW2Image10,
+                    BMW2Image11,
+                    BMW2Image12,
+                    BMW2Image13
+                ]
+            },
+            {
+                year: 2017,
+                carName: 'Hyundai Tucson',
+                horsepower: 164,
+                mileage: 98000,
+                overallCostPln: 64500,
+                description: 'Po więcej informacji zapraszamy do kontaktu',
+                pictures: [
+                    TucsonImage1,
+                    TucsonImage2,
+                    TucsonImage3,
+                    TucsonImage4,
+                    TucsonImage5,
+                    TucsonImage6,
+                    TucsonImage7,
+                    TucsonImage8
                 ]
             }
         ],
@@ -111,8 +179,8 @@ export const CMS = {
         items: [
             {
                 type: 'text',
-                text: 'Nasza firma do 2000 roku zajmuje się importem i sprzedażą aut ze Stanów Zjednoczonych i Kanady.  Mauris id tortor nec ex consequat suscipit. Mauris id tortor nec ex consequat suscipit et eget elit. In non fermentum nunc. Donec sit amet dictum arcu. In hac habitasse platea dictumst. Sed nec leo risus. Integer quis sapien euismod, dapibus libero vitae, viverra justo. Quisque ac condimentum nisi, et porttitor sem. Duis facilisis tincidunt cursus. Nasza firma do 2000 roku zajmuje się importem i sprzedażą aut ze Stanów Zjednoczonych i Kanady.  Mauris id tortor nec ex consequat suscipit. Mauris id tortor nec ex consequat suscipit et eget elit. In non fermentum nunc. Donec sit amet dictum arcu. In hac habitasse platea dictumst. Sed nec leo risus. Integer quis sapien euismod, dapibus libero vitae, viverra justo. Quisque ac condimentum nisi, et porttitor sem. Duis facilisis tincidunt cursus. dapibus libero vitae, viverra justo. Quisque ac condimentum nisi, et porttitor sem. Duis facilisis tincidunt cursus. dapibus libero vitae, viverra justo. Quisque ac condimentum nisi, et porttitor sem. Duis facilisis tincidunt cursus.'
-            }
+                text: ''
+        }
         ],
         button: {
             children: 'Kalkulator',

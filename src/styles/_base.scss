@@ -40,6 +40,10 @@
 		--header-height: #{vw(62, phone)};
 	}
 
+	@include breakpoint(tablet) {
+		--header-height: #{vw(80, tablet)};
+	}
+
 	--sidebar-width: #{vw(400)};
 	--sidebar-padding: #{vw(13)};
 	--modal-width: #{vw(320)};

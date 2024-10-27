@@ -22,7 +22,7 @@ export type ShowcaseItem = {
     year: number;
     carName: string;
     description: string;
-    countryOrigin: string;
+    mileage: number;
     horsepower: number;
     overallCostPln: number;
     pictures: StaticImageData[];

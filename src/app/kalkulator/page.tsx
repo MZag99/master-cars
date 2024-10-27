@@ -105,7 +105,7 @@ export default function CalculatorPage() {
                     input={{ type: 'value', props: { value: roundToDecimal(summaryValue, 2), currency: 'PLN' } }}
                 />
 
-                <Documents title={CMS.UNIVERSAL.DOCUMENTS_TITLE} className={styles.documents} items={CMS.UNIVERSAL.DOCUMENTS_ITEMS} />
+                {/* <Documents title={CMS.UNIVERSAL.DOCUMENTS_TITLE} className={styles.documents} items={CMS.UNIVERSAL.DOCUMENTS_ITEMS} /> */}
 
             </Calculator>
 

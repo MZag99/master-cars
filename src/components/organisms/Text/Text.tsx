@@ -80,7 +80,7 @@ const Text = ({ heading, items, button, isDark, id }: TextProps): JSX.Element =>
     return (
         <Module paddingBlock className={classNames(isDark && 'is-dark', styles.wrapper)} id={id}>
 
-            <Heading className={styles.text}>
+            <Heading className={classNames(styles.text, heading.subtitle && styles['has-subtitle'])}>
                 <Title ref={titleRef} size='medium'>{heading.title}</Title>
                 {heading.subtitle && <Subtitle ref={subtitleRef}>{heading.subtitle}</Subtitle>}
                 {heading.button && <Button ref={buttonRef} {...heading.button}>{heading.button.children}</Button>}

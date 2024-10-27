@@ -9,7 +9,7 @@
         color: var(--color-red);
     }
 
-    @include breakpoint(not-desktop) {
+    @include breakpoint(phone) {
         margin-top: vw(20, phone);
     }
 
@@ -17,9 +17,13 @@
 
 .text {
     @include breakpoint(not-desktop) {
-        @include flex(column, flex-start, flex-start);
+        @include flex(row, space-between, center);
 
         margin-bottom: vw(20, phone);
+    
+        &.has-subtitle {
+            @include flex(column, flex-start, flex-start);
+        }
     }
 }
 

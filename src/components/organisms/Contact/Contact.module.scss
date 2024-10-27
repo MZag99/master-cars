@@ -30,6 +30,11 @@
         border-color: var(--color-grey-01);
     }
 
+    @include breakpoint(tablet) {
+        margin-top: vw(20, tablet);
+        padding-top: vw(30, tablet);
+    }
+
     .logo {
         @include breakpoint(desktop) {
             margin-bottom: vw(10);
@@ -37,6 +42,10 @@
         
         @include breakpoint(not-desktop) {
             margin-bottom: vw(10, phone);
+        }
+
+        @include breakpoint(tablet) {
+            margin-bottom: 0;
         }
     }
 }
@@ -52,6 +61,11 @@
         margin-block: vw(20, phone);
         gap: vw(10, phone);
     }
+
+    @include breakpoint(tablet) {
+        margin-block: vw(30, tablet);
+        gap: vw(10, tablet);
+    }
 }
 
 .contact-item {
@@ -59,6 +73,10 @@
 
     @include breakpoint(desktop) {
         gap: vw(1);
+    }
+
+    @include breakpoint(tablet) {
+        gap: vw(2, tablet);
     }
 
     h4 {

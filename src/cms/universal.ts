@@ -27,20 +27,12 @@ export const CMS_UNIVERSAL = {
                 link: '/kalkulator',
                 name: 'Kalkulator'
             },
-            {
-                link: '/tracking',
-                name: 'Tracking'
-            }
         ]
     } as HeaderProps,
 
 
     SOCIALS: {
         items: [
-            {
-                name: 'facebook',
-                link: SOCIAL_LINKS.FACEBOOK
-            },
             {
                 name: 'instagram',
                 link: SOCIAL_LINKS.INSTAGRAM
@@ -66,14 +58,9 @@ export const CMS_UNIVERSAL = {
         },
         contactItems: [
             {
-                name: 'Jan Kowalski',
-                phoneNumber: '+48 123 456 789',
-                email: 'zagojski.michal.99@gmail.com'
-            },
-            {
-                name: 'Jan Kowalski',
-                phoneNumber: '+48 123 456 789',
-                email: 'zagojski.michal.99@gmail.com'
+                name: 'Maciej Uznański',
+                phoneNumber: '+48 507 515 404',
+                email: 'kontakt@usauto.com.pl'
             }
         ]
     },
@@ -90,14 +77,6 @@ export const CMS_UNIVERSAL = {
                 name: 'Kalkulator',
                 link: '/kalkulator'
             },
-            {
-                name: 'Tracking',
-                link: '/tracking'
-            },
-            {
-                name: 'Polityka prywatności',
-                link: '/polityka-prywatnosci'
-            }
         ]
     } as FooterProps
 };

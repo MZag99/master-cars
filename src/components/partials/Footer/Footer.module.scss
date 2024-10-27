@@ -14,6 +14,11 @@
         gap: vw(25, phone);
         padding-block: vw(16, phone);
     }
+
+    @include breakpoint(tablet) {
+        gap: vw(25, tablet);
+        padding-block: vw(20, tablet);
+    }
 }
 
 .list {
@@ -25,6 +30,10 @@
     @include breakpoint(not-desktop) {
         @include flex(column, flex-start, flex-start);
         gap: vw(10, phone);
+    }
+
+    @include breakpoint(tablet) {
+        gap: vw(15, tablet);
     }
 }
 
@@ -45,6 +54,10 @@
         justify-content: flex-start;
         gap: vw(20, phone);
     }
+
+    @include breakpoint(tablet) {
+        gap: vw(20, tablet);
+    }
 }
 
 .copyright {
@@ -54,6 +67,10 @@
         @include breakpoint(not-desktop) {
             display: inline-block;
             margin-top: vw(20, phone);
+        }
+
+        @include breakpoint(tablet) {
+            margin-top: vw(20, tablet);
         }
     }
 }
