@@ -1,0 +1,33 @@
+@import "mixins";
+
+.wrapper {
+    @include z-index(menu, $elements);
+    position: fixed;
+    inset: 0;
+    background: var(--color-white);
+    transform: translateX(100%);    
+    transition: transform 0.8s var(--ease-custom);
+
+    @include breakpoint(not-desktop) {
+        padding: vw(16, phone);
+        padding-top: calc(var(--header-height) + vw(16, phone));
+    }
+
+    &.is-open {
+        transform: translateX(0);
+    }
+
+    ul {
+        @include flex(column-reverse, flex-start, flex-start);
+
+        gap: vw(25, phone);
+    }
+}
+
+
+.policy {
+    position: absolute;
+    bottom: vw(16, phone);
+    list-style: none;
+    color: var(--color-grey-01);
+}

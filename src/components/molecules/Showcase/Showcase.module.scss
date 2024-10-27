@@ -5,7 +5,12 @@
     flex-wrap: wrap;
 
     @include breakpoint(desktop) {
+        min-height: vw(600);
         gap: vw(17);
+    }
+
+    @include breakpoint(not-desktop) {
+        gap: vw(15, phone);
     }
 }
 
@@ -17,15 +22,23 @@
     @include breakpoint(desktop) {
         height: vw(245);
         max-width: 33%;
-    }
 
-    &:nth-child(4n) {
-        min-width: 100%;
-
-        @include breakpoint(desktop) {
+        &:nth-child(4n) {
+            min-width: 100%;
             height: vw(500);
         }
     }
+
+    @include breakpoint(not-desktop) {
+        height: vw(120, phone);
+        max-width: 50%;
+
+        &:nth-child(3n) {
+            min-width: 100%;
+            height: vw(200, phone);
+        }
+    }
+
 
     @include hover {
         .item-image {
@@ -46,7 +59,8 @@
     }
 }
 
-.name-label, .image-label {
+.name-label,
+.image-label {
     @include flex;
 
     color: var(--color-white);
@@ -58,6 +72,16 @@
         padding-inline: vw(15);
         height: vw(30);
         gap: vw(5);
+    }
+
+    @include breakpoint(not-desktop) {
+        @include flex;
+
+        left: vw(5, phone);
+        bottom: vw(5, phone);
+        padding-inline: vw(10, phone);
+        height: vw(18, phone);
+        gap: vw(5, phone);
     }
 
     svg {
@@ -81,11 +105,19 @@
         bottom: vw(15);
         padding-top: vw(5);
     }
+
+    @include breakpoint(not-desktop) {
+        max-width: 80%;
+    }
 }
 
 .image-label {
     @include breakpoint(desktop) {
         top: vw(15);
+    }
+    
+    @include breakpoint(not-desktop) {
+        top: vw(5, phone);
     }
 }
 

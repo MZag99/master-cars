@@ -59,6 +59,18 @@ export default function CalculatorPage() {
                     setValue={setTollCalculatorSum}
                     items={
                         [
+                            {
+                                label: 'Wartość pojazdu',
+                                noSetValue: true,
+                                input: {
+                                    type: 'text',
+                                    props: {
+                                        currency: 'PLN',
+                                        value: 0,
+                                        placeholder: Math.round(baseCalculatorSum).toString()
+                                    }
+                                }
+                            },
                             ...CMS.CALCULATOR_MAIN.TOLL_CALCULATOR_ITEMS,
                             {
                                 ...CMS.CALCULATOR_MAIN.TOLL_SUMMARY_ROW,

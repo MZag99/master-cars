@@ -1,6 +1,13 @@
 @import "mixins";
 
 .paragraph {
+
+    color: var(--color-grey-02);
+
+    strong {
+        letter-spacing: -0.05em;
+    }
+
     a {
         color: var(--color-red);
         transition: opacity 0.3s var(--ease-custom);

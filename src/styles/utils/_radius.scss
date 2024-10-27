@@ -6,7 +6,13 @@ $radius: 17, 34;
 	@each $r in $radius {
 
 		&-#{$r} {
-			border-radius: vw($r);
+			@include breakpoint(desktop) {
+				border-radius: vw($r);
+			}
+
+			@include breakpoint(not-desktop) {
+				border-radius: vw($r, phone);
+			}
 		}
 	}
 }

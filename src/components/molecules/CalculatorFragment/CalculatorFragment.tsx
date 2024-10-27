@@ -16,20 +16,21 @@ export type CalculatorRowProps = {
     label: string,
     index: number,
     input: {
-        type: 'text' | 'dropdown' | 'checkbox' | 'value' | 'no-choice' | 'relative',
+        type: 'text' | 'dropdown' | 'checkbox' | 'value' | 'no-choice' | 'relative' | 'hidden',
         props: TextInputProps | DropdownInputProps | CheckboxInputProps | InputValueProps | RelativeInputValueProps;
     }
     caption?: string,
     variant?: 'accent' | 'outline',
     forceValue?: string,
     className?: string,
+    noSetValue?: boolean,
     rowValues: number[],
     setRowValues: (values: number[] | ((prev: number[]) => number[])) => void,
 };
 
 export type CalculatorFragmentProps = {
     setValue: (value: number) => void,
-    items: (Omit<CalculatorRowProps, 'index' | 'setRowValues'>)[];
+    items: (Omit<CalculatorRowProps, 'index' | 'setRowValues' | 'rowValues'>)[];
 };
 
 
@@ -37,7 +38,12 @@ const CalculatorFragment = ({ items, setValue }: CalculatorFragmentProps): JSX.E
 
     const [rowValues, setRowValues] = useState<number[]>(new Array(items.length).fill(0));
 
-    const fragmentSum = useMemo(() => rowValues.reduce((acc, curr) => acc + curr, 0), [rowValues]);
+    const fragmentSum = useMemo(() =>
+        rowValues.reduce((acc, curr, i) => {
+            const increment = items[i].noSetValue ? 0 : curr;
+            return acc + increment;
+        }, 0)
+    , [rowValues, items]);
 
     useEffect(() => {
         setValue(fragmentSum);
@@ -53,7 +59,7 @@ const CalculatorFragment = ({ items, setValue }: CalculatorFragmentProps): JSX.E
 };
 
 
-const CalculatorRow = ({ label, caption, input, variant, className, index, rowValues, setRowValues }: CalculatorRowProps): JSX.Element => {
+const CalculatorRow = ({ label, caption, input, variant, className, index, rowValues, setRowValues, noSetValue }: CalculatorRowProps): JSX.Element => {
 
     const rowCurrency = useMemo(() => input.props.currency, [input]);
     const initialValue = useMemo(() => (input.type === 'value' || input.type === 'no-choice') ? (input.props as InputValueProps).value : 0, [input]);
@@ -83,18 +89,19 @@ const CalculatorRow = ({ label, caption, input, variant, className, index, rowVa
             next[index] = rowValue * currencyMultiplier;
             return next;
         });
-    }, [rowValue, index, setRowValues, currencyMultiplier]);
+    }, [rowValue, index, setRowValues, currencyMultiplier, noSetValue]);
 
     return (
         <div className={classNames(styles.row, variant && styles[`is-${variant}`], variant && 'radius-34', className)}>
 
-            <InputLabel className={styles.label}>{label}</InputLabel>
-
-            {caption &&
-                <InputCaption className={classNames((input.type === 'value' && variant) && styles['value-caption'])}>
-                    {caption}
-                </InputCaption>
-            }
+            <InputLabel className={styles.label}>
+                {label}
+                {caption &&
+                    <InputCaption className={classNames((input.type === 'value' && variant) && styles['value-caption'])}>
+                        {caption}
+                    </InputCaption>
+                }
+            </InputLabel>
 
             {input.type === 'text' && <TextInput setRowValue={setRowValue} {...input.props as TextInputProps} />}
             {input.type === 'dropdown' && <DropdownInput setRowValue={setRowValue} {...input.props as DropdownInputProps} />}

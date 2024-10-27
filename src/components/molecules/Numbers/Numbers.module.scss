@@ -13,7 +13,16 @@
                 margin-right: vw(30);
                 margin-bottom: vw(30);
             }
+
+            @include breakpoint(not-desktop) {
+                margin-right: 0;
+                margin-bottom: vw(20, phone);
+            }
         }
+    }
+
+    @include breakpoint(not-desktop) {
+        margin-bottom: vw(50, phone);
     }
 }
 

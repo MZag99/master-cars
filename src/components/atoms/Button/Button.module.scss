@@ -8,8 +8,13 @@
     width: fit-content;
     transition: filter 0.3s var(--ease-custom);
 
+
     @include breakpoint(desktop) {
         padding-inline: vw(15);
+    }
+
+    @include breakpoint(not-desktop) {
+        padding-inline: vw(12, phone);
     }
     
     @include breakpoint(hd) {
@@ -38,6 +43,11 @@
             height: vw(34);
             min-width: vw(120);
         }
+
+        @include breakpoint(not-desktop) {
+            height: vw(28, phone);
+            min-width: vw(70, phone);
+        }
         
         @include breakpoint(hd) {
             height: vw(34 * $hd-scaling-factor);
@@ -46,10 +56,16 @@
     }
     
     &.is-big {
+        width: fit-content;
+
         @include breakpoint(desktop) {
             height: vw(60);
             min-width: vw(265);
-            width: fit-content;
+        }
+        
+        @include breakpoint(not-desktop) {
+            height: vw(34, phone);
+            min-width: vw(165, phone);
         }
 
         @include breakpoint(hd) {
@@ -137,6 +153,10 @@
     @include breakpoint(desktop) {
         margin-left: vw(7);
     }
+
+    @include breakpoint(not-desktop) {
+        margin-left: vw(5, phone);
+    }
 }
 
 .disclaimer {
@@ -145,10 +165,15 @@
     left: 50%;
     color: var(--color-grey-01);
     text-align: center;
+    line-height: 1.2;
+    width: 80%;
     
     @include breakpoint(desktop) {
         transform: translate(-50%, calc(100% + vw(8)));
-        width: 80%;
-        line-height: 1.2;
+    }
+ 
+    @include breakpoint(not-desktop) {
+        transform: translate(-50%, calc(100% + vw(6, phone)));
+        width: 90%;
     }
 }

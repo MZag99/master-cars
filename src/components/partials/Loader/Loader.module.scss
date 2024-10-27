@@ -28,13 +28,9 @@
 }
 
 .text-wrapper {
-    opacity: 0;
+    overflow: hidden;
 
-    span {
-        color: var(--color-black);
-    }
-    
-    strong {
-        color: var(--color-red);
+    div {
+        transform: translateY(110%);
     }
 }

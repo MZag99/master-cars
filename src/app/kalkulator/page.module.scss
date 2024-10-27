@@ -18,4 +18,11 @@
         left: var(--base-inline-padding);
         bottom: var(--base-inline-padding);
     }
+
+    @include breakpoint(not-desktop) {
+        @include flex(column, flex-start, flex-start);
+
+        gap: vw(10, phone);
+        margin-top: vw(50, phone);
+    }
 }

@@ -3,11 +3,14 @@
 .wrapper {
     position: relative;
     background: var(--color-white);
+    font-family: var(--font-secondary);
+
 
     @include breakpoint(desktop) {
         padding-top: vw(50);
         min-height: vw(280);
     }
+
 
     /* &:before {
         content: '';
@@ -19,11 +22,21 @@
 }
 
 .info {
-    color: var(--color-grey-01);
+
+    @include breakpoint(not-desktop) {
+        margin-top: vw(20, phone);
+        padding-top: vw(30, phone);
+        border-top: var(--border-thin);
+        border-color: var(--color-grey-01);
+    }
 
     .logo {
         @include breakpoint(desktop) {
             margin-bottom: vw(10);
+        }
+        
+        @include breakpoint(not-desktop) {
+            margin-bottom: vw(10, phone);
         }
     }
 }
@@ -34,21 +47,23 @@
     @include breakpoint(desktop) {
         gap: vw(25);
     }
+
+    @include breakpoint(not-desktop) {
+        margin-block: vw(20, phone);
+        gap: vw(10, phone);
+    }
 }
 
 .contact-item {
     @include flex(column, flex-start, flex-start);
 
     @include breakpoint(desktop) {
-        gap: vw(3);
+        gap: vw(1);
     }
 
     h4 {
-        font-weight: 400;
-    }
-
-    p {
-        color: var(--color-grey-01);
+        font-weight: 600;
+        letter-spacing: -0.05em;
     }
 
     svg {

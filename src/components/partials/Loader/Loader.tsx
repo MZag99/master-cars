@@ -6,6 +6,8 @@ import { useEffect, useRef, useState } from 'react';
 import useAnimation from '@/hooks/useAnimation';
 import { useIsPageLoaded } from '@/store/useGlobalStore';
 
+import Icon from '@/components/atoms/Icon/Icon';
+
 import styles from './Loader.module.scss';
 
 type stageType = 'left' | 'middle' | 'right';
@@ -21,7 +23,7 @@ const Loader = (): JSX.Element => {
 
     const isPageLoaded = useIsPageLoaded();
 
-    useAnimation(ref, { name: 'splitUp', options: { duration: 0.5, delay: 0.4, stagger: 0.1, ease: 'power3.out' } }, [stage === 'left']);
+    useAnimation(ref, { name: 'slideUp', options: { duration: 0.5, delay: 0.4, ease: 'power3.out' } }, [stage === 'left']);
 
     useEffect(() => {
         if (isPageLoaded) {
@@ -35,11 +37,10 @@ const Loader = (): JSX.Element => {
 
     return (
         <div className={classNames(styles.wrapper, styles[`is-${stage}`])}>
-            <div ref={ref} className={styles['text-wrapper']}>
-                <span className='font-size-30 font-weight-600'>
-                    Master.
-                    <strong>cars</strong>
-                </span>
+            <div className={styles['text-wrapper']}>
+                <div ref={ref}>
+                    <Icon name='logo' />
+                </div>
             </div>
         </div>
     );

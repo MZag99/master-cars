@@ -35,6 +35,11 @@
 
 	// Fixed values
 	--header-height: #{vw(100)};
+
+	@include breakpoint(not-desktop) {
+		--header-height: #{vw(62, phone)};
+	}
+
 	--sidebar-width: #{vw(400)};
 	--sidebar-padding: #{vw(13)};
 	--modal-width: #{vw(320)};
@@ -58,7 +63,6 @@ html {
 	@include breakpoint(phone) {
 		font-size: vw($browser-context, phone);
 	}
-
 }
 
 html,
@@ -69,12 +73,13 @@ body {
 	font-weight: 400;
 	overscroll-behavior: none;
 	background-color: var(--color-bg);
+	overflow-x: clip;
 }
 
 main {
 	margin-top: var(--header-height);
 	position: relative;
 	width: 100%;
-	min-height: calc(100vh - var(--header-height) - var(--footer-height) - var(--contact-height));
+	min-height: calc(100vh - var(--header-height) - var(--footer-height) - var(--contact-height) - 1px);
 	overflow: hidden;
 }

@@ -5,9 +5,11 @@ import { SOCIAL_LINKS } from '@/static/constants';
 
 import HeroImage from '@/assets/images/hero-image.jpg';
 // ściezka do fotek aut: '@/assets/images/cars/[NAZWA_PLIKU]'
-import CamaroImage from '@/assets/images/cars/camaro-2012.jpg';
-import MustangImage from '@/assets/images/cars/ford-mustang-2018.jpg';
-import DodgeImage from '@/assets/images/cars/dodge-challenger-2015.jpg';
+import BMWImage1 from '@/assets/images/cars/bmw/DSC_0212-min.jpg';
+import BMWImage2 from '@/assets/images/cars/bmw/DSC_0215-min.jpg';
+import BMWImage3 from '@/assets/images/cars/bmw/DSC_0218-min.jpg';
+import BMWImage4 from '@/assets/images/cars/bmw/DSC_0225-min.jpg';
+import BMWImage5 from '@/assets/images/cars/bmw/DSC_0227-min.jpg';
 
 export const CMS = {
     HERO: {
@@ -30,7 +32,7 @@ export const CMS = {
         items: [
             {
                 type: 'text',
-                text: 'Nasza firma <strong>od 2000 roku zajmuje się importem i sprzedażą aut ze Stanów Zjednoczonych i Kanady.</strong> Mauris id tortor nec ex consequat suscipit. Mauris id tortor nec ex consequat suscipit et eget elit. In non fermentum nunc. <br/><br/>Donec sit amet dictum arcu. In hac habitasse platea dictumst. Sed nec leo risus. Integer quis sapien euismod, dapibus libero vitae, viverra justo. Quisque ac condimentum nisi, et porttitor sem. Duis facilisis tincidunt cursus. <br/><br/>Nasza firma do 2000 roku zajmuje się importem i sprzedażą aut ze Stanów Zjednoczonych i Kanady.  Mauris id tortor nec ex consequat suscipit. Mauris id tortor nec ex consequat suscipit et eget elit. In non fermentum nunc. Donec sit amet dictum arcu. In hac habitasse platea dictumst. Sed nec leo risus. Integer quis sapien euismod, dapibus libero vitae, viverra justo. Quisque ac condimentum nisi, et porttitor sem. Duis facilisis tincidunt cursus. dapibus libero vitae, viverra justo. Quisque ac condimentum nisi, et porttitor sem. Duis facilisis tincidunt cursus. dapibus libero vitae, viverra justo. Quisque ac condimentum nisi, et porttitor sem. Duis facilisis tincidunt cursus.'
+                text: 'Zajmujemy się kompleksową obsługą importu samochodów z USA, oferując wsparcie na każdym etapie – od wyszukiwania pojazdu, przez jego zakup, aż po transport i dostarczenie do klienta. Dzięki naszej współpracy z zaufanymi partnerami w Stanach Zjednoczonych gwarantujemy pewność i bezpieczeństwo transakcji. Zapewniamy również pomoc w załatwieniu wszelkich formalności celnych oraz technicznych, by samochód trafił do Ciebie bez zbędnych komplikacji.'
             }
         ],
         isDark: true
@@ -58,146 +60,32 @@ export const CMS = {
         numberItems: [
             {
                 label: 'Lat na rynku',
-                value: '11'
+                value: '5'
             },
             {
                 label: 'Wygranych aukcji',
-                value: '2000'
+                value: '1000+'
             },
             {
                 label: 'Taniej kupując u nas',
-                value: '20',
+                value: '30',
                 suffix: '%'
             }
         ],
         showcaseItems: [
             {
-                year: 2012,
-                carName: 'Chevrolet Camaro Chevrolet Camaro Chevrolet Camaro',
-                horsepower: 400,
-                description: 'Nasza firma do 2000 roku zajmuje się importem i sprzedażą aut ze Stanów Zjednoczonych i Kanady.  Mauris id tortor nec ex consequat suscipit. Mauris id tortor nec ex consequat suscipit et eget elit. In non fermentum nunc. Donec sit amet dictum arcu. In hac habitasse platea dictumst. Sed nec leo risus. Integer quis sapien euismod, dapibus libero vitae, viverra justo. Quisque ac condimentum nisi, et porttitor sem. Duis facilisis tincidunt cursus.',
-                countryOrigin: 'USA',
-                overallCostPln: 120000,
-                pictures: [
-                    CamaroImage,
-                    CamaroImage,
-                    CamaroImage,
-                    CamaroImage
-                ]
-            },
-            {
                 year: 2015,
-                carName: 'Dodge Challenger',
-                horsepower: 400,
-                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus ut dolor.',
-                countryOrigin: 'USA',
-                overallCostPln: 150000,
-                pictures: [
-                    DodgeImage,
-                    DodgeImage,
-                    DodgeImage,
-                    DodgeImage,
-                    DodgeImage,
-                    DodgeImage,
-                    DodgeImage,
-                    DodgeImage
-                ]
-            },
-            {
-                year: 2018,
-                carName: 'Ford Mustang',
-                horsepower: 400,
-                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus ut dolor.',
+                carName: 'BMW M4',
+                horsepower: 550,
+                description: 'Po więcej informacji zapraszamy do kontaktu',
                 countryOrigin: 'USA',
                 overallCostPln: 180000,
                 pictures: [
-                    MustangImage,
-                    MustangImage,
-                    MustangImage
-                ]
-            },
-            {
-                year: 2012,
-                carName: 'Chevrolet Camaro',
-                horsepower: 400,
-                description: 'Nasza firma do 2000 roku zajmuje się importem i sprzedażą aut ze Stanów Zjednoczonych i Kanady.  Mauris id tortor nec ex consequat suscipit. Mauris id tortor nec econsequat suscipit et eget elit. In non fermentum nunc. Donec sit amet dictum arcu. In hac habitasse platea dictumst. Sed nec leo risus. Integer quis sapien euismod, dapibus libervitae, viverra justo. Quisque ac condimentum nisi, et porttitor sem. Duis facilisis tincidunt cursus.',
-                countryOrigin: 'USA / Kalifornia',
-                overallCostPln: 220000,
-                pictures: [
-                    CamaroImage,
-                    CamaroImage
-                ]
-            },
-            {
-                year: 2015,
-                carName: 'Dodge Challenger',
-                horsepower: 400,
-                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus ut dolor.',
-                countryOrigin: 'USA',
-                overallCostPln: 150000,
-                pictures: [
-                    DodgeImage,
-                    DodgeImage,
-                    DodgeImage,
-                    DodgeImage,
-                    DodgeImage,
-                    DodgeImage,
-                    DodgeImage,
-                    DodgeImage
-                ]
-            },
-            {
-                year: 2015,
-                carName: 'Dodge Challenger',
-                horsepower: 400,
-                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus ut dolor.',
-                countryOrigin: 'USA',
-                overallCostPln: 150000,
-                pictures: [
-                    DodgeImage,
-                    DodgeImage,
-                    DodgeImage,
-                    DodgeImage,
-                    DodgeImage,
-                    DodgeImage,
-                    DodgeImage,
-                    DodgeImage
-                ]
-            },
-            {
-                year: 2015,
-                carName: 'Dodge Challenger',
-                horsepower: 400,
-                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus ut dolor.',
-                countryOrigin: 'USA',
-                overallCostPln: 150000,
-                pictures: [
-                    DodgeImage,
-                    DodgeImage,
-                    DodgeImage,
-                    DodgeImage,
-                    DodgeImage,
-                    DodgeImage,
-                    DodgeImage,
-                    DodgeImage
-                ]
-            },
-            {
-                year: 2015,
-                carName: 'Dodge Challenger',
-                horsepower: 400,
-                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus ut dolor.',
-                countryOrigin: 'USA',
-                overallCostPln: 150000,
-                pictures: [
-                    DodgeImage,
-                    DodgeImage,
-                    DodgeImage,
-                    DodgeImage,
-                    DodgeImage,
-                    DodgeImage,
-                    DodgeImage,
-                    DodgeImage
+                    BMWImage1,
+                    BMWImage2,
+                    BMWImage3,
+                    BMWImage4,
+                    BMWImage5
                 ]
             }
         ],
@@ -205,7 +93,7 @@ export const CMS = {
          * Tag <a> oznacza link do zewnętrznej strony, pod href podaj adres tej strony, a target="_blank" oznacza otwarcie nowego okna w przeglądarce.
          */
         disclaimers: [
-            `Całą naszą ofertę znajdziesz<br/> na naszym profilu <a href=${SOCIAL_LINKS.OTOMOTO} target="_blank">OTOMOTO</a>.`, 
+            `Całą naszą ofertę znajdziesz na naszym profilu <a href=${SOCIAL_LINKS.OTOMOTO} target="_blank">OTOMOTO</a>.`, 
             `Zapraszamy take na nasza grupę <a href=${SOCIAL_LINKS.WHATSAPP} target="_blank">WhatsApp</a>.`
         ]
     },

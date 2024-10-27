@@ -19,8 +19,8 @@ export const fadeUp: AnimationType = (element: HTMLElement | HTMLElement[], opti
                 trigger: element,
                 start: 'top+=10% bottom'
             },
-            opacity: 1,
-            y: 0,
+            opacity: 0,
+            y: 20,
             ...options
         }
     );

@@ -5,6 +5,7 @@
 
     position: relative;
     background: var(--color-black);
+    font-family: var(--font-primary);
     transition: all 0.3s var(--ease-custom) 0.2s;
 
     @include breakpoint(desktop) {

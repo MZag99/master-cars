@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 import { useRef, useState } from 'react';
 
 import { CMS } from '@/cms/about';
+import useFontSize from '@/hooks/useFontSize';
 import { Heading, Title } from '../Heading/Heading';
 import useClickOutside from '@/hooks/useClickOutside';
 import { useGlobalStoreActions, useLightbox } from '@/store/useGlobalStore';
@@ -19,6 +20,7 @@ const ShowcaseModal = (): JSX.Element | null => {
 
     const [currentImage, setCurrentImage] = useState<StaticImageData | null>(null);
     const ref = useRef<HTMLDivElement>(null);
+    const listFontSize = useFontSize([21, 16]);
 
     useClickOutside(() => setLightbox(null));
 
@@ -39,7 +41,7 @@ const ShowcaseModal = (): JSX.Element | null => {
 
                 <div className={styles.info}>
 
-                    <ul className={classNames(styles.list, 'font-size-21')}>
+                    <ul className={classNames(styles.list, listFontSize)}>
                         <li>Rocznik: <strong>{lightbox.year}</strong></li>
                         <li>Moc: <strong>{lightbox.horsepower} KM</strong></li>
                         <li>Pochodzenie: <strong>{lightbox.countryOrigin}</strong></li>

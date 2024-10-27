@@ -2,6 +2,10 @@
 
 .wrapper {
     width: 100%;
+
+    @include breakpoint(not-desktop) {
+        margin-block: vw(40, phone);
+    }
 }
 
 .row {
@@ -19,6 +23,10 @@
 
     @include breakpoint(desktop) {
         padding-block: vw(25);
+    }
+
+    @include breakpoint(not-desktop) {
+        padding-block: vw(20, phone);
     }
 
     &:first-child {
@@ -40,6 +48,23 @@
             padding-inline: var(--accent-offset);
             width: calc(100% + 2 * var(--accent-offset));
         }
+        
+        @include breakpoint(not-desktop) {
+            padding-inline: vw(16, phone);
+            border-radius: 0;
+
+            .label {
+                width: 50%;
+            }
+        }
+    }
+
+    &.is-accent {
+        @include breakpoint(not-desktop) {
+            &:has(p) {
+                margin-bottom: vw(150, phone);
+            }
+        }
     }
 
     &.is-outline {
@@ -53,11 +78,22 @@
     @include breakpoint(desktop) {
         width: vw(390);
     }
+
+    @include breakpoint(not-desktop) {
+        width: 60%;
+        margin-right: vw(20, phone);
+    }
 }
 
 .value-caption {
     @include breakpoint(desktop) {
         inset: auto var(--accent-offset) vw(-32) var(--accent-offset);
+    }
+
+    @include breakpoint(not-desktop) {
+        position: absolute;
+        inset: auto 0 0;
+        transform: translateY(calc(100% + vw(6, phone)));
     }
 }
 

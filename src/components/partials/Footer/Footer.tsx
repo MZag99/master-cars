@@ -7,6 +7,7 @@ import { usePathname } from 'next/navigation';
 import Socials from '../Socials/Socials';
 import { CMS_UNIVERSAL } from '@/cms/universal';
 import useCssVariable from '@/hooks/useCssVariable';
+import { useBreakpoints } from '@/store/useBrowserStore';
 
 import LinkListItem from '@/components/molecules/LinkListItem/LinkListItem';
 
@@ -25,10 +26,12 @@ const Footer = ({ copyright, items }: FooterProps): JSX.Element => {
     const pathname = usePathname();
     const ref = useRef<HTMLDivElement>(null);
 
+    const breakpoint = useBreakpoints();
+
     useCssVariable(ref, '--footer-height', 'clientHeight');
 
     return (
-        <footer ref={ref} className={classNames(styles.wrapper, 'module-wrapper')}>
+        <footer ref={ref} className={classNames(styles.wrapper, 'module-wrapper', breakpoint?.desktop ? 'font-size-18' : 'font-size-14')}>
             <span className={styles.copyright} dangerouslySetInnerHTML={{ __html: copyright }}></span>
 
             <ul className={styles.list}>

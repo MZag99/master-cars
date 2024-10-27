@@ -1,3 +1,5 @@
+@import "mixins";
+
 .wrapper {
     position: relative;
 
@@ -12,8 +14,19 @@
 }
 
 .disclaimers {
-    position: absolute;
-    left: var(--base-block-padding);
-    bottom: var(--base-block-padding);
     color: var(--color-grey-01);
+    
+    @include breakpoint(desktop) {
+        position: absolute;
+        left: var(--base-block-padding);
+        bottom: var(--base-block-padding);
+        width: vw(370);
+        white-space: nowrap;
+    }
+
+    @include breakpoint(not-desktop) {
+        margin: vw(50, phone) auto 0;
+        text-align: center;
+        width: 70%;
+    }
 }

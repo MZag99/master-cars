@@ -7,6 +7,7 @@ import classNames from 'classnames';
 import { useEffect, useRef } from 'react';
 
 import useAnimation from '@/hooks/useAnimation';
+import { useBreakpoints } from '@/store/useBrowserStore';
 import { useGlobalStoreActions } from '@/store/useGlobalStore';
 
 import Icon from '@/components/atoms/Icon/Icon';
@@ -40,6 +41,8 @@ const Showcase = ({ items }: ShowcaseProps): JSX.Element => {
     const listRef = useRef<HTMLUListElement>(null);
     const listItemsRef = useRef<HTMLLIElement[]>([]);
 
+    const breakpoint = useBreakpoints();
+
     useEffect(() => {
         if (!listRef.current) return;
         listItemsRef.current = Array.from(listRef.current.children) as HTMLLIElement[];
@@ -50,7 +53,7 @@ const Showcase = ({ items }: ShowcaseProps): JSX.Element => {
     return (
         <ul ref={listRef} className={styles.list}>
             {items.map((item, index) =>
-                <li key={index} className={classNames(styles['item-wrapper'], 'radius-34')}>
+                <li key={index} className={classNames(styles['item-wrapper'], breakpoint?.desktop ? 'radius-34' : 'radius-17')}>
 
                     <div className={styles['item-image']}>
                         <Image src={item.pictures[0].src} alt={item.carName} width={item.pictures[0].width} height={item.pictures[0].height} />
@@ -67,8 +70,12 @@ const Showcase = ({ items }: ShowcaseProps): JSX.Element => {
 };
 
 const ShowcaseLabel = ({ text, image, className }: ShowcaseLabelProps) => {
+
+    const breakpoint = useBreakpoints();
+    const fontSize = breakpoint?.desktop ? 16 : 12;
+
     return (
-        <span className={classNames(styles['showcase-label'], 'radius-17', className)}>
+        <span className={classNames(styles['showcase-label'], 'radius-17', `font-size-${fontSize}`, className)}>
             {text}
             {image && <Icon name='picture'/>}
         </span>

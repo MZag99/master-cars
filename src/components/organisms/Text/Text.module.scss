@@ -8,10 +8,29 @@
     strong {
         color: var(--color-red);
     }
+
+    @include breakpoint(not-desktop) {
+        margin-top: vw(20, phone);
+    }
+
+}
+
+.text {
+    @include breakpoint(not-desktop) {
+        @include flex(column, flex-start, flex-start);
+
+        margin-bottom: vw(20, phone);
+    }
 }
 
 .button {
-    margin-left: auto;
+    @include breakpoint(desktop) {
+        margin-left: auto;
+    }
+
+    @include breakpoint(not-desktop) {
+        margin: vw(30, phone) auto;
+    }
 }
 
 .is-dark {
@@ -21,6 +40,10 @@
 .image-item {
     @include breakpoint(desktop) {
         margin-block: vw(35);
+    }
+    
+    @include breakpoint(not-desktop) {
+        margin-block: vw(35, phone);
     }
 }
 

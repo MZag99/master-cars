@@ -6,6 +6,10 @@
     background: var(--color-white);
     z-index: 0;
     overflow: hidden;
+
+    @include breakpoint(not-desktop) {
+        height: calc(100svh - var(--header-height));
+    }
 }
 
 .text {
@@ -13,6 +17,14 @@
     @include breakpoint(desktop) {
         margin-top: vw(200);
         width: vw(790);
+    }
+
+    @include breakpoint(not-desktop) {
+        margin-top: vw(60, phone);
+
+        > span {
+            color: var(--color-grey-02);
+        }
     }
 
     @include breakpoint(hd) {
@@ -41,6 +53,10 @@
     @include breakpoint(desktop) {
         inset: vw(150) 0 vw(100) vw(850);
     }
+    
+    @include breakpoint(not-desktop) {
+        inset: vw(310, phone) 0 vw(20, phone) vw(110, phone);
+    }
 
     img {
         width: 120% !important;
@@ -57,13 +73,22 @@
         margin-top: vw(20);
         gap: vw(10);
     }
+
+    @include breakpoint(not-desktop) {
+        margin-top: vw(10, phone);
+        gap: vw(10, phone);
+    }
 }
 
 .scroll {
     position: absolute;
+    left: var(--base-inline-padding);
 
     @include breakpoint(desktop) {
         bottom: vw(100);
-        left: var(--base-inline-padding);
+    }
+
+    @include breakpoint(not-desktop) {
+        bottom: vw(20, phone);
     }
 }

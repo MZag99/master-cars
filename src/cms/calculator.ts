@@ -53,31 +53,13 @@ export const CMS = {
                 }
             },
             {
-                label: 'Koszty transportu do portu w USA',
+                label: 'Koszty transportu do portu w Europie',
+                noSetValue: true,
                 input: {
-                    type: 'value',
+                    type: 'relative',
                     props: {
-                        value: 1,
-                        currency: 'USD'
-                    }
-                }
-            },
-            {
-                label: 'Frach morski do Europy',
-                input: {
-                    type: 'value',
-                    props: {
-                        value: 1,
-                        currency: 'USD'
-                    }
-                }
-            },
-            {
-                label: 'Broker',
-                input: {
-                    type: 'value',
-                    props: {
-                        value: 1,
+                        relativeRow: 2,
+                        relativeMultiplier: 1,
                         currency: 'USD'
                     }
                 }
@@ -107,10 +89,11 @@ export const CMS = {
             {
                 label: 'Cło',
                 input: {
-                    type: 'value',
+                    type: 'relative',
                     props: {
-                        currency: 'USD',
-                        value: 200
+                        relativeRow: 0,
+                        relativeMultiplier: 0.1,
+                        currency: 'EUR'
                     }
                 }
             },
@@ -121,54 +104,20 @@ export const CMS = {
                     props: {
                         relativeRow: 0,
                         relativeMultiplier: 0.19,
-                        currency: 'USD'
+                        currency: 'EUR'
                     }
                 }
             },
             {
-                label: 'Stan (region), w którym znajduje się Twój pojazd',
-                input: {
-                    type: 'dropdown',
-                    props: {
-                        currency: 'USD',
-                        options: [
-                            { name: 'Kalifornia (CA)', value: '1000' },
-                            { name: 'Kalifornia (CA)', value: '1000' },
-                            { name: 'Kalifornia (CA)', value: '1000' }
-                        ]
-                    }
-                }
-            },
-            {
-                label: 'Koszty transportu do portu w USA',
+                label: 'Agencja celna i rozładunek',
                 input: {
                     type: 'value',
                     props: {
-                        value: 1,
-                        currency: 'USD'
+                        currency: 'EUR',
+                        value: 450
                     }
                 }
             },
-            {
-                label: 'Frach morski do Europy',
-                input: {
-                    type: 'value',
-                    props: {
-                        value: 1,
-                        currency: 'USD'
-                    }
-                }
-            },
-            {
-                label: 'Broker',
-                input: {
-                    type: 'value',
-                    props: {
-                        value: 1,
-                        currency: 'USD'
-                    }
-                }
-            }
         ] as CalculatorFragmentProps['items'],
 
 
@@ -196,12 +145,12 @@ export const CMS = {
         BONUS_CALCULATOR_ITEMS: [
             {
                 label: 'Transport pod dom',
-                caption: '(W zależności od wielkości i stanu samochodu)',
+                caption: '(Koszt transportu ustalany jest indywidualnie)',
                 input: {
                     type: 'checkbox',
                     props: {
-                        value: 200,
-                        label: '100-300',
+                        value: 2100,
+                        label: 'od 2100',
                         currency: 'PLN'
                     }
                 }
@@ -211,7 +160,7 @@ export const CMS = {
                 input: {
                     type: 'checkbox',
                     props: {
-                        value: 500,
+                        value: 300,
                         currency: 'PLN'
                     }
                 }
@@ -221,7 +170,7 @@ export const CMS = {
                 input: {
                     type: 'checkbox',
                     props: {
-                        value: 500,
+                        value: 300,
                         currency: 'PLN'
                     }
                 }
@@ -241,7 +190,7 @@ export const CMS = {
                 input: {
                     type: 'no-choice',
                     props: {
-                        value: 10000,
+                        value: 3000,
                         currency: 'PLN'
                     }
                 }

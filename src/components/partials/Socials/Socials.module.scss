@@ -2,7 +2,7 @@
 
 .wrapper {
     @include flex(row, space-between, center);
-    @include z-index(header, $elements);
+    @include z-index(content, $elements);
 
     position: fixed;
     right: var(--base-inline-padding);
