@@ -13,6 +13,7 @@ import { useIsPageLoaded } from '@/store/useGlobalStore';
 
 import Button from '@/components/atoms/Button/Button';
 import Warning from '@/components/atoms/Warning/Warning';
+import Module from '@/components/partials/Module/Module';
 import Paragraph from '@/components/atoms/Paragraph/Paragraph';
 import { Heading, Subtitle, Title } from '@/components/molecules/Heading/Heading';
 
@@ -24,6 +25,7 @@ export type TextProps = {
     items: (TextItem | WarningItem | ImageItem)[];
     isDark?: boolean;
     button: ButtonProps & { children: string };
+    id?: string;
 };
 
 export type TextItem = {
@@ -43,7 +45,7 @@ export type ImageItem = {
     alt: string;
 }
 
-const Text = ({ heading, items, button, isDark }: TextProps): JSX.Element => {
+const Text = ({ heading, items, button, isDark, id }: TextProps): JSX.Element => {
 
     const isPageLoaded = useIsPageLoaded();
     
@@ -76,9 +78,9 @@ const Text = ({ heading, items, button, isDark }: TextProps): JSX.Element => {
     useAnimation(sideButtonRef, { name: 'fadeUp', options: { delay: 0.3, duration: 1, ease: 'power3.out' } }, [isPageLoaded]);
 
     return (
-        <div className={classNames(styles.wrapper, 'module-wrapper', 'padding-block', isDark && styles['is-dark'])}>
+        <Module paddingBlock className={classNames(isDark && 'is-dark', styles.wrapper)} id={id}>
 
-            <Heading className={styles.text}>
+            <Heading className={classNames(styles.text, heading.subtitle && styles['has-subtitle'])}>
                 <Title ref={titleRef} size='medium'>{heading.title}</Title>
                 {heading.subtitle && <Subtitle ref={subtitleRef}>{heading.subtitle}</Subtitle>}
                 {heading.button && <Button ref={buttonRef} {...heading.button}>{heading.button.children}</Button>}
@@ -105,7 +107,7 @@ const Text = ({ heading, items, button, isDark }: TextProps): JSX.Element => {
 
             {button && <Button ref={sideButtonRef} {...button} className={styles.button}>{button.children}</Button>}
 
-        </div>
+        </Module>
     );
 };
 

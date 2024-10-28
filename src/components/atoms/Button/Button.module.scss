@@ -8,8 +8,17 @@
     width: fit-content;
     transition: filter 0.3s var(--ease-custom);
 
+
     @include breakpoint(desktop) {
         padding-inline: vw(15);
+    }
+
+    @include breakpoint(not-desktop) {
+        padding-inline: vw(12, phone);
+    }
+
+    @include breakpoint(tablet) {
+        padding-inline: vw(12, tablet);
     }
     
     @include breakpoint(hd) {
@@ -17,13 +26,36 @@
     }
 
     @include hover {
-        filter: brightness(0.8);
+        &:not(&.is-outline) {
+            filter: brightness(0.8);
+        }
+
+        &.is-outline {
+            padding-inline: auto;
+
+            color: var(--color-white);
+            border-color: var(--color-red);
+
+            &:after {
+                transform: translateY(0);
+            }
+        }
     }
 
     &.is-small {
         @include breakpoint(desktop) {
             height: vw(34);
             min-width: vw(120);
+        }
+
+        @include breakpoint(not-desktop) {
+            height: vw(28, phone);
+            min-width: vw(70, phone);
+        }
+
+        @include breakpoint(tablet) {
+            height: vw(28, tablet);
+            min-width: vw(70, tablet);
         }
         
         @include breakpoint(hd) {
@@ -33,10 +65,21 @@
     }
     
     &.is-big {
+        width: fit-content;
+
         @include breakpoint(desktop) {
             height: vw(60);
             min-width: vw(265);
-            width: fit-content;
+        }
+        
+        @include breakpoint(not-desktop) {
+            height: vw(34, phone);
+            min-width: vw(165, phone);
+        }
+
+        @include breakpoint(tablet) {
+            height: vw(40, tablet);
+            min-width: vw(200, tablet);
         }
 
         @include breakpoint(hd) {
@@ -83,6 +126,19 @@
         background: transparent;
         border: var(--border-thick);
         color: var(--color-black);
+        overflow: hidden;
+
+        transition: color 0.3s var(--ease-custom), border-color 0.3s var(--ease-custom);
+
+        &::after {
+            content: '';
+            position: absolute;
+            inset: -1px;
+            background: var(--color-red);
+            transform: translateY(100%);
+            transition: transform 0.3s var(--ease-custom);
+            z-index: -1;
+        }
     
         svg {
             path {
@@ -111,6 +167,14 @@
     @include breakpoint(desktop) {
         margin-left: vw(7);
     }
+
+    @include breakpoint(not-desktop) {
+        margin-left: vw(5, phone);
+    }
+
+    @include breakpoint(tablet) {
+        margin-left: vw(5, tablet);
+    }
 }
 
 .disclaimer {
@@ -119,10 +183,19 @@
     left: 50%;
     color: var(--color-grey-01);
     text-align: center;
+    line-height: 1.2;
+    width: 80%;
     
     @include breakpoint(desktop) {
         transform: translate(-50%, calc(100% + vw(8)));
-        width: 80%;
-        line-height: 1.2;
+    }
+ 
+    @include breakpoint(not-desktop) {
+        transform: translate(-50%, calc(100% + vw(6, phone)));
+        width: 90%;
+    }
+
+    @include breakpoint(tablet) {
+        transform: translate(-50%, calc(100% + vw(6, tablet)));
     }
 }

@@ -9,7 +9,6 @@ import { roundToDecimal } from '@/utils/roundToDecimal';
 import { useControlsStoreActions } from '@/store/useControlsStore';
 
 import Socials from '@/components/partials/Socials/Socials';
-import Documents from '@/components/atoms/Documents/Documents';
 import Calculator from '@/components/organisms/Calculator/Calculator';
 import { Heading, Title } from '@/components/molecules/Heading/Heading';
 import { CalculatorFragment, CalculatorRow } from '@/components/molecules/CalculatorFragment/CalculatorFragment';
@@ -24,7 +23,7 @@ export default function CalculatorPage() {
 
     const { setCurrencies } = useControlsStoreActions();
 
-    const currencies = useCurrencies(['usd']);
+    const currencies = useCurrencies(['USD', 'EUR']);
     
     const summaryValue = useMemo(() => baseCalculatorSum + tollCalculatorSum + bonusCalculatorSum, [baseCalculatorSum, tollCalculatorSum, bonusCalculatorSum]);
 
@@ -44,7 +43,7 @@ export default function CalculatorPage() {
                             ...CMS.CALCULATOR_MAIN.BASE_CALCULATOR_ITEMS,
                             {
                                 ...CMS.CALCULATOR_MAIN.BASE_SUMMARY_ROW,
-                                input: { type: 'value', props: { value: roundToDecimal(baseCalculatorSum, 2), currency: 'pln' } }
+                                input: { type: 'value', props: { value: roundToDecimal(baseCalculatorSum, 2), currency: 'PLN' } }
                             }
                         ]
                     }
@@ -59,10 +58,22 @@ export default function CalculatorPage() {
                     setValue={setTollCalculatorSum}
                     items={
                         [
+                            {
+                                label: 'Wartość pojazdu',
+                                noSetValue: true,
+                                input: {
+                                    type: 'text',
+                                    props: {
+                                        currency: 'PLN',
+                                        value: 0,
+                                        placeholder: Math.round(baseCalculatorSum).toString()
+                                    }
+                                }
+                            },
                             ...CMS.CALCULATOR_MAIN.TOLL_CALCULATOR_ITEMS,
                             {
                                 ...CMS.CALCULATOR_MAIN.TOLL_SUMMARY_ROW,
-                                input: { type: 'value', props: { value: roundToDecimal(baseCalculatorSum, 2), currency: 'pln' } }
+                                input: { type: 'value', props: { value: roundToDecimal(tollCalculatorSum, 2), currency: 'PLN' } }
                             }
                         ]
                     }
@@ -90,10 +101,10 @@ export default function CalculatorPage() {
                 {/* Final sum */}
                 <CalculatorRow
                     {...CMS.CALCULATOR_BONUS.SUMMARY_ROW}
-                    input={{ type: 'value', props: { value: roundToDecimal(summaryValue, 2), currency: 'pln' } }}
+                    input={{ type: 'value', props: { value: roundToDecimal(summaryValue, 2), currency: 'PLN' } }}
                 />
 
-                <Documents title={CMS.UNIVERSAL.DOCUMENTS_TITLE} className={styles.documents} items={CMS.UNIVERSAL.DOCUMENTS_ITEMS} />
+                {/* <Documents title={CMS.UNIVERSAL.DOCUMENTS_TITLE} className={styles.documents} items={CMS.UNIVERSAL.DOCUMENTS_ITEMS} /> */}
 
             </Calculator>
 

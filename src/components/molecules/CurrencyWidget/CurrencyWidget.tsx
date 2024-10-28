@@ -11,7 +11,7 @@ export type CurrencyWidgetProps = {
 
 const CurrencyWidget = ({ className }: CurrencyWidgetProps): JSX.Element => {
     const currencies = useLoadedCurrencies();
-
+    
     return (
         <div className={classNames(styles.wrapper, 'radius-17', className)}>
             <h2 className='font-size-23 font-weight-400'>{CMS.CURRENCY_WIDGET_COPY}</h2>

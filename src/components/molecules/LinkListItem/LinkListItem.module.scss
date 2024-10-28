@@ -6,16 +6,18 @@
         position: relative;
         transition: color 0.3s var(--ease-custom) 0.2s;
         
-        &:after {
-            content: '';
-            display: block;
-            position: absolute;
-            height: 1px;
-            background: var(--color-black);
-            inset: auto 0 vw(-3) 0;
-            transform: scaleX(0);
-            transform-origin: right;
-            transition: transform 0.3s $ease-custom;
+        @include breakpoint(desktop) {
+            &:after {
+                content: '';
+                display: block;
+                position: absolute;
+                height: 1px;
+                background: var(--color-black);
+                inset: auto 0 vw(-3) 0;
+                transform: scaleX(0);
+                transform-origin: right;
+                transition: transform 0.3s $ease-custom;
+            }
         }
     
         @include hover {

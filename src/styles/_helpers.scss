@@ -22,9 +22,20 @@
 }
 
 .module-wrapper {
-	display: grid;
-	grid-template-columns: var(--base-grid);
 	padding-inline: var(--base-inline-padding);
+	
+	@include breakpoint(desktop) {
+		display: grid;
+		grid-template-columns: var(--base-grid);
+	}
+}
+
+.module-wrapper-double {
+	@include breakpoint(desktop) {
+		display: grid;
+		grid-template-columns: var(--base-grid-double);
+		padding-inline: var(--base-inline-padding);
+	}
 }
 
 .lines-overflow-wrapper {

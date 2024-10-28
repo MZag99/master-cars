@@ -4,14 +4,23 @@
     font-family: var(--font-primary);
     font-weight: 500;
     letter-spacing: -0.5px;
-    line-height: 1.3;
-
+    
     strong {
         font-weight: 700 !important;
     }
-
+    
     @include breakpoint(desktop) {
         margin-bottom: vw(10);
+        line-height: 1.3;
+    }
+
+    @include breakpoint(not-desktop) {
+        line-height: 1.15;
+        margin-bottom: vw(10, phone);
+    }
+
+    @include breakpoint(tablet) {
+        margin-bottom: vw(10, tablet);
     }
 }
 
@@ -19,9 +28,21 @@
     display: inline-block;
     color: var(--color-grey-02);
     font-family: var(--font-primary);
+    text-wrap: pretty;
 
     @include breakpoint(desktop) {
         margin-top: vw(10);
         width: vw(340);
+    }
+
+    @include breakpoint(not-desktop) {
+        margin-top: vw(5, phone);
+        color: var(--color-red);
+    }
+
+    @include breakpoint(tablet) {
+        width: vw(300, tablet);
+
+        br { display: none; }
     }
 }

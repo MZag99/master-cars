@@ -1,25 +1,37 @@
 @import 'mixins';
 
 .wrapper {
-    @include flex(row, flex-start, flex-start);
+    @include flex(column, flex-start, flex-start);
 
     li {
         @include flex(column, flex-start, flex-start);
-
-        float: left;
         
         &:not(:last-child) {
-            border-right: 1px solid var(--color-grey-01);
+            // border-right: 1px solid var(--color-grey-01);
 
             @include breakpoint(desktop) {
                 margin-right: vw(30);
-                padding-right: vw(20);
+                margin-bottom: vw(30);
+            }
+
+            @include breakpoint(not-desktop) {
+                margin-right: 0;
+                margin-bottom: vw(20, phone);
+            }
+
+            @include breakpoint(tablet) {
+                margin-right: 0;
+                margin-bottom: vw(20, tablet);
             }
         }
+    }
 
-        @include breakpoint(desktop) {
-            height: vw(160);
-        }
+    @include breakpoint(not-desktop) {
+        margin-bottom: vw(50, phone);
+    }
+
+    @include breakpoint(tablet) {
+        margin-bottom: vw(80, tablet);
     }
 }
 

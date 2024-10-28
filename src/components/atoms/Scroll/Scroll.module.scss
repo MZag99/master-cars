@@ -2,24 +2,50 @@
 @import 'variables/transitions';
 
 $fill-size: vw(12);
+$fill-size-mobile: vw(12, phone);
+$fill-size-tablet: vw(12, tablet);
+
+@keyframes scrollMobile {
+    0% {
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    40% {
+        opacity: 1;
+        top: vw(2, phone);
+    }
+
+    90% {
+        top: calc(100% - $fill-size-mobile - vw(2, phone));
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
 
 @keyframes scroll {
     0% {
         opacity: 0;
     }
+
     15% {
         opacity: 1;
     }
+
     60% {
         opacity: 1;
-        
-        @include breakpoint(desktop) {
-            top: vw(2);
-        }
+        top: vw(2);
     }
+
     90% {
         top: calc(100% - $fill-size - vw(2));
     }
+
     100% {
         opacity: 0;
     }
@@ -31,6 +57,16 @@ $fill-size: vw(12);
         height: vw(65);
     }
 
+    @include breakpoint(not-desktop) {
+        width: vw(100, phone);
+        height: vw(65, phone);
+    }
+
+    @include breakpoint(tablet) {
+        width: vw(100, tablet);
+        height: vw(65, tablet);
+    }
+
     @include breakpoint(hd) {
         width: vw(100 * $hd-scaling-factor);
         height: vw(65 * $hd-scaling-factor);
@@ -40,12 +76,25 @@ $fill-size: vw(12);
 .bar {
     position: relative;
     display: block;
+    border: var(--border-thick);
+    overflow: hidden;
 
     @include breakpoint(desktop) {
         width: vw(16);
         height: vw(61);
         border-radius: vw(8);
-        border: var(--border-thick);
+    }
+
+    @include breakpoint(not-desktop) {
+        width: vw(16, phone);
+        height: vw(61, phone);
+        border-radius: vw(8, phone);
+    }
+
+    @include breakpoint(tablet) {
+        width: vw(16, tablet);
+        height: vw(61, tablet);
+        border-radius: vw(8, tablet);
     }
 
     @include breakpoint(hd) {
@@ -65,6 +114,14 @@ $fill-size: vw(12);
         left: vw(21);
     }
 
+    @include breakpoint(not-desktop) {
+        left: vw(21, phone);
+    }
+
+    @include breakpoint(tablet) {
+        left: vw(21, tablet);
+    }
+
     @include breakpoint(hd) {
         left: vw(21 * $hd-scaling-factor);
     }
@@ -77,13 +134,25 @@ $fill-size: vw(12);
     border-radius: 50%;
     transform: translateX(-50%);
     background: var(--color-red);
-    animation: scroll 2s infinite $ease-custom;
-
     
     @include breakpoint(desktop) {
         top: vw(2);
         width: $fill-size;
         height: $fill-size;
+        animation: scroll 2s infinite $ease-custom;
+    }
+    
+    @include breakpoint(not-desktop) {
+        top: vw(2, phone);
+        width: $fill-size-mobile;
+        height: $fill-size-mobile;
+        animation: scrollMobile 2s infinite $ease-custom;
+    }
+
+    @include breakpoint(tablet) {
+        top: vw(2, tablet);
+        width: $fill-size-tablet;
+        height: $fill-size-tablet;
     }
 
     @include breakpoint(hd) {

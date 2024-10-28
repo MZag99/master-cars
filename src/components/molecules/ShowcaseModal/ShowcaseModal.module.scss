@@ -4,6 +4,7 @@
 .wrapper {
     --padding: #{vw(70)};
 
+    @extend %no-scrollbar;
     @include flex(column, flex-start, flex-start);
 
     position: relative;
@@ -12,6 +13,14 @@
     @include breakpoint(desktop) {
         width: vw(1400);
         height: vw(900);
+        padding: var(--padding);
+    }
+
+    @include breakpoint(not-desktop) {
+
+        overflow: auto;
+        position: fixed;
+        inset: 0;
         padding: var(--padding);
     }
 
@@ -24,23 +33,39 @@
 
 
 .image-closer, .close {
+    position: absolute !important;
+    padding: 0 !important;
+    min-width: auto !important;
+    background: var(--color-red) !important;
+    
+    svg {
+        margin: 0;
+
+        @include breakpoint(not-desktop) {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        path {
+            fill: var(--color-white) !important;
+        }
+    }
+
+    @include breakpoint(not-desktop) {
+        position: fixed !important;
+        top: vw(23, phone);
+        right: vw(25, phone);
+        width: vw(28, phone) !important;
+        z-index: 1;
+    }
+
     @include breakpoint(desktop) {
-        position: absolute !important;
         top: vw(25);
         right: vw(25);
 
-        padding: 0 !important;
-        min-width: auto !important;
         width: vw(34) !important;
-        background: var(--color-red) !important;
-
-        svg {
-            margin: 0;
-
-            path {
-                fill: var(--color-white) !important;
-            }
-        }
     }
 
     @include breakpoint(hd) {
@@ -61,6 +86,15 @@
         vertical-align: middle;
         color: var(--color-grey-02);
     }
+
+    @include breakpoint(not-desktop) {
+        margin-bottom: vw(30, phone);
+        margin-right: vw(50, phone);
+
+        span {
+            @include font-size(24);
+        }
+    }
 }
 
 
@@ -76,6 +110,11 @@
 .info {
     @include flex(row, space-between, flex-start);
     width: 100%;
+
+    @include breakpoint(not-desktop) {
+        flex-direction: column;
+        gap: vw(20, phone);
+    }
 
     @include breakpoint(desktop) {
         margin-top: vw(50);
@@ -104,11 +143,19 @@
     @extend %no-scrollbar;
     @include flex(row, flex-start, flex-start);
 
-    overflow: auto;
-    flex: 1;
-    flex-wrap: wrap;
-
+    
+    @include breakpoint(not-desktop) {
+        gap: vw(16, phone);
+        margin-top: vw(50, phone);
+        height: auto;
+        flex-direction: column;
+        pointer-events: none;
+    }
+    
     @include breakpoint(desktop) {
+        overflow: auto;
+        flex: 1;
+        flex-wrap: wrap;
         gap: vw(17);
         margin-top: vw(50);
     }
@@ -128,16 +175,21 @@
             color: var(--color-grey-01);
         }
 
+        @include breakpoint(phone) {
+            height: vw(200, phone);
+            width: 100%;
+        }
+        
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s var(--ease-custom);
+        }
+
         @include breakpoint(desktop) {
             width: 32%;
             height: vw(220);
-
-            img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                transition: transform 0.3s var(--ease-custom);
-            }
         }
 
         @include hover {
@@ -153,6 +205,16 @@
     @include breakpoint(desktop) {
         p {
             width: vw(340);
+        }
+    }
+
+    @include breakpoint(not-desktop) {
+        justify-content: center !important;
+
+        p {
+            width: 80%;
+            text-align: center;
+            margin: 0 auto;
         }
     }
 }

@@ -9,6 +9,11 @@
         height: vw(100);
     }
 
+    @include breakpoint(not-desktop) {
+        width: 100%;
+        height: vw(100, phone);
+    }
+
     a {
         @include flex;
     
@@ -23,5 +28,9 @@
 
     @include breakpoint(desktop) {
         gap: vw(30);
+    }
+
+    @include breakpoint(not-desktop) {
+        gap: vw(20, phone);
     }
 }

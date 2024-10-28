@@ -13,7 +13,9 @@ import Download from '@/assets/svg/download.svg';
 import Facebook from '@/assets/svg/facebook.svg';
 import WhatsApp from '@/assets/svg/whatsapp.svg';
 import Instagram from '@/assets/svg/instagram.svg';
+import Hamburger from '@/assets/svg/hamburger.svg';
 import Chevron from '@/assets/svg/chevron-down.svg';
+import CloseThin from '@/assets/svg/close-thin.svg';
 
 export type IconProps = {
     name: keyof typeof icons;
@@ -23,6 +25,7 @@ export type IconProps = {
 export const icons = {
     dhl: DHL,
     close: Close,
+    'close-thin': CloseThin,
     logo: Logo,
     mail: Mail,
     phone: Phone,
@@ -34,7 +37,8 @@ export const icons = {
     download: Download,
     facebook: Facebook,
     whatsapp: WhatsApp,
-    instagram: Instagram
+    instagram: Instagram,
+    hamburger: Hamburger
 };
 
 const Icon = ({ name, className }: IconProps): JSX.Element | null => {

@@ -1,0 +1,242 @@
+@import "mixins";
+
+.wrapper {
+    @include flex(column, flex-start, flex-start);
+
+    position: relative;
+    background: var(--color-black);
+    font-family: var(--font-primary);
+    transition: all 0.3s var(--ease-custom) 0.2s;
+
+    @include breakpoint(desktop) {
+        height: vw(68);
+        width: vw(280);
+        padding: vw(20);
+
+        &.is-expanded {
+            width: vw(500);
+            height: vw(200);
+            transition-delay: 0s;
+        }
+    }
+
+    .copy {
+        margin: auto;
+        white-space: nowrap;
+        color: var(--color-white);
+        transition: transform 0.3s var(--ease-custom);
+    }
+
+    .consent {
+        color: var(--color-grey-01);
+        line-height: 1.2;
+        font-weight: 300;
+
+        a {
+            color: var(--color-grey-03);
+            font-weight: 500;
+        }
+    }
+
+    svg {
+        path {
+            fill: var(--color-white);
+        }
+
+        transition: transform 0.3s var(--ease-custom);
+
+        @include breakpoint(desktop) {
+            margin: vw(1) 0 0 vw(10);
+        }
+    }
+
+
+    .button {
+        position: absolute;
+        inset: 0;
+    }
+
+
+    .checkbox {
+        appearance: none;
+        border: 1px solid var(--color-grey-01);
+        border-radius: 50%;
+        cursor: pointer;
+        position: relative;
+        background-color: transparent;
+
+        @include breakpoint(desktop) {
+            margin: auto;
+            min-width: vw(20);
+            min-height: vw(20);
+        }
+
+        &:checked {
+            &::after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 50%;
+                height: 50%;
+                background-color: var(--color-grey-01);
+                border-radius: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+
+
+    .form {
+        @include flex(column, flex-start, flex-start);
+
+        opacity: 0;
+        flex: 1;
+        pointer-events: none;
+        transition: opacity 0.3s var(--ease-custom);
+
+        input, textarea {
+            @include breakpoint(desktop) {
+                padding: vw(10);
+            }
+
+            &::placeholder {
+                color: var(--color-grey-01);
+            }
+        }
+
+        @include breakpoint(desktop) {
+            margin-top: vw(5);
+            gap: vw(12);
+        }
+
+        &.is-sending, &.is-sent, &.is-error {
+            .top, .text-input {
+                filter: brightness(0.7);
+            }
+
+            .top,.bottom { pointer-events: none; }
+            
+            .submit {
+                opacity: 1;
+                pointer-events: none !important;
+                
+                @include breakpoint(desktop) {
+                    width: vw(110);
+                }
+            }
+        }
+
+        &.is-sent {
+            .submit {
+                @include breakpoint(desktop) {
+                    width: vw(88);
+                }
+            }
+        }
+        
+        &.is-error {
+            .submit {
+                @include breakpoint(desktop) {
+                    width: vw(100);
+                }
+            }
+        }
+    }
+
+
+    .bottom {
+        flex: 1;
+        width: 100%;
+    }
+
+
+    .text-input {
+        height: 100%;
+        width: 100%;
+        cursor: text;
+        resize: none;
+        scrollbar-width: none;
+        
+        @include breakpoint(desktop) {
+            border-radius: vw(17);
+        }
+
+        @include hover {
+            + .submit {
+                opacity: 1;
+                pointer-events: auto;
+            }
+        }
+    }
+
+
+    .top {
+        @include flex(row, flex-start, center);
+        width: 100%;
+
+        @include breakpoint(desktop) {
+            gap: vw(10);
+        }
+    }
+
+
+    .input {
+        @include breakpoint(desktop) {
+            border-radius: vw(17);
+            min-width: vw(240);
+            height: vw(28);
+        }
+    }
+
+
+    .submit {
+        position: absolute;
+        border: var(--border-thin);
+        padding: 0 vw(10) !important;
+        background: var(--color-white);
+        opacity: 0;
+        pointer-events: none;
+        z-index: 1;
+        transition: opacity 0.3s var(--ease-custom), width 0.1s var(--ease-custom), filter 0.3s var(--ease-custom);
+
+        @include breakpoint(desktop) {
+            width: vw(75);
+            height: vw(28);
+            bottom: vw(25);
+            right: vw(25);
+        }
+
+        @include hover {
+            filter: brightness(0.8);
+            opacity: 1;
+            pointer-events: auto;
+        }
+    }
+
+
+    &.is-expanded {
+        .form {
+            opacity: 1;
+            pointer-events: auto;
+            transition-delay: 0.2s;
+        }
+
+        .button {
+            pointer-events: none;
+        }
+    }
+
+
+    @include hover {
+        &:not(.is-expanded) {
+            .copy {
+                transform: translateX(vw(-10));
+
+                svg {
+                    transform: translateX(vw(10));
+                }
+            }
+        }
+    }
+}

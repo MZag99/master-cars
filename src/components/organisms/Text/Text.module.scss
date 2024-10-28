@@ -2,27 +2,52 @@
 
 .wrapper {
     position: relative;
+    background: var(--color-white);
     z-index: 1;
+
+    strong {
+        color: var(--color-red);
+    }
+
+    @include breakpoint(phone) {
+        margin-top: vw(20, phone);
+    }
+
 }
 
-.paragraph {
-    &.text-light {
-        color: var(--color-grey-01);
+.text {
+    @include breakpoint(not-desktop) {
+        @include flex(row, space-between, center);
+
+        margin-bottom: vw(20, phone);
+    
+        &.has-subtitle {
+            @include flex(column, flex-start, flex-start);
+        }
     }
 }
 
 .button {
-    margin-left: auto;
+    @include breakpoint(desktop) {
+        margin-left: auto;
+    }
+
+    @include breakpoint(not-desktop) {
+        margin: vw(30, phone) auto;
+    }
 }
 
 .is-dark {
-    background: var(--color-black);
-    color: var(--color-white);
+    background: var(--color-grey-04);
 }
 
 .image-item {
     @include breakpoint(desktop) {
         margin-block: vw(35);
+    }
+    
+    @include breakpoint(not-desktop) {
+        margin-block: vw(35, phone);
     }
 }
 

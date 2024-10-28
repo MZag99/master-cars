@@ -2,17 +2,38 @@
 
 .wrapper {
     position: relative;
+    background: var(--color-white);
 
     @include breakpoint(desktop) {
         padding-block: vw(20);
     }
+
+    @include breakpoint(not-desktop) {
+        @include flex(column-reverse, flex-start, flex-start);
+
+        gap: vw(25, phone);
+        padding-block: vw(16, phone);
+    }
+
+    @include breakpoint(tablet) {
+        gap: vw(25, tablet);
+        padding-block: vw(20, tablet);
+    }
 }
 
 .list {
-    @include flex(row, flex-start, center);
-
     @include breakpoint(desktop) {
+        @include flex(row, flex-start, center);
         gap: vw(65);
+    }
+
+    @include breakpoint(not-desktop) {
+        @include flex(column, flex-start, flex-start);
+        gap: vw(10, phone);
+    }
+
+    @include breakpoint(tablet) {
+        gap: vw(15, tablet);
     }
 }
 
@@ -23,15 +44,33 @@
     right: unset;
     bottom: unset;
     border: none;
-    margin-left: auto;
- 
+    
     @include breakpoint(desktop) {
+        margin-left: auto;
         gap: vw(35);
+    }
+
+    @include breakpoint(not-desktop) {
+        justify-content: flex-start;
+        gap: vw(20, phone);
+    }
+
+    @include breakpoint(tablet) {
+        gap: vw(20, tablet);
     }
 }
 
 .copyright {
     span {
         font-family: var(--font-secondary);
+
+        @include breakpoint(not-desktop) {
+            display: inline-block;
+            margin-top: vw(20, phone);
+        }
+
+        @include breakpoint(tablet) {
+            margin-top: vw(20, tablet);
+        }
     }
 }

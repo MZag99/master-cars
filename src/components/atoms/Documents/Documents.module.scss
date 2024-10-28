@@ -18,9 +18,21 @@
             padding-inline: vw(13);
         }
 
+        @include breakpoint(not-desktop) {
+            padding: vw(12, phone);
+
+            a {
+                text-wrap: pretty;
+            }
+        }
+
         svg {
             @include breakpoint(desktop) {
                 margin: 0 0 vw(-2) vw(8);
+            }
+
+            @include breakpoint(not-desktop) {
+                margin: 0 0 vw(-3, phone) vw(6, phone);
             }
         }
 

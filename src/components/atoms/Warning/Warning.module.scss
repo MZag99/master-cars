@@ -10,11 +10,33 @@
         @include breakpoint(desktop) {
             margin-right: vw(7);
         }
+
+        @include breakpoint(not-desktop) {
+            margin-top: vw(4, phone);
+        }
+
+        @include breakpoint(tablet) {
+            margin-top: 0;
+        }
     }
 
     @include breakpoint(desktop) {
         height: vw(30);
         padding-inline: vw(10);
         margin-block: vw(27);
+    }
+    
+    @include breakpoint(not-desktop) {
+        align-items: flex-start;
+        height: auto;
+        padding: vw(5, phone) vw(10, phone) vw(5, phone);
+        margin-block: vw(27, phone);
+        gap: vw(10, phone);
+    }
+
+    @include breakpoint(tablet) {
+        padding: vw(5, tablet) vw(10, tablet) vw(5, tablet);
+        margin-block: vw(27, tablet);
+        gap: vw(10, tablet);
     }
 }

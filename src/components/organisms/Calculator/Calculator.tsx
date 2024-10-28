@@ -3,9 +3,8 @@
 import type { ReactNode } from 'react';
 import type { HeadingType } from '@/components/molecules/Heading/Heading';
 
-import classNames from 'classnames';
-
 import Button from '@/components/atoms/Button/Button';
+import Module from '@/components/partials/Module/Module';
 import { Heading, Subtitle, Title } from '@/components/molecules/Heading/Heading';
 import CurrencyWidget from '@/components/molecules/CurrencyWidget/CurrencyWidget';
 
@@ -19,7 +18,7 @@ export type CalculatorProps = {
 
 const Calculator = ({ heading, children, currencyWidget }: CalculatorProps): JSX.Element => {
     return (
-        <div className={classNames('module-wrapper', 'padding-block')}>
+        <Module paddingBlock>
 
             {heading ?
                 <Heading>
@@ -37,7 +36,7 @@ const Calculator = ({ heading, children, currencyWidget }: CalculatorProps): JSX
             {currencyWidget && (
                 <CurrencyWidget className={styles.currencies} />
             )}
-        </div>
+        </Module>
     );
 };
 

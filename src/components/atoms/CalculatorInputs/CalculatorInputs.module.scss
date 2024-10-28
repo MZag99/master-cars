@@ -24,8 +24,16 @@ $padding-inline: #{vw(16)};
         color: var(--color-grey-01);
         transition: color 0.3s var(--ease-custom);
 
+        &::placeholder {
+            color: var(--color-grey-01);
+        }
+
         &:focus {
             color: var(--color-black);
+        }
+
+        @include breakpoint(not-desktop) {
+            padding-inline: vw(12, phone);
         }
     }
 
@@ -35,11 +43,29 @@ $padding-inline: #{vw(16)};
         width: vw(277);
         padding-inline: $padding-inline;
     }
+    
+    @include breakpoint(not-desktop) {
+        height: vw(28, phone);
+    }
 }
 
 .dropdown-wrapper {
     overflow: visible;
     background: var(--color-white);
+    border-color: transparent;
+
+    button {
+        border: var(--border-thin);
+        border-radius: inherit;
+        background: var(--color-white);
+        z-index: -1;
+    }
+
+    @include breakpoint(not-desktop) {
+        width: vw(250, phone);
+        padding-inline: vw(12, phone);
+
+    }
 }
 
 .dropdown {
@@ -53,11 +79,18 @@ $padding-inline: #{vw(16)};
     clip-path: inset(0 0 100% 0);
     color: var(--color-grey-01);
     transition: clip-path 0.3s var(--ease-custom);
+    z-index: -2;
 
     @include breakpoint(desktop) {
         border-radius: 0 0 vw(17) vw(17);
         padding: vw(16) $padding-inline vw(10);
-        transform: translateY(calc(100% - vw(7)));
+        transform: translateY(calc(100% - vw(8)));
+    }
+
+    @include breakpoint(not-desktop) {
+        border-radius: 0 0 vw(17, phone) vw(17, phone);
+        padding: vw(8, phone) vw(12, phone) vw(6, phone);
+        transform: translateY(calc(100% - vw(6, phone)));
     }
 
     li {
@@ -103,6 +136,10 @@ $padding-inline: #{vw(16)};
             height: vw(34);
             width: fit-content;
         }
+
+        @include breakpoint(not-desktop) {
+            white-space: nowrap;
+        }
     }
 
     span {
@@ -130,6 +167,10 @@ $padding-inline: #{vw(16)};
             border-radius: 50%;
             inset: vw(6);
             transition: background 0.3s var(--ease-custom);
+
+            @include breakpoint(not-desktop) {
+                inset: vw(3, phone);
+            }
         }
 
         &:checked {
@@ -143,14 +184,23 @@ $padding-inline: #{vw(16)};
             height: vw(34);
             border-radius: 50%;
         }
+
+        @include breakpoint(not-desktop) {
+            width: vw(20, phone);
+            height: vw(20, phone);
+            margin-left: vw(8, phone);
+            margin-bottom: vw(-4, phone);
+            padding: 0;
+            border-radius: 50%;
+        }
     }
 }
 
 .caption {
-    position: absolute;
     color: var(--color-grey-02);
     
     @include breakpoint(desktop) {
+        position: absolute;
         inset: auto auto 0 0;
         transform: translateY(calc(100% - vw(24)));
     }

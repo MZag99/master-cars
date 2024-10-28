@@ -1,6 +1,8 @@
 import type { HeadingType } from '@/components/molecules/Heading/Heading';
 import type { CalculatorFragmentProps, CalculatorRowProps } from '@/components/molecules/CalculatorFragment/CalculatorFragment';
 
+import { SOCIAL_LINKS } from '@/static/constants';
+
 export const CMS = {
 
     
@@ -11,14 +13,16 @@ export const CMS = {
             subtitle: 'Wprowadź informacje dotyczące interesującego Cię auta i sprawdź w jakiej cenie je u nas dostaniesz.'
         } as HeadingType,
 
-
+        /**
+         * typy inputów: 'text', 'value', 'dropdown', 'checkbox', 'no-choice', 'relative'
+         */
         BASE_CALCULATOR_ITEMS: [
             {
                 label: 'Planowana cena pojazdu (USD)',
                 input: {
                     type: 'text',
                     props: {
-                        currency: '$',
+                        currency: 'USD',
                         placeholder: '0'
                     }
                 }
@@ -26,10 +30,27 @@ export const CMS = {
             {
                 label: 'Koszty aukcyjne (około)',
                 input: {
-                    type: 'value',
+                    type: 'relative-stepped',
                     props: {
-                        value: 936,
-                        currency: 'dollar'
+                        steps: [
+                            {
+                                minValue: 1,
+                                maxValue: 1000,
+                                stepValue: 105
+                            },
+                            {
+                                minValue: 1001,
+                                maxValue: 2000,
+                                stepValue: 150
+                            },
+                            {
+                                minValue: 2001,
+                                maxValue: 'infinity',
+                                isRelative: true,
+                                stepValue: 0.5
+                            }
+                        ],
+                        currency: 'USD'
                     }
                 }
             },
@@ -38,9 +59,9 @@ export const CMS = {
                 input: {
                     type: 'dropdown',
                     props: {
-                        currency: '$',
+                        currency: 'USD',
                         options: [
-                            { name: 'Kalifornia (CA)', value: '1000' },
+                            { name: 'Alaska (Al)', value: '3000' },
                             { name: 'Kalifornia (CA)', value: '1000' },
                             { name: 'Kalifornia (CA)', value: '1000' }
                         ]
@@ -48,32 +69,24 @@ export const CMS = {
                 }
             },
             {
-                label: 'Koszty transportu do portu w USA',
-                input: {
-                    type: 'value',
-                    props: {
-                        value: 936,
-                        currency: 'dollar'
-                    }
-                }
-            },
-            {
-                label: 'Frach morski do Europy',
-                input: {
-                    type: 'value',
-                    props: {
-                        value: 936,
-                        currency: 'dollar'
-                    }
-                }
-            },
-            {
                 label: 'Broker',
                 input: {
-                    type: 'value',
+                    type: 'hidden',
                     props: {
-                        value: 936,
-                        currency: 'dollar'
+                        value: 300,
+                        currency: 'USD'
+                    }
+                }
+            },
+            {
+                label: 'Koszty transportu do portu w Europie',
+                noSetValue: true,
+                input: {
+                    type: 'relative',
+                    props: {
+                        relativeRow: 2,
+                        relativeMultiplier: 1,
+                        currency: 'USD'
                     }
                 }
             }
@@ -87,7 +100,7 @@ export const CMS = {
                 type: 'value',
                 props: {
                     value: 0,
-                    currency: 'dollar'
+                    currency: 'USD'
                 }
             },
             variant: 'accent',
@@ -102,63 +115,32 @@ export const CMS = {
             {
                 label: 'Cło',
                 input: {
-                    type: 'text',
+                    type: 'relative',
                     props: {
-                        currency: '$',
-                        placeholder: '0'
+                        relativeRow: 0,
+                        relativeMultiplier: 0.1,
+                        currency: 'EUR'
                     }
                 }
             },
             {
                 label: 'Vat (19%)',
                 input: {
-                    type: 'value',
+                    type: 'relative',
                     props: {
-                        value: 936,
-                        currency: 'dollar'
+                        relativeRow: 0,
+                        relativeMultiplier: 0.19,
+                        currency: 'EUR'
                     }
                 }
             },
             {
-                label: 'Stan (region), w którym znajduje się Twój pojazd',
-                input: {
-                    type: 'dropdown',
-                    props: {
-                        options: [
-                            { name: 'Kalifornia (CA)', value: '1000' },
-                            { name: 'Kalifornia (CA)', value: '1000' },
-                            { name: 'Kalifornia (CA)', value: '1000' }
-                        ]
-                    }
-                }
-            },
-            {
-                label: 'Koszty transportu do portu w USA',
+                label: 'Agencja celna i rozładunek',
                 input: {
                     type: 'value',
                     props: {
-                        value: 936,
-                        currency: 'dollar'
-                    }
-                }
-            },
-            {
-                label: 'Frach morski do Europy',
-                input: {
-                    type: 'value',
-                    props: {
-                        value: 936,
-                        currency: 'dollar'
-                    }
-                }
-            },
-            {
-                label: 'Broker',
-                input: {
-                    type: 'value',
-                    props: {
-                        value: 936,
-                        currency: 'dollar'
+                        currency: 'EUR',
+                        value: 450
                     }
                 }
             }
@@ -172,7 +154,7 @@ export const CMS = {
                 type: 'value',
                 props: {
                     value: 0,
-                    currency: 'dollar'
+                    currency: 'USD'
                 }
             },
             variant: 'accent',
@@ -182,16 +164,6 @@ export const CMS = {
 
 
     CALCULATOR_BONUS: {
-        HEADING: {
-            size: 'small',
-            title: 'Skontaktuj się z nami w celu<br/>otrzymania szczegółowej<br/>wyceny!',
-            button: {
-                variant: 'accent',
-                children: 'Kontakt',
-                icon: 'phone'
-            }
-        } as HeadingType,
-
 
         SEPARATOR_TEXT: 'Usługi dodatkowe',
 
@@ -199,12 +171,13 @@ export const CMS = {
         BONUS_CALCULATOR_ITEMS: [
             {
                 label: 'Transport pod dom',
-                caption: '(W zależności od wielkości i stanu samochodu)',
+                caption: '(Koszt transportu ustalany jest indywidualnie)',
                 input: {
                     type: 'checkbox',
                     props: {
-                        value: 3000,
-                        currency: 'pln'
+                        value: 2100,
+                        label: 'od 2100',
+                        currency: 'PLN'
                     }
                 }
             },
@@ -213,8 +186,8 @@ export const CMS = {
                 input: {
                     type: 'checkbox',
                     props: {
-                        value: 500,
-                        currency: 'pln'
+                        value: 400,
+                        currency: 'PLN'
                     }
                 }
             },
@@ -223,8 +196,8 @@ export const CMS = {
                 input: {
                     type: 'checkbox',
                     props: {
-                        value: 500,
-                        currency: 'pln'
+                        value: 300,
+                        currency: 'PLN'
                     }
                 }
             },
@@ -234,7 +207,7 @@ export const CMS = {
                     type: 'checkbox',
                     props: {
                         value: 500,
-                        currency: 'pln'
+                        currency: 'PLN'
                     }
                 }
             },
@@ -244,7 +217,7 @@ export const CMS = {
                     type: 'no-choice',
                     props: {
                         value: 3000,
-                        currency: 'pln'
+                        currency: 'PLN'
                     }
                 }
             }
@@ -260,7 +233,7 @@ export const CMS = {
                 type: 'value',
                 props: {
                     value: 0,
-                    currency: 'pln'
+                    currency: 'PLN'
                 }
             },
             variant: 'outline'
@@ -279,10 +252,9 @@ export const CMS = {
         ],
 
         SOCIALS: {
-            facebook: 'https://www.facebook.com/',
-            instagram: 'https://www.instagram.com/',
-            linkedin: 'https://www.linkedin.com/',
-            twitter: 'https://www.twitter.com/'
+            facebook: SOCIAL_LINKS.FACEBOOK,
+            instagram: SOCIAL_LINKS.INSTAGRAM,
+            whatsapp: SOCIAL_LINKS.WHATSAPP
         }
     }
 };

@@ -5,6 +5,7 @@ import classNames from 'classnames';
 import React, { forwardRef } from 'react';
 
 import Icon from '../Icon/Icon';
+import { useBreakpoints } from '@/store/useBrowserStore';
 
 import styles from './Button.module.scss';
 
@@ -27,7 +28,7 @@ const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(({
         <LinkButton ref={ref as LegacyRef<HTMLAnchorElement>} link={link} {...props}>
             {children}
             {disclaimer &&
-                <span className={classNames(styles.disclaimer, 'font-size-10')}>
+                <span className={classNames(styles.disclaimer, 'font-size-12')}>
                     {disclaimer}
                 </span>
             }
@@ -35,7 +36,7 @@ const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(({
         <RegularButton ref={ref as LegacyRef<HTMLButtonElement>} {...props}>
             {children}
             {disclaimer &&
-                <span className={classNames(styles.disclaimer, 'font-size-10')}>
+                <span className={classNames(styles.disclaimer, 'font-size-12')}>
                     {disclaimer}
                 </span>
             }
@@ -44,6 +45,9 @@ const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(({
 
 
 const RegularButton = forwardRef<HTMLButtonElement, ButtonProps>(({ variant = 'light', big, icon, children, onClick, disabled, interactive = true, className }, ref): JSX.Element => {
+    
+    const breakpoint = useBreakpoints();
+
     return (
         <button
             ref={ref}
@@ -53,7 +57,7 @@ const RegularButton = forwardRef<HTMLButtonElement, ButtonProps>(({ variant = 'l
                 disabled && styles['is-disabled'],
                 !interactive && styles['is-not-interactive'],
                 `radius-${big ? 34 : 17}`,
-                `font-size-${big ? 23 : 16}`,
+                `font-size-${!breakpoint?.desktop ? 16 : (big ? 23 : 16)}`,
                 styles[`is-${variant}`],
                 styles[`is-${big ? 'big' : 'small'}`],
                 className
@@ -67,16 +71,20 @@ const RegularButton = forwardRef<HTMLButtonElement, ButtonProps>(({ variant = 'l
 
 
 const LinkButton = forwardRef<HTMLAnchorElement, ButtonProps>(({ variant = 'light', big, icon, children, link, disabled, interactive = true, className }, ref): JSX.Element => {
+    
+    const breakpoint = useBreakpoints();
+    
     return (
         <a
             ref={ref}
             href={link}
+            target='_blank'
             className={classNames(
                 styles.wrapper,
                 disabled && styles['is-disabled'],
                 !interactive && styles['is-not-interactive'],
                 `radius-${big ? 34 : 17}`,
-                `font-size-${big ? 23 : 16}`,
+                `font-size-${!breakpoint?.desktop ? 16 : (big ? 23 : 18)}`,
                 styles[`is-${variant}`],
                 styles[`is-${big ? 'big' : 'small'}`],
                 className
@@ -88,8 +96,8 @@ const LinkButton = forwardRef<HTMLAnchorElement, ButtonProps>(({ variant = 'ligh
     );
 });
 
+Button.displayName = 'Button';
 RegularButton.displayName = 'RegularButton';
 LinkButton.displayName = 'LinkButton';
-Button.displayName = 'Button';
 
 export default Button;

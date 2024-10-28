@@ -1,12 +1,13 @@
-import type { CurrencyObjectRaw } from '@/types/universal';
+import type { Currency, CurrencyObject, CurrencyObjectRaw } from '@/types/universal';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 
-const useCurrencies = (codes: string[]) => {
+const useCurrencies = (codes: Currency[]) => {
 
     const [currencies, setCurrencies] = useState<{ code: string, rate: number }[]>([]);
+    const loadedRef = useRef<CurrencyObject[]>([]);
 
-    const fetchCurrency = async (currencyCode: string) => {
+    const fetchCurrency = useCallback(async (currencyCode: string) => {
         try {
             const response = await fetch(process.env.CURRENCIES_API_URL + currencyCode + '?format=json');
             if (!response.ok) {
@@ -14,14 +15,17 @@ const useCurrencies = (codes: string[]) => {
             }
 
             const data: CurrencyObjectRaw = await response.json();
+            const currency: CurrencyObject = { code: data.code, rate: data.rates[0].mid };
 
-            setCurrencies([...currencies, { code: data.code, rate: data.rates[0].mid }]);
+            !loadedRef.current.find(item => item.code === currency.code) && loadedRef.current.push(currency);
+
+            setCurrencies([...loadedRef.current]);
 
         } catch (error) {
             // eslint-disable-next-line no-console
             console.log(error);
         }
-    };
+    }, [loadedRef, setCurrencies]);
 
     useEffect(() => {
         codes.forEach(code => fetchCurrency(code));

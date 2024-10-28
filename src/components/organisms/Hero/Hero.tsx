@@ -3,17 +3,22 @@
 import type { StaticImageData } from 'next/image';
 
 import Image from 'next/image';
+import gsap from 'gsap/dist/gsap';
 import classNames from 'classnames';
 import { useEffect, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
+import { ScrollToPlugin } from 'gsap/dist/ScrollToPlugin';
 
 import useAnimation from '@/hooks/useAnimation';
 
 import Button from '@/components/atoms/Button/Button';
 import Scroll from '@/components/atoms/Scroll/Scroll';
+import Module from '@/components/partials/Module/Module';
 import { Heading, Subtitle, Title } from '@/components/molecules/Heading/Heading';
 
 import styles from './Hero.module.scss';
+
+gsap.registerPlugin(ScrollToPlugin);
 
 export type HeroProps = {
     title: string;
@@ -30,12 +35,13 @@ const Hero = ({ title, subtitle, image }: HeroProps): JSX.Element => {
     const buttonsRef = useRef<HTMLDivElement>(null);
     const titleRef = useRef<HTMLHeadingElement>(null);
     const subtitleRef = useRef<HTMLSpanElement>(null);
-    const carRef = useRef<HTMLDivElement>(null);
+    const carRef = useRef<HTMLImageElement>(null);
+    const wrapperRef = useRef<HTMLDivElement>(null);
 
-    useAnimation(carRef, { name: 'fadeLeft', options: { delay: 1, duration: 1, ease: 'power3.out' } });
-    useAnimation(buttonsRef, { name: 'fadeUp', options: { delay: 2, duration: 1, ease: 'power3.out' } });
-    useAnimation(titleRef, { name: 'splitUp', options: { delay: 1.3, duration: 0.8, ease: 'power3.out', stagger: 0.01 } });
-    useAnimation(subtitleRef, { name: 'splitUp', options: { delay: 1.5, duration: 0.8, ease: 'power3.out', stagger: 0.01 } });
+    useAnimation(carRef, { name: 'parallax' });
+    useAnimation(buttonsRef, { name: 'fadeUp', options: { delay: 3, duration: 1, ease: 'power3.out' } });
+    useAnimation(titleRef, { name: 'splitUp', options: { delay: 2.3, duration: 0.8, ease: 'power3.out', stagger: 0.01 } });
+    useAnimation(subtitleRef, { name: 'splitUp', options: { delay: 2.5, duration: 0.8, ease: 'power3.out', stagger: 0.01 } });
 
     const scrollTimeout = useRef<NodeJS.Timeout | null>(null);
 
@@ -52,10 +58,10 @@ const Hero = ({ title, subtitle, image }: HeroProps): JSX.Element => {
     }, []);
 
     return (
-        <div className={classNames(styles.wrapper, 'module-wrapper')}>
+        <Module ref={wrapperRef} className={styles.wrapper}>
 
-            <div ref={carRef} className={styles.image}>
-                <Image fill src={image} alt='Hero image' />
+            <div className={classNames(styles.image, 'radius-34')}>
+                <Image ref={carRef} fill src={image} alt='Hero image' />
             </div>
 
             <Heading className={styles.text}>
@@ -65,7 +71,7 @@ const Hero = ({ title, subtitle, image }: HeroProps): JSX.Element => {
                 <Subtitle ref={subtitleRef}>{subtitle}</Subtitle>
 
                 <div ref={buttonsRef} className={styles.buttons}>
-                    <Button variant='accent'>O nas</Button>
+                    <Button variant='accent' onClick={() => gsap.to(window, { scrollTo: { y: '#about' }, duration: 1, ease: 'power3.out' })}>O nas</Button>
                     <Button variant='outline' icon='otomoto' link='https://www.otomoto.pl/'>Oferta</Button>
                 </div>
             </Heading>
@@ -78,7 +84,7 @@ const Hero = ({ title, subtitle, image }: HeroProps): JSX.Element => {
                 }
             </AnimatePresence>
 
-        </div>
+        </Module>
     );
 };
 
