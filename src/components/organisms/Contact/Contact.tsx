@@ -9,6 +9,7 @@ import useAnimation from '@/hooks/useAnimation';
 import useCssVariable from '@/hooks/useCssVariable';
 import { useBreakpoints } from '@/store/useBrowserStore';
 
+
 import Icon from '@/components/atoms/Icon/Icon';
 import Module from '@/components/partials/Module/Module';
 import EmailWidget from '@/components/molecules/EmailWidget/EmailWidget';

@@ -96,7 +96,6 @@ const LinkButton = forwardRef<HTMLAnchorElement, ButtonProps>(({ variant = 'ligh
     );
 });
 
-
 Button.displayName = 'Button';
 RegularButton.displayName = 'RegularButton';
 LinkButton.displayName = 'LinkButton';
