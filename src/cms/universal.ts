@@ -26,7 +26,7 @@ export const CMS_UNIVERSAL = {
             {
                 link: '/kalkulator',
                 name: 'Kalkulator'
-            },
+            }
         ]
     } as HeaderProps,
 
@@ -76,7 +76,7 @@ export const CMS_UNIVERSAL = {
             {
                 name: 'Kalkulator',
                 link: '/kalkulator'
-            },
+            }
         ]
     } as FooterProps
 };

@@ -5,13 +5,15 @@ import { SOCIAL_LINKS } from '@/static/constants';
 
 import HeroImage from '@/assets/images/hero-image.jpg';
 // ściezka do fotek aut: '@/assets/images/cars/[NAZWA_PLIKU]'
+import BMW2Image10 from '@/assets/images/cars/bmw2/DSC_0250.jpg';
+import BMW2Image11 from '@/assets/images/cars/bmw2/DSC_0251.jpg';
+import BMW2Image13 from '@/assets/images/cars/bmw2/DSC_0256.jpg';
 //M4
 import BMWImage1 from '@/assets/images/cars/bmw/DSC_0212-min.jpg';
 import BMWImage2 from '@/assets/images/cars/bmw/DSC_0215-min.jpg';
 import BMWImage3 from '@/assets/images/cars/bmw/DSC_0218-min.jpg';
 import BMWImage4 from '@/assets/images/cars/bmw/DSC_0225-min.jpg';
 import BMWImage5 from '@/assets/images/cars/bmw/DSC_0227-min.jpg';
-
 //F30 1
 import BMW2Image1 from '@/assets/images/cars/bmw2/DSC_0234 (1).jpg';
 import BMW2Image2 from '@/assets/images/cars/bmw2/DSC_0235 (2).jpg';
@@ -22,19 +24,15 @@ import BMW2Image6 from '@/assets/images/cars/bmw2/DSC_0241 (3).jpg';
 import BMW2Image7 from '@/assets/images/cars/bmw2/DSC_0242 (1).jpg';
 import BMW2Image8 from '@/assets/images/cars/bmw2/DSC_0245 (2).jpg';
 import BMW2Image9 from '@/assets/images/cars/bmw2/DSC_0247 (2).jpg';
-import BMW2Image10 from '@/assets/images/cars/bmw2/DSC_0250.jpg';
-import BMW2Image11 from '@/assets/images/cars/bmw2/DSC_0251.jpg';
-import BMW2Image12 from '@/assets/images/cars/bmw2/DSC_0254 (1).jpg';
-import BMW2Image13 from '@/assets/images/cars/bmw2/DSC_0256.jpg';
-
 // Tucson
 import TucsonImage1 from '@/assets/images/cars/tucson/DSC_0190.jpg';
 import TucsonImage2 from '@/assets/images/cars/tucson/DSC_0193.jpg';
 import TucsonImage3 from '@/assets/images/cars/tucson/DSC_0204.jpg';
-import TucsonImage4 from '@/assets/images/cars/tucson/DSC_0205 (1).jpg';
 import TucsonImage5 from '@/assets/images/cars/tucson/DSC_0206.jpg';
 import TucsonImage6 from '@/assets/images/cars/tucson/DSC_0207.jpg';
 import TucsonImage7 from '@/assets/images/cars/tucson/DSC_0208.jpg';
+import BMW2Image12 from '@/assets/images/cars/bmw2/DSC_0254 (1).jpg';
+import TucsonImage4 from '@/assets/images/cars/tucson/DSC_0205 (1).jpg';
 import TucsonImage8 from '@/assets/images/cars/tucson/DSC_0210 (1).jpg';
 
 
@@ -180,7 +178,7 @@ export const CMS = {
             {
                 type: 'text',
                 text: ''
-        }
+            }
         ],
         button: {
             children: 'Kalkulator',

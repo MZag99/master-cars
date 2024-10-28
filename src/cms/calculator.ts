@@ -143,7 +143,7 @@ export const CMS = {
                         value: 450
                     }
                 }
-            },
+            }
         ] as CalculatorFragmentProps['items'],
 
 

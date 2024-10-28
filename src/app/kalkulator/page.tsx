@@ -9,7 +9,6 @@ import { roundToDecimal } from '@/utils/roundToDecimal';
 import { useControlsStoreActions } from '@/store/useControlsStore';
 
 import Socials from '@/components/partials/Socials/Socials';
-import Documents from '@/components/atoms/Documents/Documents';
 import Calculator from '@/components/organisms/Calculator/Calculator';
 import { Heading, Title } from '@/components/molecules/Heading/Heading';
 import { CalculatorFragment, CalculatorRow } from '@/components/molecules/CalculatorFragment/CalculatorFragment';

@@ -1,8 +1,9 @@
 import Link from 'next/link';
 import classNames from 'classnames';
 
-import styles from './LinkListItem.module.scss';
 import useFontSize from '@/hooks/useFontSize';
+
+import styles from './LinkListItem.module.scss';
 
 type LinkListItemProps = { href: string; children: string; isActive: boolean, className?: string };
 

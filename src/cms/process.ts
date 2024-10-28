@@ -2,7 +2,6 @@ import type { TextProps } from '@/components/organisms/Text/Text';
 
 // Fotki do modułu Tekstowego w sekcji Proces:
 // ściezka do fotek aut: '@/assets/images/cars/[NAZWA_PLIKU]'
-import DodgeImage from '@/assets/images/cars/bmw/DSC_0212-min.jpg';
 
 export const CMS = {
     PROCESS_TEXT_MODULE: {
@@ -26,7 +25,7 @@ export const CMS = {
             {
                 type: 'text',
                 text: '<br/><strong>4. Agencja celna oraz odbiór auta </strong><br/><br/>Po rozładunku pojazd poddaje się procedurze celnej. Firma spedycyjna wystawia poszczególne rachunki (CŁO, VAT, opłaty portowe)- po ich opłaceniu pojazd transportowany jest do naszej firmy bądź pod konkretny adres.'
-            },
+            }
         ],
         button: {
             children: 'Tracking',
