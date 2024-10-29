@@ -54,7 +54,7 @@
     @include breakpoint(not-desktop) {
 
         min-width: unset !important;
-        padding: vw(7, phone) vw(10, phone) vw(5, phone);
+        padding: vw(6, phone) vw(10, phone) vw(5, phone);
         transition: border-color 0.3s var(--ease-custom);
 
         * { pointer-events: none; }

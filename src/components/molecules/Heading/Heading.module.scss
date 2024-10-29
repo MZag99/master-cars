@@ -37,7 +37,7 @@
 
     @include breakpoint(not-desktop) {
         margin-top: vw(5, phone);
-        color: var(--color-red);
+        // color: var(--color-red);
     }
 
     @include breakpoint(tablet) {

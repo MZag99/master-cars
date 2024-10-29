@@ -18,6 +18,20 @@ export const metadata: Metadata = {
     title: 'US Auto',
     description: 'US Auto - import aut z USA',
     manifest: '/site.webmanifest',
+    openGraph: {
+        title: 'US Auto',
+        description: 'US Auto - import aut z USA',
+        type: 'website',
+        locale: 'pl_PL',
+        url: 'https://usauto.com.pl',
+        images: [
+            {
+                url: '/og-image.jpg',
+                width: 1200,
+                height: 630
+            }
+        ]
+    },
     icons: [
         {
             rel: 'icon',

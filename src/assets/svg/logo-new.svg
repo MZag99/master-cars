@@ -1,17 +1,58 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 1037 325">
-  <defs>
-    <clipPath id="clip-path">
-      <path id="Path_1" data-name="Path 1" d="M0,0H111V304H0Z" transform="translate(442 11)" fill="#fff" stroke="#707070" stroke-width="1"/>
-    </clipPath>
-    <clipPath id="clip-Custom_Size_1">
-      <rect width="1037" height="325"/>
-    </clipPath>
-  </defs>
-  <g id="Custom_Size_1" data-name="Custom Size – 1" clip-path="url(#clip-Custom_Size_1)">
-    <rect width="1037" height="325" fill="#fff"/>
-    <text id="USAuto." transform="translate(10 254)" fill="#e71d36" font-size="260" font-family="Stolzl-Bold, Stolzl" font-weight="700" letter-spacing="-0.04em"><tspan x="0" y="0">USA</tspan><tspan y="0" fill="#000">uto.</tspan></text>
-    <g id="Mask_Group_1" data-name="Mask Group 1" clip-path="url(#clip-path)">
-      <text id="A" transform="translate(341 254)" font-size="260" font-family="Stolzl-Bold, Stolzl" font-weight="700" letter-spacing="-0.04em"><tspan x="0" y="0">A</tspan></text>
-    </g>
-  </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 27.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Warstwa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1920 1080" style="enable-background:new 0 0 1920 1080;" xml:space="preserve">
+<style type="text/css">
+	.st0{clip-path:url(#SVGID_00000107547459135770670650000016833853162041323183_);}
+	.st1{fill:#FFFFFF;}
+	.st2{enable-background:new    ;}
+	.st3{fill:#E71D36;}
+	.st4{clip-path:url(#SVGID_00000125581326116740749870000013786956177595259321_);}
+</style>
+<g>
+	<defs>
+		<rect id="SVGID_1_" y="239.1" width="1920" height="601.7"/>
+	</defs>
+	<clipPath id="SVGID_00000083791458192087935440000014415765432969193095_">
+		<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
+	</clipPath>
+	<g id="Custom_Size_1" style="clip-path:url(#SVGID_00000083791458192087935440000014415765432969193095_);">
+		<rect y="239.1" class="st1" width="1920" height="601.7"/>
+		<g class="st2">
+			<path class="st3" d="M336.2,372.4l-0.5,199.3c0,95.8-60.7,143.9-141.5,143.9S52.7,667.5,52.7,571.7l-0.5-199.3h83.3v194.5
+				c0,53,23.6,70.8,58.7,70.8s58.7-17.8,58.7-70.8V372.4H336.2z"/>
+			<path class="st3" d="M643.8,607.4c0,82.3-76.1,108.3-130,108.3c-103,0-142-60.2-148.7-117.5h82.8c7.7,27.9,22.6,40.9,65.5,40.9
+				c33.2,0,48.1-10.6,48.1-28.4c0-19.7-20.2-21.2-76.5-33.2c-54.9-11.6-111.2-31.8-111.2-101.6c0-74.1,65.9-109.8,130-109.8
+				c95.3,0,131.4,53.4,137.2,111.7h-82.8c-4.8-19.7-15.9-35.1-54.4-35.1c-36.6,0-47.7,14.9-47.7,29.4c0,15.9,15.4,17.8,48.6,25
+				C599.1,517.3,643.8,538.5,643.8,607.4z"/>
+			<path class="st3" d="M880.7,639.6H754.6l-24.1,69.8h-86.6l122.3-337h103l122.3,337h-86.6L880.7,639.6z M853.7,561.6l-36.1-104.9
+				l-36.1,104.9H853.7z"/>
+		</g>
+		<g class="st2">
+			<path d="M1258.1,444.6v264.8h-81.8v-30.3c-19.3,24.1-43.8,36.6-76.1,36.6c-58.2,0-94.4-40.9-94.4-105.4V444.6h81.8V592
+				c0,28.9,8.7,45.7,40.9,45.7c31.3,0,47.7-15.9,47.7-52.5V444.6H1258.1z"/>
+			<path d="M1501.7,692.6c-14.9,10.6-49.6,23.1-82.8,23.1c-51,0-101.1-29.8-101.1-108.8v-85.2h-45.2v-77h45.2v-54.4l81.8-17.8v72.2
+				h89.1v77h-89.1v80.4c0,25.5,13,37.5,33.7,37.5c14.4,0,31.8-5.8,54.4-13L1501.7,692.6z"/>
+			<path d="M1781.3,577c0,79.9-61.1,138.6-138.6,138.6c-77.5,0-138.6-59.2-138.6-138.6c0-79.9,62.1-138.6,138.6-138.6
+				C1719.2,438.4,1781.3,497.1,1781.3,577z M1586.9,577c0,37.1,24.6,60.7,55.8,60.7c31.8,0,55.8-23.6,55.8-60.7
+				c0-36.6-24.1-60.7-55.8-60.7C1610.9,516.4,1586.9,540.4,1586.9,577z"/>
+			<path d="M1914.2,668.5c0,27.4-21.2,47.2-49.6,47.2s-49.6-19.7-49.6-47.2c0-27.4,21.2-47.2,49.6-47.2S1914.2,641.1,1914.2,668.5z"
+				/>
+		</g>
+		<g>
+			<defs>
+				<rect id="SVGID_00000073692475543821653960000010038065210092243095_" x="818.4" y="259.5" width="205.5" height="562.9"/>
+			</defs>
+			<clipPath id="SVGID_00000108272690327387518750000004975931912278555828_">
+				<use xlink:href="#SVGID_00000073692475543821653960000010038065210092243095_"  style="overflow:visible;"/>
+			</clipPath>
+			<g id="Mask_Group_1" style="clip-path:url(#SVGID_00000108272690327387518750000004975931912278555828_);">
+				<g class="st2">
+					<path d="M880.2,639.6H754.1L730,709.4h-86.6l122.3-337h103l122.3,337h-86.6L880.2,639.6z M853.3,561.6l-36.1-104.9l-36.1,104.9
+						H853.3z"/>
+				</g>
+			</g>
+		</g>
+	</g>
+</g>
 </svg>

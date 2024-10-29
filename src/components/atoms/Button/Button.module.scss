@@ -26,18 +26,20 @@
     }
 
     @include hover {
-        &:not(&.is-outline) {
-            filter: brightness(0.8);
-        }
-
-        &.is-outline {
-            padding-inline: auto;
-
-            color: var(--color-white);
-            border-color: var(--color-red);
-
-            &:after {
-                transform: translateY(0);
+        @include breakpoint(desktop) {
+            &:not(&.is-outline) {
+                filter: brightness(0.8);
+            }
+    
+            &.is-outline {
+                padding-inline: auto;
+    
+                color: var(--color-white);
+                border-color: var(--color-red);
+    
+                &:after {
+                    transform: translateY(0);
+                }
             }
         }
     }

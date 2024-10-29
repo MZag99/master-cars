@@ -57,7 +57,7 @@ export const CMS = {
         items: [
             {
                 type: 'text',
-                text: 'Zajmujemy się kompleksową obsługą importu samochodów z USA, oferując wsparcie na każdym etapie – od wyszukiwania pojazdu, przez jego zakup, aż po transport i dostarczenie do klienta. Dzięki naszej współpracy z zaufanymi partnerami w Stanach Zjednoczonych gwarantujemy pewność i bezpieczeństwo transakcji. Zapewniamy również pomoc w załatwieniu wszelkich formalności celnych oraz technicznych, by samochód trafił do Ciebie bez zbędnych komplikacji.'
+                text: 'Zajmujemy się kompleksową obsługą importu samochodów z USA, oferując wsparcie na każdym etapie – od wyszukiwania pojazdu, przez jego zakup, aż po transport i dostarczenie do klienta. <br/><br/>Dzięki naszej współpracy z zaufanymi partnerami w Stanach Zjednoczonych gwarantujemy pewność i bezpieczeństwo transakcji. Zapewniamy również pomoc w załatwieniu wszelkich formalności celnych oraz technicznych, by samochód trafił do Ciebie bez zbędnych komplikacji.'
             }
         ],
         isDark: true
@@ -87,10 +87,10 @@ export const CMS = {
                 label: 'Lat na rynku',
                 value: '5'
             },
-            {
+            /* {
                 label: 'Wygranych aukcji',
                 value: '1000+'
-            },
+            }, */
             {
                 label: 'Taniej kupując u nas',
                 value: '30',
