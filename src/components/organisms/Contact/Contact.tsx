@@ -25,6 +25,7 @@ export type ContactProps = {
         name: string;
         phoneNumber: string;
         email: string;
+        otherInfo?: string;
     }[];
     receiverData: ReceiverData;
     id?: string;
@@ -53,6 +54,7 @@ const Contact = ({ emailButton, contactItems, id, receiverData }: ContactProps) 
                         <h4>{item.name}</h4>
                         <p className={breakpoint?.desktop ? 'font-size-18' : 'font-size-14 '}>{item.phoneNumber}</p>
                         <p className={breakpoint?.desktop ? 'font-size-18' : 'font-size-14'}>{item.email}</p>
+                        <p className={breakpoint?.desktop ? 'font-size-18' : 'font-size-14'}>{item.otherInfo}</p>
                     </div>
                 ))}
             </div>

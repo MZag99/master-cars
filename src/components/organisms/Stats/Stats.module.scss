@@ -20,8 +20,7 @@
         position: absolute;
         left: var(--base-block-padding);
         bottom: var(--base-block-padding);
-        width: vw(370);
-        white-space: nowrap;
+        width: vw(400);
     }
 
     @include breakpoint(not-desktop) {

@@ -31,10 +31,11 @@ export type CalculatorRowProps = {
 export type CalculatorFragmentProps = {
     setValue: (value: number) => void,
     items: (Omit<CalculatorRowProps, 'index' | 'setRowValues' | 'rowValues'>)[];
+    className?: string,
 };
 
 
-const CalculatorFragment = ({ items, setValue }: CalculatorFragmentProps): JSX.Element => {
+const CalculatorFragment = ({ items, setValue, className }: CalculatorFragmentProps): JSX.Element => {
 
     const [rowValues, setRowValues] = useState<number[]>(new Array(items.length).fill(0));
 
@@ -49,7 +50,7 @@ const CalculatorFragment = ({ items, setValue }: CalculatorFragmentProps): JSX.E
     }, [fragmentSum, setValue]);
 
     return (
-        <div className={styles.wrapper}>
+        <div className={classNames(styles.wrapper, className)}>
             {items.map((item, index) => (
                 <CalculatorRow key={index} {...item} index={index} rowValues={rowValues} setRowValues={setRowValues} />
             ))}

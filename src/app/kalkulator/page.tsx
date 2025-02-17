@@ -24,7 +24,7 @@ export default function CalculatorPage() {
     const { setCurrencies } = useControlsStoreActions();
 
     const currencies = useCurrencies(['USD', 'EUR']);
-    
+
     const summaryValue = useMemo(() => baseCalculatorSum + tollCalculatorSum + bonusCalculatorSum, [baseCalculatorSum, tollCalculatorSum, bonusCalculatorSum]);
 
     useEffect(() => {
@@ -37,6 +37,7 @@ export default function CalculatorPage() {
 
                 {/* Base (top) calculator */}
                 <CalculatorFragment
+                    className={styles['calc-base']}
                     setValue={setBaseCalculatorSum}
                     items={
                         [
@@ -55,6 +56,7 @@ export default function CalculatorPage() {
 
                 {/* Toll (bottom) calculator */}
                 <CalculatorFragment
+                    className={styles['calc-toll']}
                     setValue={setTollCalculatorSum}
                     items={
                         [
@@ -89,6 +91,7 @@ export default function CalculatorPage() {
 
                 {/* Bonus calculator */}
                 <CalculatorFragment
+                    className={styles['calc-bonus']}
                     setValue={setBonusCalculatorSum}
                     items={CMS.CALCULATOR_BONUS.BONUS_CALCULATOR_ITEMS}
                 />

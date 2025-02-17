@@ -79,12 +79,16 @@ $padding-inline: #{vw(16)};
     clip-path: inset(0 0 100% 0);
     color: var(--color-grey-01);
     transition: clip-path 0.3s var(--ease-custom);
+    overflow: auto;
     z-index: -2;
+    scrollbar-width: none;
+
 
     @include breakpoint(desktop) {
         border-radius: 0 0 vw(17) vw(17);
         padding: vw(16) $padding-inline vw(10);
         transform: translateY(calc(100% - vw(8)));
+        max-height: vw(400);
     }
 
     @include breakpoint(not-desktop) {

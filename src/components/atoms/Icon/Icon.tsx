@@ -16,6 +16,7 @@ import Instagram from '@/assets/svg/instagram.svg';
 import Hamburger from '@/assets/svg/hamburger.svg';
 import Chevron from '@/assets/svg/chevron-down.svg';
 import CloseThin from '@/assets/svg/close-thin.svg';
+import Searates from '@/assets/svg/searates-logo.svg';
 
 export type IconProps = {
     name: keyof typeof icons;
@@ -37,6 +38,7 @@ export const icons = {
     download: Download,
     facebook: Facebook,
     whatsapp: WhatsApp,
+    searates: Searates,
     instagram: Instagram,
     hamburger: Hamburger
 };

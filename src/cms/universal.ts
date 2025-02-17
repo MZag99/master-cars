@@ -26,6 +26,10 @@ export const CMS_UNIVERSAL = {
             {
                 link: '/kalkulator',
                 name: 'Kalkulator'
+            },
+            {
+                link: '/tracking',
+                name: 'Tracking'
             }
         ]
     } as HeaderProps,
@@ -46,7 +50,6 @@ export const CMS_UNIVERSAL = {
 
 
     CONTACT: {
-        info: 'ul. Pana Balcera 8/110<br/>20-631, Lublin<br/>NIP 7121575499<br/>Regon 1283726619283981',
         receiverData: {
             serviceId: 'service_j32kch9',
             templateId: 'template_f8g0uep',
@@ -58,9 +61,10 @@ export const CMS_UNIVERSAL = {
         },
         contactItems: [
             {
-                name: 'Maciej Uznański',
+                name: 'Maciej',
                 phoneNumber: '+48 507 515 404',
-                email: 'kontakt@usauto.com.pl'
+                email: 'kontakt@usauto.com.pl',
+                otherInfo: 'Pon - Pt: 9:00 - 17:00'
             }
         ]
     },

@@ -2,14 +2,14 @@
 import type { NavigationItem } from '@/types/universal';
 
 import Link from 'next/link';
-import { useMemo } from 'react';
+// import { useMemo } from 'react';
 import gsap from 'gsap/dist/gsap';
 import classNames from 'classnames';
 import { usePathname } from 'next/navigation';
 import { ScrollToPlugin } from 'gsap/dist/ScrollToPlugin';
 
 import { useBreakpoints } from '@/store/useBrowserStore';
-import useScrollDirection from '@/hooks/useScrollDirection';
+// import useScrollDirection from '@/hooks/useScrollDirection';
 import { useGlobalStoreActions, useIsMenuOpen } from '@/store/useGlobalStore';
 
 import Icon from '@/components/atoms/Icon/Icon';
@@ -27,15 +27,15 @@ export type HeaderProps = {
 const Header = ({ items }: HeaderProps): JSX.Element => {
 
     const pathname = usePathname();
-    const { down } = useScrollDirection();
+    // const { down } = useScrollDirection();
     const breakpoint = useBreakpoints();
     const { setIsMenuOpen } = useGlobalStoreActions();
     const isMenuOpen = useIsMenuOpen();
 
-    const isHidden = useMemo(() => down, [down]);
+    // const isHidden = useMemo(() => down, [down]);
 
     return (
-        <header className={classNames(styles.wrapper, isHidden && styles['is-hidden'])}>
+        <header className={classNames(styles.wrapper)}>
 
             <div className={styles.logo}>
                 <Link href='/'>

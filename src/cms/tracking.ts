@@ -4,12 +4,13 @@ import type { TextProps } from '@/components/organisms/Text/Text';
 export const CMS = {
     PROCESS_TEXT_MODULE: {
         heading: {
-            title: 'Śledź swoje<br/>zamówienie'
+            title: 'Śledź swoje<br/>zamówienie',
+            subtitle: 'Sprawdź gdzie aktualnie znajduje się Twoja przesyłka.'
         },
         items: [
             {
                 type: 'text',
-                text: 'Nasza firma do 2000 roku zajmuje się importem i sprzedażą aut ze Stanów Zjednoczonych i Kanady.'
+                text: 'Aby śledzić swoje zamówienie, wejdź na stronę, dostawcy przejdź do zakładki “Tracking” i wpisz otrzymany od nas kod.'
             }
         ]
     } as TextProps,
@@ -17,12 +18,8 @@ export const CMS = {
     VENDORS_MODULE: {
         items: [
             {
-                logo: 'dhl',
-                url: 'https://www.dhl.com/'
-            },
-            {
-                logo: 'dhl',
-                url: 'https://www.dhl.com/'
+                logo: 'searates',
+                url: 'https://www.searates.com/'
             }
         ]
     }

@@ -26,3 +26,21 @@
         margin-top: vw(50, phone);
     }
 }
+
+
+.calc-base {
+    position: relative;
+    z-index: 3;
+}
+
+
+.calc-toll {
+    position: relative;
+    z-index: 2;
+}
+
+
+.calc-bonus {
+    position: relative;
+    z-index: 1;
+}
