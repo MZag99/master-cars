@@ -16,7 +16,6 @@ import EmailWidget from '@/components/molecules/EmailWidget/EmailWidget';
 import styles from './Contact.module.scss';
 
 export type ContactProps = {
-    info: string;
     emailButton: {
         email: string;
         copy: string;
